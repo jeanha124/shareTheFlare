@@ -1,6 +1,12 @@
 {
   "name": "shareTheFlare",
+  "version": "1.0.0",
+  "description": "Flickr-clone",
   "private": true,
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
   "dependencies": {
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
@@ -14,5 +20,18 @@
     "redux-logger": "^3.0.6",
     "webpack": "^4.18.0",
     "webpack-cli": "^3.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "webpack",
+    "webpack": "webpack --watch"
+  },
+  "engines": {
+    "node": "6.10.1",
+    "npm": "3.10.10"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeanha124/shareTheFlare.git"
   }
 }
