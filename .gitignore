@@ -29,3 +29,5 @@
 node_modules/
 bundler.js
 bundler.js.map
+.DS_Store
+npm-debug.log
