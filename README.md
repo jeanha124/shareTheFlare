@@ -1,2 +1,2 @@
-# Flickr-clone
-Fullstack
+# README
+This is the README for Share-The-Flare.
