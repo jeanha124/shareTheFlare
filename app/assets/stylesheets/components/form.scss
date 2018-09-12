@@ -1,0 +1,21 @@
+.login-form-container {
+  margin: 0 auto;
+  width: 400px;
+}
+.login-form-box {
+  position: absolute;
+  border: 2px solid black;
+  top: 30%;
+  padding: 50px;
+}
+.login-input {
+  width: 99%;
+  border-radius: 5px;
+}
+
+.session-submit {
+  padding: 4px 18px;
+  border-radius: 9px;
+  position: absolute;
+  left: 38%;
+}

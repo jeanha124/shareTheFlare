@@ -19,13 +19,18 @@ header {
 nav {
   margin: 0 auto;
   display: flex;
-  opacity: 1;
   font-size: 21px;
   justify-content: space-between;
   position: relative;
   top: 20px;
+  background-color: none;
 }
-
+nav #sign {
+  color: white;
+  background-color: black;
+  border: 2px solid black;
+  border-radius: 5px;
+}
 a {
   background-color: white;
   border: 2px solid white;
@@ -63,4 +68,8 @@ input {
   left: 184px;
   padding: 11px 44px;
   font-size: 28px;
+}
+
+.logo {
+  
 }

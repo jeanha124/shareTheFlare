@@ -12,7 +12,7 @@ class Launch extends React.Component {
           <input type="text" placeholder="Photos"/>
             <div id="log-links">
               <Link to={`/login`}>Log In</Link>
-              <Link to={`/signup`}>Sign Up</Link>
+              <Link to={`/signup`} id="sign">Sign Up</Link>
             </div>
           </nav>
         </header>
