@@ -346,9 +346,11 @@ function (_React$Component) {
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "log-links"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/login"
+        to: "/login",
+        className: "btn"
       }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/signup",
+        className: "btn",
         id: "sign"
       }, "Sign Up")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"

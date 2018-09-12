@@ -11,8 +11,8 @@ class Launch extends React.Component {
           <h1>Share The Flare</h1>
           <input type="text" placeholder="Photos"/>
             <div id="log-links">
-              <Link to={`/login`}>Log In</Link>
-              <Link to={`/signup`} id="sign">Sign Up</Link>
+              <Link to={`/login`} className="btn">Log In</Link>
+              <Link to={`/signup`} className="btn" id="sign">Sign Up</Link>
             </div>
           </nav>
         </header>
