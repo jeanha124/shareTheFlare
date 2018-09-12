@@ -4,10 +4,10 @@ html, body {
 
 .launch-body {
   color: white;
-  background: url('friend1.jpg') no-repeat center center fixed;
+  background: image-url('friend1.jpg') no-repeat center center fixed;
   background-size: 100%;
   overflow: hidden;
-  height: 980px;
+  height: 100vh;
 }
 header {
   height: 60px;
