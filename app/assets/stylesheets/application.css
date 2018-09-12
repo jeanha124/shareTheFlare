@@ -13,3 +13,9 @@
  *= require_tree .
  *= require_self
  */
+
+/* CSS Reset */
+@import "base/reset.scss";
+
+/* Components */
+@import "components/nav.scss";
