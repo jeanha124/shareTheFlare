@@ -4,7 +4,14 @@ import { withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '', email: ''};
+    this.state = { 
+      email: '', 
+      password: '',
+      fname: '',
+      lname: '',
+      display_name: '',
+      gender: '',  
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   update(field){
@@ -27,43 +34,99 @@ class SessionForm extends React.Component {
     );
   }
   render() {
-    return (
-      <div className="login-form-container">
-        <form onSubmit={this.handleSubmit} className="login-form-box">
-          Welcome to Share the Flare!
-          <br />
-          Please { this.props.formType } or { this.props.navLink }
-          { this.renderErrors() }
-          <div className="login-form">
+    if (this.props.formType === 'signup'){
+      return (
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            Welcome to Share the Flare!
             <br />
-            <label>Username:
-              <input type="text"
-              value={this.state.username}
-              onChange={this.update('username')}
-              className="login-input"
-              />
-            </label>
+            Sign Up
+            { this.renderErrors() }
+            <div className="login-form">
+              <br />
+                <input type="text"
+                placeholder="First Name"
+                value={this.state.fname}
+                onChange={this.update('fname')}
+                className="login-input"
+                />
+                <input type="text"
+                placeholder = "Last Name"
+                value={this.state.lname}
+                onChange={this.update('lname')}
+                className="login-input"
+                />
+              <br /> 
+                <input type="text"
+                placeholder = "Email"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input"
+                />
+              <br />
+                <input type="password"
+                placeholder = "Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+                />
+              <br />
+                <input type="text"
+                placeholder = "Display Name"
+                value={this.state.display_name}
+                onChange={this.update('display_name')}
+                className="login-input"
+                />
+              <br /> 
+                <input type="text"
+                placeholder = "Gender: Optional"
+                value={this.state.gender}
+                onChange={this.update('gender')}
+                className="login-input"
+                />
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
             <br />
-            <label>Password:
-              <input type="password"
-              value={this.state.password}
-              onChange={this.update('password')}
-              className="login-input"
-              />
-            </label>
             <br />
-            <label>Email:
-              <input type="text"
-              value={this.state.email}
-              onChange={this.update('email')}
-              className="login-input"
-              />
-            </label>
-            <input className="session-submit" type="submit" value={this.props.formType} />
-          </div>
-        </form>
-      </div>
-    );
+            Already have an account? { this.props.navLink }
+          </form>
+        </div>
+      );
+    } else {
+      return (
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            Welcome to Share the Flare!
+            <br />
+            Log In
+            { this.renderErrors() }
+            <div className="login-form">
+              <br />
+                <input type="text"
+                placeholder = "Email"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input"
+                />
+              <br />
+                <input type="password"
+                placeholder = "Password"
+                value={this.state.password}
+                onChange={this.update('password')}
+                className="login-input"
+                />
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
+            </div>
+            <br />
+            <br />
+            Don't have an account? { this.props.navLink }
+          </form>
+        </div>
+      );
+
+    }
   }
 }
 
