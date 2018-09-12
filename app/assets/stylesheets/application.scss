@@ -15,6 +15,7 @@
  */
 
 /* CSS Reset */
-
+@import 'base/reset.scss';
 
 /* Components */
+@import 'components/*';

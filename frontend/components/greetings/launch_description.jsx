@@ -16,13 +16,13 @@ class Launch extends React.Component {
             </div>
           </nav>
         </header>
-        <div className="launch-body">
-          <h1>Find your inspiration.</h1>
-          <br />
-          <h2>Join the Share the Flare community, home to tens of billions</h2> 
-          <h2>of photos and 2 million groups.</h2>
+        <div className="content">
+            <h1>Find your inspiration.</h1>
+            <br />
+            <h2>Join the Share the Flare community, home to tens of billions</h2> 
+            <h2>of photos and 2 million groups.</h2>
 
-          <Link to={`/signup`}>Sign Up</Link>
+            <Link to={`/signup`}>Sign Up</Link>
         </div>
       </div>
     );
