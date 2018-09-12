@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: ''};
+    this.state = { username: '', password: '', email: ''};
     this.handleSubmit = this.handleSubmit.bind(this);
   }
   update(field){
@@ -52,6 +52,13 @@ class SessionForm extends React.Component {
               />
             </label>
             <br />
+            <label>Email:
+              <input type="text"
+              value={this.state.email}
+              onChange={this.update('email')}
+              className="login-input"
+              />
+            </label>
             <input className="session-submit" type="submit" value={this.props.formType} />
           </div>
         </form>
