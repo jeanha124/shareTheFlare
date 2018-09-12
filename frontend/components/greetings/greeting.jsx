@@ -11,13 +11,6 @@ class Greeting extends React.Component {
             <button onClick={this.props.logout}>Log Out</button>
           </div>
         );
-    } else {
-      return (
-        <div>
-          <Link to={`/login`}>Log In</Link>
-          <Link to={`/signup`}>Sign Up</Link>
-        </div>
-      );
     }
   }
 }
