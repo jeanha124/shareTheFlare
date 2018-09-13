@@ -16,7 +16,7 @@ html, body {
 
 .navi-header {
   display: grid;
-  grid-template-columns: 175px 1504px 87px 135px;
+  grid-template-columns: 207px 1439px 91px 164px;
   grid-gap: 7px;
   width: 1922px;
   height: 65px;
@@ -44,21 +44,11 @@ html, body {
 .signup {
   background-color: white;
   border: 2px solid white;
-  padding-right: 19px;
+  padding: 6px 22px;
   border-radius: 3px;
   color: black;
-  padding-bottom: 2px;
   font-size: 21px;
 }
-/*nav {
-  
-}
-nav #sign {
-  color: white;
-  background-color: black;
-  border: 2px solid black;
-  border-radius: 5px;
-}*/
 
 .content {
   display: grid;
