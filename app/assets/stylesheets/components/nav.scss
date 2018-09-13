@@ -4,8 +4,11 @@ html, body {
 
 .launch-body {
   color: white;
-  background: image-url('friend1.jpg') no-repeat center center fixed;
-  background-size: 100%;
+  background: image-url('friend1.jpg')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
   overflow: hidden;
   height: 100vh;
   font-family: Proxima Nova, helvetica nueue, helvetica, arial, sans-serif;
@@ -13,9 +16,9 @@ html, body {
 
 .navi-header {
   display: grid;
-  grid-template-columns: 175px 1504px 87px 132px;
+  grid-template-columns: 175px 1504px 87px 135px;
   grid-gap: 7px;
-  width: 1919px;
+  width: 1922px;
   height: 65px;
   font-size: 21px;
   justify-items: center;
@@ -58,34 +61,48 @@ nav #sign {
 }*/
 
 .content {
-  margin: 0 auto;
-  width: 640px;
-  height: 297px;
-  position: relative;
-  top: 33%;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 371.5px 85px 95.5px;
+  height: 640px;
+  grid-template-columns: 531px 801px auto;
+  grid-auto-flow: column;
+  justify-items: center;
 }
 
-.content > h1 {
-  font-size: 56px;
-  text-align: center;
+.content-h1 {
+  grid-column: 2;
+  grid-row: 2;
+  width: 560px;
+  font-size: 60px;
+  height: 69px;
   text-shadow: 1px 1px black;
 }
 
-.content h2 {
+.content-h2 {
+  grid-row: 3;
+  grid-column: 2;
+  font-weight: 500;
   font-size: 26px;
   text-align: center;
-  margin: 5px;
   text-shadow: 1px 1px black;
 }
 
-.content a {
-  position: absolute;
-  top: 212px;
-  left: 184px;
-  padding: 11px 44px;
-  font-size: 28px;
+.signup-2 {
+  grid-column: 2;
+  grid-row: 4;
+  font-size: 24px;
+  background: whitesmoke;
+  color: black;
+  border-radius: 5px;
+  padding: 16px 58px;
 }
-
-.logo {
-  
+.empty {
+  display: grid;
+  height: 196px;
+}
+.footer {
+  display: grid;
+  background: black;
+  height: 76px;
 }
