@@ -1,7 +1,8 @@
                    
 <% if logged_in? %>
+const show_user = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>;
 <script type="text/javascript">
-  window.currentUser = <%= render("api/users/user.json.jbuilder", user: current_user).html_safe %>
+  window.currentUser = show_user;
 </script>
 <% end %>
 <main id='root'></main>
