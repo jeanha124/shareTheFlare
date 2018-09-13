@@ -37,51 +37,52 @@ class SessionForm extends React.Component {
     if (this.props.formType === 'signup'){
       return (
         <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
+          <form onSubmit={ this.handleSubmit } className="login-form-box">
             Welcome to Share the Flare!
             <br />
             Sign Up
+            <div onClick={ this.props.closeModal } className="close-x">X</div>
             { this.renderErrors() }
             <div className="login-form">
               <br />
                 <input type="text"
                 placeholder="First Name"
-                value={this.state.fname}
-                onChange={this.update('fname')}
+                value={ this.state.fname }
+                onChange={ this.update('fname') }
                 className="login-input"
                 />
                 <input type="text"
                 placeholder = "Last Name"
-                value={this.state.lname}
-                onChange={this.update('lname')}
+                value={ this.state.lname }
+                onChange={ this.update('lname') }
                 className="login-input"
                 />
               <br /> 
                 <input type="text"
                 placeholder = "Email"
-                value={this.state.email}
-                onChange={this.update('email')}
+                value={ this.state.email }
+                onChange={ this.update('email') }
                 className="login-input"
                 />
               <br />
                 <input type="password"
                 placeholder = "Password"
-                value={this.state.password}
-                onChange={this.update('password')}
+                value={ this.state.password }
+                onChange={ this.update('password') }
                 className="login-input"
                 />
               <br />
                 <input type="text"
                 placeholder = "Display Name"
-                value={this.state.display_name}
-                onChange={this.update('display_name')}
+                value={ this.state.display_name }
+                onChange={ this.update('display_name') }
                 className="login-input"
                 />
               <br /> 
                 <input type="text"
                 placeholder = "Gender: Optional"
-                value={this.state.gender}
-                onChange={this.update('gender')}
+                value={ this.state.gender }
+                onChange={ this.update('gender') }
                 className="login-input"
                 />
               <br />
@@ -89,7 +90,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Already have an account? { this.props.navLink }
+            Already have an account? 
           </form>
         </div>
       );
@@ -100,6 +101,7 @@ class SessionForm extends React.Component {
             Welcome to Share the Flare!
             <br />
             Log In
+            <div onClick={ this.props.closeModal } className="close-x">X</div>
             { this.renderErrors() }
             <div className="login-form">
               <br />
@@ -121,7 +123,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don't have an account? { this.props.navLink }
+            Don't have an account? 
           </form>
         </div>
       );

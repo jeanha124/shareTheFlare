@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import GreetingContainer from './greeting_container';
 
 class Launch extends React.Component {
 
@@ -8,9 +9,8 @@ class Launch extends React.Component {
       <div className="launch-body">
         <header className="navi-header">
           <h1 className="logo">Share The Flare</h1>
-          <input type="text" placeholder="Photos" className="search"/>
-          <Link to={`/login`} className="login">Log In</Link>
-          <Link to={`/signup`} className="signup">Sign Up</Link> 
+          <input type="text" placeholder="Photos" className="search"/> 
+          <GreetingContainer />
         </header>
         <div className="content">
             <h1 className="content-h1">Find your inspiration.</h1>

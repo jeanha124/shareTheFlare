@@ -16,7 +16,7 @@ html, body {
 
 .navi-header {
   display: grid;
-  grid-template-columns: 207px 1439px 91px 164px;
+  grid-template-columns: 207px 1439px 259px;
   grid-gap: 7px;
   width: 1922px;
   height: 65px;
@@ -40,6 +40,8 @@ html, body {
 .login {
   background: none;
   border: none;
+  position: relative;
+  right: 16px;
 }
 .signup {
   background-color: white;
@@ -48,6 +50,8 @@ html, body {
   border-radius: 3px;
   color: black;
   font-size: 21px;
+  position: relative;
+  right: -8px;
 }
 
 .content {
