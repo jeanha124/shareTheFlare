@@ -286,7 +286,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var mapStateToProps = function mapStateToProps(state) {
   return {
-    currentUser: state.session.currentUser
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
