@@ -10,10 +10,53 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_12_125337) do
+ActiveRecord::Schema.define(version: 2018_09_14_193909) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "albums", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.string "title", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["owner_id"], name: "index_albums_on_owner_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "commenter_id", null: false
+    t.integer "photo_id", null: false
+    t.string "title", null: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["commenter_id"], name: "index_comments_on_commenter_id"
+    t.index ["photo_id"], name: "index_comments_on_photo_id"
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.integer "owner_id", null: false
+    t.integer "album_id"
+    t.string "title", null: false
+    t.text "description"
+    t.string "img_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["album_id"], name: "index_photos_on_album_id"
+    t.index ["owner_id"], name: "index_photos_on_owner_id"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string "title", null: false
+    t.integer "author_id", null: false
+    t.integer "photo_id", null: false
+    t.integer "friend_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_tags_on_author_id"
+    t.index ["friend_id"], name: "index_tags_on_friend_id"
+    t.index ["photo_id"], name: "index_tags_on_photo_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", null: false
