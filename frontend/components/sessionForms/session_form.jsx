@@ -41,7 +41,6 @@ class SessionForm extends React.Component {
             Welcome to Share the Flare!
             <br />
             Sign Up
-            <div onClick={ this.props.closeModal } className="close-x">X</div>
             { this.renderErrors() }
             <div className="login-form">
               <br />
@@ -90,7 +89,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Already have an account? 
+            Already have an account? <a href="#">Login</a>
           </form>
         </div>
       );
@@ -101,7 +100,6 @@ class SessionForm extends React.Component {
             Welcome to Share the Flare!
             <br />
             Log In
-            <div onClick={ this.props.closeModal } className="close-x">X</div>
             { this.renderErrors() }
             <div className="login-form">
               <br />
@@ -123,7 +121,8 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don 't have an account? <a href="signup">Sign Up</a>
+            Don't have an account? <a href="#">Sign Up</a>
+            <button className="demo">DEMO USER</button>
           </form>
         </div>
       );

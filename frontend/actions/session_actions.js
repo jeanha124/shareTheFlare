@@ -48,3 +48,7 @@ export const logout = () => {
   };
 };
 
+/*export const loginDemo = () => {
+  const demoUser = {email: 'demo@email.com', password: 'hunter2'};
+  return login(demoUser);
+};*/

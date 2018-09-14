@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting_container';
+import Fade from './../fade';
 
 class Launch extends React.Component {
 
@@ -13,6 +14,7 @@ class Launch extends React.Component {
           <GreetingContainer />
         </header>
         <div className="content">
+          <Fade />
             <h1 className="content-h1">Find your inspiration.</h1>
             <h2 className="content-h2">Join the Share the Flare community, home to tens of billions of photos and 2 million groups.</h2>
             <Link to={`/signup`} className="signup-2">Sign Up</Link>
