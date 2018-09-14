@@ -13,14 +13,31 @@ class SessionForm extends React.Component {
       gender: '',  
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.demoLogin = this.demoLogin.bind(this);
   }
   update(field){
-    return e => this.setState({ [field]: e.currentTarget.value });
+    return e => this.setState({ [field]: e.target.value });
   }
+
+  demoLogin(e) {
+    e.preventDefault();
+    const demoUser = {email: 'demo@email.com', password:'password123'};
+    if (this.props.formType === 'login'){
+      this.props.processForm(demoUser).then(this.props.closeModal);
+    } else {
+      this.props.demoLogin(demoUser).then(this.props.closeModal);
+    }
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    let user;
+    if (this.props.formType === 'signup'){
+      user = Object.assign({}, this.state);
+    } else {
+      user = Object.assign({}, {email: this.state.email}, {password: this.state.password});
+    }
+    this.props.processForm(user).then(this.props);
   }
   renderErrors() {
     return (
@@ -34,11 +51,13 @@ class SessionForm extends React.Component {
     );
   }
   render() {
+    let button;
     if (this.props.formType === 'signup'){
+
+      button = this.props.otherForm;
       return (
         <div className="login-form-container">
-          <form onSubmit={ this.handleSubmit } className="login-form-box">
-            Welcome to Share the Flare!
+          <form onSubmit={(e) => this.handleSubmit(e) } className="login-form-box">
             <br />
             Sign Up
             { this.renderErrors() }
@@ -89,15 +108,15 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Already have an account? <a href="#">Login</a>
+            Already have an account? {button}
           </form>
         </div>
       );
     } else {
+      button = this.props.otherForm;
       return (
         <div className="login-form-container">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            Welcome to Share the Flare!
+          <form onSubmit={(e) => this.handleSubmit(e)} className="login-form-box">
             <br />
             Log In
             { this.renderErrors() }
@@ -121,8 +140,9 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don't have an account? <a href="#">Sign Up</a>
-            <button className="demo">DEMO USER</button>
+            Don't have an account? {button}
+            <br />
+            <button id="demo" onClick={(e) => this.demoLogin(e)}>Demo Login</button>
           </form>
         </div>
       );
