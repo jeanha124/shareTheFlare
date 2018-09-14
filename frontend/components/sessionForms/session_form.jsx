@@ -21,7 +21,7 @@ class SessionForm extends React.Component {
 
   demoLogin(e) {
     e.preventDefault();
-    const demoUser = {email: 'demo@email.com', password:'password123'};
+    const demoUser = {email: 'demo@email.com', password:'hunter2'};
     if (this.props.formType === 'login'){
       this.props.processForm(demoUser).then(this.props.closeModal);
     } else {
@@ -57,7 +57,7 @@ class SessionForm extends React.Component {
       button = this.props.otherForm;
       return (
         <div className="login-form-container">
-          <form onSubmit={(e) => this.handleSubmit(e) } className="login-form-box">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
             Sign Up
             { this.renderErrors() }
@@ -108,7 +108,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Already have an account? {button}
+            Already have an account? <span className="link-btn">{button}</span>
           </form>
         </div>
       );
@@ -116,7 +116,7 @@ class SessionForm extends React.Component {
       button = this.props.otherForm;
       return (
         <div className="login-form-container">
-          <form onSubmit={(e) => this.handleSubmit(e)} className="login-form-box">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
             Log In
             { this.renderErrors() }
@@ -140,9 +140,9 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don't have an account? {button}
+            Don 't have an account? <span className="link-btn">{button}</span>
             <br />
-            <button id="demo" onClick={(e) => this.demoLogin(e)}>Demo Login</button>
+            <button id="demo" onClick={this.demoLogin}>Demo Login</button>
           </form>
         </div>
       );
