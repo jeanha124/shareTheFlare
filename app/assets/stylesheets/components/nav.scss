@@ -16,8 +16,8 @@ html, body {
 
 .navi-header {
   display: grid;
-  grid-template-columns: 207px 1184px 298px;
-  grid-gap: 7px;
+  grid-template-columns: 207px 1316px 460px;
+  grid-gap: 20px;
   width: 1922px;
   height: 65px;
   font-size: 21px;
@@ -100,3 +100,14 @@ html, body {
   background: black;
   height: 106px;
 }
+
+@media only screen and (max-width: 1400px) {
+  .navi-header, .content, .empty, .footer {
+    width: 100%;
+  }
+}
+
+
+
+
+/*207px 1184px 298px*/

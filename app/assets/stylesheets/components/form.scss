@@ -29,3 +29,21 @@
   position: absolute;
   left: 38%;
 }
+
+.header-name {
+  position: absolute;
+  top: 9px;
+  font-size: 26px;
+  font-weight: 700;
+}
+
+.header-button {
+  font-size: 20px;
+  background: black;
+  border-radius: 4px;
+  color: white;
+  font-weight: 500; 
+  padding: 8px 20px;
+  position: absolute;
+  top: 4%;    
+}
