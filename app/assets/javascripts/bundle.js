@@ -639,7 +639,9 @@ function (_React$Component) {
           className: "session-submit",
           type: "submit",
           value: this.props.formType
-        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Don't have an account?"));
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Don 't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+          href: "signup"
+        }, "Sign Up")));
       }
     }
   }]);

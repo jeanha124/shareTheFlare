@@ -16,7 +16,7 @@ html, body {
 
 .navi-header {
   display: grid;
-  grid-template-columns: 207px 1439px 259px;
+  grid-template-columns: 207px 1184px 298px;
   grid-gap: 7px;
   width: 1922px;
   height: 65px;
@@ -31,7 +31,7 @@ html, body {
 }
 
 .search {
-  width: 1287px;
+  width: 1120px;
   background: rgba(245, 245, 245, .66);
   border-radius: 4px;
   border: 1px solid lightslategray;
@@ -57,9 +57,9 @@ html, body {
 .content {
   display: grid;
   grid-gap: 10px;
-  grid-template-rows: 371.5px 85px 95.5px;
+  grid-template-rows: 294.5px 106px 143.5px;
   height: 640px;
-  grid-template-columns: 531px 801px auto;
+  grid-template-columns: 396px 801px auto;
   grid-auto-flow: column;
   justify-items: center;
 }
@@ -93,7 +93,7 @@ html, body {
 }
 .empty {
   display: grid;
-  height: 216px;
+  height: 174px;
 }
 .footer {
   display: grid;

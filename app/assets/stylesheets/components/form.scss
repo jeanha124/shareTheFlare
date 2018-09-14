@@ -11,14 +11,19 @@
   background: linear-gradient(to bottom right, #b91300, #f89220);
   width: 300px;
   opacity: 0.7;
-  color: white;
+  color: black;
+  font-weight: 700;
 }
 .login-input {
   width: 99%;
   border-radius: 5px;
+  border: 2px solid darkslategray;
+  background: whitesmoke;
 }
 
 .session-submit {
+  background: black;
+  color: white;
   padding: 4px 18px;
   border-radius: 9px;
   position: absolute;

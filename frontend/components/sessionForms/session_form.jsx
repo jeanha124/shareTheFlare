@@ -123,7 +123,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don't have an account? 
+            Don 't have an account? <a href="signup">Sign Up</a>
           </form>
         </div>
       );
