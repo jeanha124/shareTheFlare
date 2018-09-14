@@ -1,3 +1,12 @@
+.launch-body {
+  background: image-url('friend1.jpg')no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  overflow: hidden;
+}
+
 .image-1 {
   background: image-url('photo1.jpg');
   background-size: cover;
