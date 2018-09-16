@@ -15,7 +15,6 @@ class Launch extends React.Component {
         <div className="content">
             <h1 className="content-h1">Find your inspiration.</h1>
             <h2 className="content-h2">Join the Share the Flare community, home to tens of billions of photos and 2 million groups.</h2>
-            <button formType="signup" className="signup-2" onClick={(e) => handleSubmit(e)}>Sign Up</button>
         </div>
         <div className="empty"></div>
         <ul className="footer">
@@ -30,5 +29,6 @@ class Launch extends React.Component {
 }
 
 export default Launch;
+/*<button  className="signup-2" onClick={(e) => handleSubmit(e)}>Sign Up</button>*/
 
  

@@ -14,6 +14,7 @@
     "babel-loader": "^8.0.2",
     "lodash": "^4.17.10",
     "react": "^16.5.0",
+    "react-compose": "^2.0.0",
     "react-dom": "^16.5.0",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
@@ -36,5 +37,8 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeanha124/shareTheFlare.git"
+  },
+  "devDependencies": {
+    "redux-devtools-extension": "^2.13.5"
   }
 }
