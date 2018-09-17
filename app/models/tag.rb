@@ -16,7 +16,7 @@ class Tag < ApplicationRecord
 
   belongs_to :author,
     foreign_key: :author_id,
-    classname: :User
+    class_name: :User
    
   belongs_to :photo
   belongs_to :tag

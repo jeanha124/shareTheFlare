@@ -196,7 +196,7 @@ var RECEIVE_ALL_USERS = 'RECEIVE_ALL_USERS';
 var receiveAllUsers = function receiveAllUsers() {
   return function (dispatch) {
     return _util_user_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchAllUsers"]().then(function (users) {
-      return dispatch({
+      dispatch({
         type: RECEIVE_ALL_USERS,
         users: users
       });

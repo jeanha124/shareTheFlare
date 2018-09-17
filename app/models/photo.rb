@@ -17,7 +17,7 @@ class Photo < ApplicationRecord
   
   belongs_to :owner,
     foreign_key: :owner_id,
-    classname: :User
+    class_name: :User
   has_many :tags
   has_many :comments
   has_many :photo_albums,

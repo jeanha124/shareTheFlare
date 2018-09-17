@@ -11,7 +11,6 @@ class Api::AlbumsController < ApplicationController
     @album = Album.new(album_params);
     @album.owner_id = current_user.id;
     if @album.save
-      photo_id
       render :show
     else
       render :json @album.errors.full_messages, status: 422

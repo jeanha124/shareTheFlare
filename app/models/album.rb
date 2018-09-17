@@ -14,10 +14,10 @@ class Album < ApplicationRecord
 
   belongs_to :owner,
     foreign_key: :owner_id,
-    classname: :User
+    class_name: :User
   has_many :photo_albums,
     foreign_key: :album_id,
-    classname: :PhotoAlbum  
+    class_name: :PhotoAlbum  
   has_many :photos
 
 end

@@ -16,6 +16,6 @@ class Comment < ApplicationRecord
 
   belongs_to :commenter,
     foreign_key: :commenter_id,
-    classname: :User
+    class_name: :User
   belongs_to :photo
 end
