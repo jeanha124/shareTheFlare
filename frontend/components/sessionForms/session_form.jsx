@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
     } else {
       user = Object.assign({}, {email: this.state.email}, {password: this.state.password});
     }
-    this.props.processForm(user).then(this.props);
+    this.props.processForm(user).then(this.props.closeModal);
   }
   renderErrors() {
     return (

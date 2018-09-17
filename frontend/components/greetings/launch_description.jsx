@@ -6,16 +6,6 @@ import { openModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 
 
-
-// const SignUp = props => {
-  //   const sign = () => {
-    //     <div>
-    //       <button onClick={() => props.openModal('signup')}>Sign Up</button>
-    //     </div>
-    //   };
-    //   return (sign);
-    // };
-    
     class Launch extends React.Component {
       constructor(props){
         super(props);
@@ -29,9 +19,11 @@ import { connect } from 'react-redux';
           <GreetingContainer />
         </header>
         <div className="content">
+        <Fade />
             <h1 className="content-h1">Find your inspiration.</h1>
             <h2 className="content-h2">Join the Share the Flare community, home to tens of billions of photos and 2 million groups.</h2>
             <button className='signup-2' onClick={() => this.props.openModal('signup')}>Sign Up</button>
+        
         </div>
         <div className="empty"></div>
         <ul className="footer">
@@ -44,7 +36,6 @@ import { connect } from 'react-redux';
     );
   }
 }
-/*<button  className="signup-2" onClick={(e) => handleSubmit(e)}>Sign Up</button>*/
 
 const mdp = dispatch => {
   return {

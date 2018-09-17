@@ -452,14 +452,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
- // const SignUp = props => {
-//   const sign = () => {
-//     <div>
-//       <button onClick={() => props.openModal('signup')}>Sign Up</button>
-//     </div>
-//   };
-//   return (sign);
-// };
+
 
 var Launch =
 /*#__PURE__*/
@@ -489,7 +482,7 @@ function (_React$Component) {
         className: "search"
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_greeting_container__WEBPACK_IMPORTED_MODULE_2__["default"], null)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_fade__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "content-h1"
       }, "Find your inspiration."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
         className: "content-h2"
@@ -516,8 +509,6 @@ function (_React$Component) {
 
   return Launch;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-/*<button  className="signup-2" onClick={(e) => handleSubmit(e)}>Sign Up</button>*/
-
 
 var mdp = function mdp(dispatch) {
   return {
@@ -710,7 +701,7 @@ function (_React$Component) {
         });
       }
 
-      this.props.processForm(user).then(this.props);
+      this.props.processForm(user).then(this.props.closeModal);
     }
   }, {
     key: "renderErrors",
