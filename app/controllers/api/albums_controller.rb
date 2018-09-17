@@ -11,6 +11,7 @@ class Api::AlbumsController < ApplicationController
     @album = Album.new(album_params);
     @album.owner_id = current_user.id;
     if @album.save
+      photo_id
       render :show
     else
       render :json @album.errors.full_messages, status: 422
@@ -27,11 +28,14 @@ class Api::AlbumsController < ApplicationController
     if @album
       render :show
     else
-      render :json
+      render :json @album.errors.full_messages, status: 422
     end
   end
 
   def destroy
+    @album = current_user.albums.find(params[:id]);
+    @album.destroy;
+    render :show
     
   end
 

@@ -27,7 +27,7 @@ class Api::PhotosController < ApplicationController
     if @photo.update(photos_params)
       render :show
     else
-      render json: ['Are you sure that photo exists?'], status: 404
+      render json: @photo.errors.full_messages, status: 404
     end
   end
   
