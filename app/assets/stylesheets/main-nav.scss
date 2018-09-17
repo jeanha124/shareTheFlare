@@ -1,0 +1,61 @@
+.main-nav {
+  background: #212124;
+  color: white;
+  font-family: Proxima Nova, helvetica nueue, helvetica, arial, sans-serif;
+}
+
+.left-nav {
+  display: grid;
+  grid-template-columns: 358px 80px 838px 183px 37px 110px 103px;
+  height: 50px;
+  grid-gap: 20px;
+  font-size: 17px;
+  justify-items: baseline;
+  align-items: center;
+}
+
+.sub-nav {
+  display: grid;
+  background: white;
+  color: black;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  grid-gap: 20px;
+  grid-template-columns: 284px 1fr auto;
+  justify-items: end;
+  align-items: center;
+}
+
+.main-logo {
+  width: 319px;
+  text-align: end;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.main-search {
+  background: #ccc;
+  width: 184px;
+  border-radius: 3px;
+  color: black;
+  height: 34px;
+}
+
+.you, .explore {
+  padding: 5px;
+}
+.cloud {
+  font-size: 32px;
+}
+
+.main-logo:hover, .you:hover, .explore:hover, .cloud:hover {
+  color: #ccc;
+}
+
+.activity {
+  
+}
+
+.you-drop {
+  display: none;
+}

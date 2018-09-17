@@ -13,26 +13,26 @@ import { connect } from 'react-redux';
       render(){
         return (
           <div className="launch-body">
-        <header className="navi-header">
-          <h1 className="logo">Share The Flare</h1>
-          <input type="text" placeholder="Photos" className="search"/> 
-          <GreetingContainer />
-        </header>
-        <div className="content">
-        <Fade />
-            <h1 className="content-h1">Find your inspiration.</h1>
-            <h2 className="content-h2">Join the Share the Flare community, home to tens of billions of photos and 2 million groups.</h2>
-            <button className='signup-2' onClick={() => this.props.openModal('signup')}>Sign Up</button>
-        
-        </div>
-        <div className="empty"></div>
-        <ul className="footer">
-          <li className="footer-p"></li>
-          <li className="footer-a"></li>
-          <li className="footer-a"></li>
-          <li className="footer-a"></li>
-        </ul>
-      </div>
+              <header className="navi-header">
+                <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
+                <input type="text" placeholder="Photos" className="search"/> 
+                <GreetingContainer />
+              </header>
+            <div className="content">
+            <Fade />
+              <h1 className="content-h1">Find your inspiration.</h1>
+              <h2 className="content-h2">Join the Share the Flare community, home to tens of billions of photos and 2 million groups.</h2>
+              <button className='signup-2' onClick={() => this.props.openModal('signup')}>Sign Up</button>
+          
+            </div>
+            <div className="empty"></div>
+            <ul className="footer">
+              <li className="footer-p"></li>
+              <li className="footer-a"></li>
+              <li className="footer-a"></li>
+              <li className="footer-a"></li>
+            </ul>
+          </div>
     );
   }
 }

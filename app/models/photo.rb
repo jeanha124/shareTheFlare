@@ -22,6 +22,6 @@ class Photo < ApplicationRecord
   has_many :comments
   has_many :photo_albums,
     foreign_key: :photo_id,
-    classname: :PhotoAlbum
+    class_name: :PhotoAlbum
   has_many :albums 
 end

@@ -4,7 +4,8 @@ import PhotoForm from './photo_form';
 
 const msp = state => {
   return {
-    
+    photo: { title: '', description: '', owner_id: state.session.owner_id, img_url: ''},
+    formType:'Add Photo',
   };
 };
 
