@@ -3,6 +3,18 @@ import { Link } from 'react-router-dom';
 import GreetingContainer from './greeting_container';
 import Fade from './../fade';
 
+
+
+
+// const SignUp = props => {
+//   const sign = () => {
+//     <div>
+//       <button onClick={() => props.openModal('signup')}>Sign Up</button>
+//     </div>
+//   };
+//   return (sign);
+// };
+
 class Launch extends React.Component {
   render(){
     return (
