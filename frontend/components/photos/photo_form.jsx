@@ -9,10 +9,13 @@ class PhotoForm extends React.Component {
   
   render(){
     return (
-      <div>
+      <div className="content-content">
         <div className="add-content">
           <div className="add-content-content">
-            <button id="content-upload">Choose photos and videos to upload</button>
+            <label htmlFor="add1" id="content-upload">
+              Choose photos and videos to upload
+            </label>
+            <input type="file" id="add1" name="add"/>
           </div>
         </div>
       </div>

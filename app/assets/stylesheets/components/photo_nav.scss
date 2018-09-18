@@ -29,13 +29,44 @@
 }
 
 .add-nav {
-
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 163px auto 223px;
+  grid-template-rows: 33px;
+  height: 33px;
+  background: #f2f0f0;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  align-items: center;
 }
 
-.add {
-
+#addLabel {
+  grid-column: 2;
+  width: 43px;
 }
 
-.upload {
-  
+#upload {
+  grid-column: 3;
+  grid-row: 1;
+  color: #ccc;
+}
+
+#root {
+  font-family: Proxima Nova, helvetica nueue, helvetica, arial, sans-serif;
+}
+
+#add {
+  visibility: hidden;
+}
+#add1 {
+  visibility: hidden;
+}
+.plus-fol {
+  color: green;
+}
+
+#addLabel:hover {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  padding: 3px 8px;
 }

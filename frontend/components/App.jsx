@@ -16,6 +16,7 @@ const App = () => {
            <ProtectedRoute exact path='/' component={GreetingContainer} />
            <ProtectedRoute path='/photos/upload' component={PhotoNav} />
           <ProtectedRoute path='/photos/upload' component={PhotoFormNav} />
+           <ProtectedRoute path='/photos/upload' component={PhotoForm} />
       </div>
   
          

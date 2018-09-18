@@ -1,0 +1,25 @@
+.content-content {
+  display: grid;
+  background: #231e1e;
+  height: 900px;
+  color: white;
+  font-weight: 700;
+  font-size: 30px;
+  justify-items: center;
+  align-items: center;
+  grid-template-rows: 550px 1fr;
+  grid-template-columns: 100px auto 400px 413px 300px 100px;
+}
+.add-content {
+  grid-column: 3;
+  width: 600px;
+}
+#content-upload {
+  background: #377ad1e6;
+  padding: 8px 10px;
+  border-radius: 5px;
+}
+
+#content-upload:hover {
+  background: #1034A6;
+}
