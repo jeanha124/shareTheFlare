@@ -298,6 +298,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greetings_launch_description__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./greetings/launch_description */ "./frontend/components/greetings/launch_description.jsx");
 /* harmony import */ var _modals_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../modals/modal */ "./frontend/modals/modal.jsx");
 /* harmony import */ var _photos_photo_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./photos/photo_form */ "./frontend/components/photos/photo_form.jsx");
+/* harmony import */ var _photos_photo_nav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./photos/photo_nav */ "./frontend/components/photos/photo_nav.jsx");
+
 
 
 
@@ -314,8 +316,12 @@ var App = function App() {
     path: "/",
     component: _greetings_launch_description__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
+    exact: true,
     path: "/",
     component: _greetings_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
+    path: "/photos/upload",
+    component: _photos_photo_nav__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
     path: "/photos/upload",
     component: _photos_photo_form__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -685,13 +691,7 @@ function (_React$Component) {
   _createClass(PhotoForm, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "add-sub-nav"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "add"
-      }, "Add"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "upload"
-      }, "Upload")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "add-content-content"
@@ -706,6 +706,77 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["withRouter"])(PhotoForm));
+
+/***/ }),
+
+/***/ "./frontend/components/photos/photo_nav.jsx":
+/*!**************************************************!*\
+  !*** ./frontend/components/photos/photo_nav.jsx ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
+
+
+var PhotoNav =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(PhotoNav, _React$Component);
+
+  function PhotoNav() {
+    _classCallCheck(this, PhotoNav);
+
+    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoNav).apply(this, arguments));
+  }
+
+  _createClass(PhotoNav, [{
+    key: "render",
+    value: function render() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "photo-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "photo-nav-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "photo-logo"
+      }, "Share the Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "photostream-photo"
+      }, "Your Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "dUser"
+      }, "Demo User")));
+    }
+  }]);
+
+  return PhotoNav;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (PhotoNav);
 
 /***/ }),
 

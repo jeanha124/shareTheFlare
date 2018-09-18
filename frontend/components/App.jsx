@@ -5,12 +5,15 @@ import { Switch } from 'react-router-dom';
 import Launch from './greetings/launch_description';
 import Modal from './../modals/modal';
 import PhotoForm from './photos/photo_form';
+import PhotoNav from './photos/photo_nav';
+
 const App = () => {
     return (
       <div className="main-container">
         <Modal />
           <AuthRoute exact path="/" component={Launch} />
-           <ProtectedRoute path='/' component={GreetingContainer} />
+           <ProtectedRoute exact path='/' component={GreetingContainer} />
+           <ProtectedRoute path='/photos/upload' component={PhotoNav} />
           <ProtectedRoute path='/photos/upload' component={PhotoForm} />
       </div>
   

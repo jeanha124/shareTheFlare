@@ -1,0 +1,29 @@
+.photo-nav {
+  background: white;
+  color: #666;
+  font-weight: 700;
+  height: 45px;
+}
+
+
+.photo-logo {
+  font-size: 21px;
+  text-align: end;
+  color: blue;
+}
+
+.photo-nav-ul {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: 293px 173px 1fr 218px;
+  height: inherit;
+  align-items: center;
+}
+
+.photostream-photo {
+  text-align: end;
+}
+
+.dUser {
+  grid-column: 4;
+}
