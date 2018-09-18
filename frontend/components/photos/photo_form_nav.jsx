@@ -11,3 +11,5 @@ class PhotoFormNav extends React.Component {
     );
   }
 };
+
+export default PhotoFormNav;
