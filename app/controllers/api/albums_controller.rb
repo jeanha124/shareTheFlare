@@ -13,7 +13,7 @@ class Api::AlbumsController < ApplicationController
     if @album.save
       render :show
     else
-      render :json @album.errors.full_messages, status: 422
+      render json: @album.errors.full_messages, status: 422
     end
   end
   
@@ -27,7 +27,7 @@ class Api::AlbumsController < ApplicationController
     if @album
       render :show
     else
-      render :json @album.errors.full_messages, status: 422
+      render json: @album.errors.full_messages, status: 422
     end
   end
 
