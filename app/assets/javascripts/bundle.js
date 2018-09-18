@@ -298,8 +298,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _greetings_launch_description__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./greetings/launch_description */ "./frontend/components/greetings/launch_description.jsx");
 /* harmony import */ var _modals_modal__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./../modals/modal */ "./frontend/modals/modal.jsx");
 /* harmony import */ var _photos_photo_form__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./photos/photo_form */ "./frontend/components/photos/photo_form.jsx");
-/* harmony import */ var _photos_photo_nav__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./photos/photo_nav */ "./frontend/components/photos/photo_nav.jsx");
-/* harmony import */ var _photos_photo_form_nav__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photos/photo_form_nav */ "./frontend/components/photos/photo_form_nav.jsx");
+/* harmony import */ var _photos_photo_nav_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./photos/photo_nav_container */ "./frontend/components/photos/photo_nav_container.js");
+/* harmony import */ var _photos_photo_form_nav_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photos/photo_form_nav_container */ "./frontend/components/photos/photo_form_nav_container.js");
 
 
 
@@ -323,13 +323,10 @@ var App = function App() {
     component: _greetings_greeting_container__WEBPACK_IMPORTED_MODULE_1__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
     path: "/photos/upload",
-    component: _photos_photo_nav__WEBPACK_IMPORTED_MODULE_7__["default"]
+    component: _photos_photo_nav_container__WEBPACK_IMPORTED_MODULE_7__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
     path: "/photos/upload",
-    component: _photos_photo_form_nav__WEBPACK_IMPORTED_MODULE_8__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
-    path: "/photos/upload",
-    component: _photos_photo_form__WEBPACK_IMPORTED_MODULE_6__["default"]
+    component: _photos_photo_form_nav_container__WEBPACK_IMPORTED_MODULE_8__["default"]
   }));
 };
 
@@ -794,6 +791,40 @@ function (_React$Component) {
 
 /***/ }),
 
+/***/ "./frontend/components/photos/photo_form_nav_container.js":
+/*!****************************************************************!*\
+  !*** ./frontend/components/photos/photo_form_nav_container.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _photo_form_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./photo_form_nav */ "./frontend/components/photos/photo_form_nav.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+
+var msp = function msp(state) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_photo_form_nav__WEBPACK_IMPORTED_MODULE_1__["default"]));
+
+/***/ }),
+
 /***/ "./frontend/components/photos/photo_nav.jsx":
 /*!**************************************************!*\
   !*** ./frontend/components/photos/photo_nav.jsx ***!
@@ -832,10 +863,14 @@ var PhotoNav =
 function (_React$Component) {
   _inherits(PhotoNav, _React$Component);
 
-  function PhotoNav() {
+  function PhotoNav(props) {
+    var _this;
+
     _classCallCheck(this, PhotoNav);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoNav).apply(this, arguments));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoNav).call(this, props));
+    _this.currentUser = _this.props.currentUser;
+    return _this;
   }
 
   _createClass(PhotoNav, [{
@@ -849,9 +884,11 @@ function (_React$Component) {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "photo-logo"
-      }, "Share the Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Share the Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/".concat(this.currentUser.display_name)
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "photostream-photo"
-      }, "Your Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Your Photostream")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dUser"
       }, "Demo User")));
     }
@@ -862,6 +899,40 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (PhotoNav);
+
+/***/ }),
+
+/***/ "./frontend/components/photos/photo_nav_container.js":
+/*!***********************************************************!*\
+  !*** ./frontend/components/photos/photo_nav_container.js ***!
+  \***********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _photo_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./photo_nav */ "./frontend/components/photos/photo_nav.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+
+var msp = function msp(state) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"]);
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_photo_nav__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 

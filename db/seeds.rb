@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 
-User.create({email: 'demo@email.com', password: 'hunter2', fname: 'Demo', lname: 'User', display_name: 'Demo User', gender: 'Other'});
+User.create({email: 'demo@email.com', password: 'hunter2', fname: 'Demo', lname: 'User', display_name: 'DemoUser', gender: 'Other'});

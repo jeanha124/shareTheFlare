@@ -5,8 +5,8 @@ import { Switch } from 'react-router-dom';
 import Launch from './greetings/launch_description';
 import Modal from './../modals/modal';
 import PhotoForm from './photos/photo_form';
-import PhotoNav from './photos/photo_nav';
-import PhotoFormNav from './photos/photo_form_nav';
+import PhotoNavContainer from './photos/photo_nav_container';
+import PhotoFormNavContainer from './photos/photo_form_nav_container';
 
 const App = () => {
     return (
@@ -14,9 +14,8 @@ const App = () => {
         <Modal />
           <AuthRoute exact path="/" component={Launch} />
            <ProtectedRoute exact path='/' component={GreetingContainer} />
-           <ProtectedRoute path='/photos/upload' component={PhotoNav} />
-          <ProtectedRoute path='/photos/upload' component={PhotoFormNav} />
-           <ProtectedRoute path='/photos/upload' component={PhotoForm} />
+           <ProtectedRoute path='/photos/upload' component={PhotoNavContainer} />
+          <ProtectedRoute path='/photos/upload' component={PhotoFormNavContainer} />
       </div>
   
          
