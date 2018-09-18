@@ -23,5 +23,6 @@ class Photo < ApplicationRecord
   has_many :photo_albums,
     foreign_key: :photo_id,
     class_name: :PhotoAlbum
-  has_many :albums 
+  has_many :albums
+  has_one_attached :picture
 end
