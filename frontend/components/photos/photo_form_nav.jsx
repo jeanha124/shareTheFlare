@@ -5,7 +5,7 @@ class PhotoFormNav extends React.Component {
   render (){
     return (
       <nav className="add-nav">
-      <label htmlFor="add" id="addLabel" className="btn"><i className="fas fa-folder-plus plus-fol"></i> Add</label>
+      <label htmlFor="add" id="addLabel" className="btn" ><i className="fas fa-folder-plus plus-fol"></i> Add</label>
           <input type="file" id="add" name="Add" />
           <button id="upload">Upload</button>
       </nav>

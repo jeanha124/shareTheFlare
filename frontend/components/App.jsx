@@ -9,12 +9,15 @@ import PhotoNavContainer from './photos/photo_nav_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import LoggedInHomepageNavContainer from './homepage/logged_in_homepage_nav_container';
 import ExploreNavContainer from './homepage/explore_nav_container';
+import PhotoIndexContainer from './photos/photo_index_container';
 
-const App = () => {
+class App extends React.Component {
+  render () {
     return (
       <div className="main-container">
         <Modal />
-            <AuthRoute exact path="/" component={Launch} />
+            
+            <AuthRoute exact path='/' component={Launch} />
           <Switch>
             <ProtectedRoute path='/photos/upload' component={PhotoNavContainer} />
             <ProtectedRoute path='/' component={GreetingContainer} />
@@ -24,11 +27,12 @@ const App = () => {
             <ProtectedRoute path='/explore' component={ExploreNavContainer} />
             <ProtectedRoute path="/" component={LoggedInHomepageNavContainer} />
           </Switch>
+          <Switch>
           <ProtectedRoute path='/photos/upload' component={CreatePhotoFormContainer} />
+          </Switch>
       </div>
-  
-         
     );
+  }
 };
 
 export default App;
