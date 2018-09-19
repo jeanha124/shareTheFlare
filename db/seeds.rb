@@ -6,5 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
+Photo.destroy_all
 
 User.create({email: 'demo@email.com', password: 'hunter2', fname: 'Demo', lname: 'User', display_name: 'DemoUser', gender: 'Other'});
+Photo.create({title: 'picture1', owner_id: 8});

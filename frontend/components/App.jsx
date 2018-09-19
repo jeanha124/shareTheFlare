@@ -9,6 +9,7 @@ import PhotoNavContainer from './photos/photo_nav_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import LoggedInHomepageNavContainer from './homepage/logged_in_homepage_nav_container';
 import ExploreNavContainer from './homepage/explore_nav_container';
+import UserProfileContainer from './users/user_profile_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 
 class App extends React.Component {
@@ -16,7 +17,7 @@ class App extends React.Component {
     return (
       <div className="main-container">
         <Modal />
-            
+            <AuthRoute exact path='/' component={GreetingContainer} />
             <AuthRoute exact path='/' component={Launch} />
           <Switch>
             <ProtectedRoute path='/photos/upload' component={PhotoNavContainer} />
@@ -25,10 +26,12 @@ class App extends React.Component {
           <Switch>
             <ProtectedRoute path='/photos/upload' component={PhotoFormNavContainer} />
             <ProtectedRoute path='/explore' component={ExploreNavContainer} />
+            <ProtectedRoute path='/photos/:display_name' component={UserProfileContainer} />
             <ProtectedRoute path="/" component={LoggedInHomepageNavContainer} />
           </Switch>
           <Switch>
           <ProtectedRoute path='/photos/upload' component={CreatePhotoFormContainer} />
+          <ProtectedRoute path='/photos/:display_name' component={PhotoIndexContainer} />
           </Switch>
       </div>
     );

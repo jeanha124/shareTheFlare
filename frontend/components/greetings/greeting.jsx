@@ -5,6 +5,8 @@ const Greeting = props => {
 
   const sessionLinks = () => (
     <nav className="login-signup">
+      <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
+      <input type="text" placeholder="Photos" className="search"/> 
       <button className="login" onClick= { () => props.openModal('login') }>Login</button>
       <button className="signup" onClick= { () => props.openModal('signup') }>Signup</button>
     </nav>

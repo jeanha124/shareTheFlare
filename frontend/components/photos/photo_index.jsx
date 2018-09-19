@@ -8,9 +8,9 @@ class PhotoIndex extends React.Component {
       return <PhotoIndexItem key={photo.id} photo={photo} />
     });
     return (
-      <div>
+      <div className="photo-div">
         <ul>{photos}</ul>
-        <Link to={'/photos/upload'}>New Photo</Link>
+        <Link to={`/photos/${this.props.currentUser.display_name}/edit`}>Edit</Link>
       </div>
     );
   }

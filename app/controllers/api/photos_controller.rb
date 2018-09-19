@@ -39,7 +39,7 @@ class Api::PhotosController < ApplicationController
   end
   
   def photos_params
-    params.require(:photo).permit(:owner_id, :img_url, :title);
+    params.require(:photo).permit(:owner_id, :picture, :title);
   end
   
   

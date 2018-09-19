@@ -10,13 +10,15 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
-  height: 100vh;
+  height: 107vh;
   font-family: Proxima Nova, helvetica nueue, helvetica, arial, sans-serif;
+  position: relative;
+  top: -64px;
 }
 
 .login-signup {
   display: grid;
-  grid-template-columns: 225px 1129px 314px;
+  grid-template-columns: 268px auto 1fr 0.5fr 0.5fr 1fr;
   grid-gap: 20px;
   width: 1922px;
   height: 65px;
@@ -24,6 +26,8 @@ html, body {
   justify-items: center;
   align-items: center;
   background: rgba(90, 88, 88, 0.6);
+  position: fixed;
+  z-index: 1;
 }
 
 .logo {
@@ -42,6 +46,7 @@ html, body {
   border: none;
   position: relative;
   right: 16px;
+  grid-column: 4;
 }
 .signup {
   background-color: white;
@@ -52,6 +57,7 @@ html, body {
   font-size: 21px;
   position: relative;
   right: -8px;
+  grid-column: 5;
 }
 
 .content {
@@ -99,6 +105,8 @@ html, body {
   display: grid;
   background: black;
   height: 106px;
+  position: relative;
+  bottom: -89px;
 }
 
 @media only screen and (max-width: 1400px) {

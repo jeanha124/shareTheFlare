@@ -13,11 +13,7 @@ import { connect } from 'react-redux';
       render(){
         return (
           <div className="launch-body">
-              <header className="navi-header">
-                <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
-                <input type="text" placeholder="Photos" className="search"/> 
-                <GreetingContainer />
-              </header>
+              
             <div className="content">
             <Fade />
               <h1 className="content-h1">Find your inspiration.</h1>

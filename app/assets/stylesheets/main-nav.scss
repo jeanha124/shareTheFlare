@@ -61,3 +61,35 @@
 .you-drop {
   display: none;
 }
+
+.profile-nav {
+  background: white;
+  color: black;
+  height: 50px;
+  border-bottom: 1px solid #ccc;
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(20, 1fr);
+  justify-items: end;
+  align-items: center;
+  grid-template-rows: repeat(5, 50px);
+  position: relative;
+  top: 276px;
+  border-top: 1px solid #ccc;
+}
+
+#about {
+  grid-column: 3;
+}
+
+#photostream {
+  grid-column: 4;
+}
+
+#albums {
+  grid-column: 5;
+}
+
+#faves {
+  grid-column: 6;
+}
