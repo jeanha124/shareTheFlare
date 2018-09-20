@@ -49,24 +49,24 @@ p20 = Photo.create({title: 'DjSiGuy', description: '', owner_id: user1})
 p21 = Photo.create({title: 'Teresa', description: '', owner_id: user1})
 
 
-p1.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/YBu5wSFhURZYCLoNNUsqz1pX'), filename: "friend1.jpg"});
-p2.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/TWur5UMws4TV6MR3VRkYD6oz'), filename: "photo2.jpg"});
-p3.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/LA1DxnEtsrHZwBEQEfUeTaHh'), filename: "photo1.jpg"});
-p4.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/iNo99U4JzwHCZ99md7NwhXLK.jpg'), filename: "photo4.jpg"});
-p5.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/rgmsQMakK6CrwVthQsrTeWin'), filename: "amanda.jpg"});
-p6.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/Q4ik8HB2fuetyzrVH4xyZHaw'), filename: "amber.jpg"});
-p7.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/NNtLJgUZfV4Ymq6HXiUCLgH5'), filename: "bubblegirl.jpg"});
-p8.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/JqYHRrEtW1iumG2jM16d9qsP'), filename: "carol2.jpg"});
-p9.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/Q6WBEmtHG3ymCoJ7SeqdWqeV'), filename: "dan1.jpg"});
-p10.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/75tZ4RGFoHXSW7VuNLMcv2Qh'), filename: "cosplay.jpg"});
-p11.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/e2NP1A9pJfaRnh5FmysprXvR'), filename: "flowers.jpg"});
-p13.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/3PXPBxFkzjeaK8QLu6uyi2Qu'), filename: "grandma.jpg"});
-p14.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/2TcTiG26sBTPuS5BYoXvp4PX'), filename: "isabel1.jpg"});
-p15.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/yeEV8Km9qNfwy1AS8AzDjtbx'), filename: "isabel2.jpg"});
+p1.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/friend1.jpg'), filename: "friend1.jpg"});
+p2.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo2.jpg'), filename: "photo2.jpg"});
+p3.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo1.jpg'), filename: "photo1.jpg"});
+p4.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo4.jpg'), filename: "photo4.jpg"});
+p5.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/amanda.jpg'), filename: "amanda.jpg"});
+p6.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/amber.jpg'), filename: "amber.jpg"});
+p7.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/bubblegirl.jpg'), filename: "bubblegirl.jpg"});
+p8.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/carol2.jpg'), filename: "carol2.jpg"});
+p9.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/dan1.jpg'), filename: "dan1.jpg"});
+p10.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/cosplay.jpg'), filename: "cosplay.jpg"});
+p11.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/flowers.jpg'), filename: "flowers.jpg"});
+p13.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/grandma.jpg'), filename: "grandma.jpg"});
+p14.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/isabel1.jpg'), filename: "isabel1.jpg"});
+p15.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/isabel2.jpg'), filename: "isabel2.jpg"});
 p16.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/bench.jpg'), filename: "bench.jpg"});
-p17.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/DkrgBjxfzU1SeKiC441Kev1v'), filename: "jay.jpg"});
-p18.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/oN3fa2f2eJXHzsXQm8nPTSw8'), filename: "jean1.jpg"});
-p19.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/a1qXf5KdXZWdrW23JsYy6hRN'), filename: "jenn.jpg"});
-p20.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/CGtwqZbYHc8chHUeU1tRrjqE'), filename: "simon.jpg"});
-p21.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/FrodHnj3NLNjTo4XEZ4E5pqp'), filename: "teresa1.jpg"});
+p17.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/jay.jpg'), filename: "jay.jpg"});
+p18.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/jean1.jpg'), filename: "jean1.jpg"});
+p19.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/jenn.jpg'), filename: "jenn.jpg"});
+p20.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/simon.jpg'), filename: "simon.jpg"});
+p21.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/teresa1.jpg'), filename: "teresa1.jpg"});
 
