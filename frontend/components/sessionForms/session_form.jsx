@@ -1,6 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -18,7 +19,7 @@ class SessionForm extends React.Component {
   update(field){
     return e => this.setState({ [field]: e.target.value });
   }
-
+  
   demoLogin(e) {
     e.preventDefault();
     const demoUser = {email: 'demo@email.com', password:'hunter2'};

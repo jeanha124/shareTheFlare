@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createPhoto } from '../../actions/photo_actions';
-import PhotoForm from './photo_form';
+import UploadIndexT from './upload_index_t';
 
 const msp = state => {
   return {
@@ -14,4 +14,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(PhotoForm);
+export default connect(msp, mdp)(UploadIndexT);

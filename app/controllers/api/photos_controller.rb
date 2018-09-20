@@ -3,10 +3,6 @@ class Api::PhotosController < ApplicationController
     @photos = Photo.all;  
   end
 
-  def new
-    @photo = Photo.new;
-  end
-
   def create
     debugger
     @photo = Photo.new(photos_params)

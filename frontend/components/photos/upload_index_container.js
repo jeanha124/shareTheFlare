@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import PhotoFormNav from './photo_form_nav';
+import UploadIndex from './upload_index';
 
 const msp = state => {
   return {
-    navType: 'add'
+   
   };
 };
 
 const mdp = dispatch => {
   return {
+
   };
 };
 
-export default connect(null, null)(PhotoFormNav);
+export default connect(msp, mdp)(UploadIndex);

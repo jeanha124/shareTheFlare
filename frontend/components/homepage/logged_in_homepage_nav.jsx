@@ -14,7 +14,7 @@ class LoggedInHomePageNav extends React.Component {
           <h1 className="explore1">Explore</h1>
         </nav>
       );
-    } else {
+    } else if (this.props.navType === 'you'){
       return (
         <ul className="profile-nav">
             <li id="about">About</li>

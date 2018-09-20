@@ -1,6 +1,6 @@
-.photo-div {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(15, 1fr);
-  grid-template-rows: repeat(15, 1fr);
+.photo-div ul {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 257px repeat(5, 1fr) 3px;
+    grid-template-rows: 278px auto 191px;
 }

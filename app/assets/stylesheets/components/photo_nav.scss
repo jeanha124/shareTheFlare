@@ -70,3 +70,59 @@
   border-radius: 4px;
   padding: 3px 8px;
 }
+
+.change-nav {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(11, 1fr);
+  grid-template-rows: 33px;
+  height: 33px;
+  background: #f2f0f0;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  align-items: center;
+}
+
+#add-add {
+  grid-column: 2;
+  justify-self: end;
+  width: 40px;
+  padding: 3px 8px;
+}
+#add-add:hover {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+#delete {
+  grid-column: 3;
+  width: 55px;
+  padding: 3px 8px;
+}
+
+#delete:hover {
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+#upload1 {
+  grid-column: 10;
+  justify-self: end;
+  width: 100px;
+  padding: 5px 8px;
+  background: #3030d5;
+  color: white;
+  border-radius: 4px;
+}
+
+#upload1:hover {
+  background: blue;
+  border: 2px solid #ccc;
+  border-radius: 6px;
+}
+
+.ex-but {
+  color: red;
+}

@@ -23,3 +23,74 @@
 #content-upload:hover {
   background: #1034A6;
 }
+
+.photo-info {
+  display: none;
+}
+
+.content-new {
+  background: #231e1e;
+  height: 900px;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: 24px;
+}
+
+.new-photo {
+  width: 83%;
+  height: 26%;
+  border: 1px solid #2d2a2a;
+  background: #231e1e;
+  border-radius: 4px;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.new-photo:hover {
+  background: #171717;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.photo-title,
+.photo-description {
+  background: #231e1e;
+}
+.photo-title:hover,
+.photo-description:hover {
+  background: #171717;
+}
+
+.form-file {
+  display: none;
+}
+
+.sidebar {
+  z-index: 1;
+  width: 90%;
+  background: #171717;
+  height: 52%;
+  border: 2px solid #272525;
+  grid-column: 2;
+  grid-row: 2;
+  border-radius: 4px;
+}
+
+.sidebar li {
+  border-bottom: 1px solid #272525;
+  text-align: center;
+  padding: 20px 0;
+  
+}
+
+.sidebar li:hover {
+  background: black;
+  
+}
+
+.sidebar-ul p {
+  border-bottom: 1px solid #272525;
+  padding: 20px 0;
+  text-align: center;
+}

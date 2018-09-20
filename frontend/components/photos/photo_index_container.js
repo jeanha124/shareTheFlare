@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import PhotoIndex from './photo_index';
-import { receiveAllPhotos, receivePhoto , deletePhoto } from '../../actions/photo_actions';
+import { receiveAllPhotos } from '../../actions/photo_actions';
 
 const msp = state => {
   return {
@@ -11,9 +11,7 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    receiveAllPhotos: () => dispatch(receiveAllPhotos()),
-    receivePhoto: (id) => dispatch(receivePhoto(id)),
-    deletePhoto: (id) => dispatch(deletePhoto(id))
+    receiveAllPhotos: () => dispatch(receiveAllPhotos())
   };
 };
 
