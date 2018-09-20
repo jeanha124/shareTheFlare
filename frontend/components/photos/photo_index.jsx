@@ -6,7 +6,7 @@ class PhotoIndex extends React.Component {
   render() {
     debugger
     const photos = this.props.photos.map(photo => {
-      return <PhotoIndexItem key={photo.id} photo={photo} />
+      return <PhotoIndexItem key={photo.id} photo={photo} receivePhoto = {this.props.receivePhoto}/>
     });
     return (
       <div className="photo-div">

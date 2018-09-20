@@ -866,13 +866,12 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
-/* harmony import */ var _photo_upload_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_upload_form */ "./frontend/components/photos/photo_upload_form.jsx");
+/* harmony import */ var _photo_form__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./photo_form */ "./frontend/components/photos/photo_form.jsx");
 
 
 
 
 var msp = function msp(state) {
-  debugger;
   return {
     currentUser: state.entities.users[state.session.id]
   };
@@ -886,7 +885,153 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_photo_upload_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_photo_form__WEBPACK_IMPORTED_MODULE_2__["default"]));
+
+/***/ }),
+
+/***/ "./frontend/components/photos/photo_form.jsx":
+/*!***************************************************!*\
+  !*** ./frontend/components/photos/photo_form.jsx ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+
+
+var PhotoForm =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(PhotoForm, _React$Component);
+
+  function PhotoForm(props) {
+    var _this;
+
+    _classCallCheck(this, PhotoForm);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoForm).call(this, props));
+    _this.state = {
+      title: '',
+      description: '',
+      ownerId: _this.props.currentUser.id,
+      photoUrl: null,
+      photoFile: null
+    };
+    _this.handleTitle = _this.handleTitle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleDescription = _this.handleDescription.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
+  }
+
+  _createClass(PhotoForm, [{
+    key: "handleTitle",
+    value: function handleTitle(e) {
+      this.setState({
+        title: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleDescription",
+    value: function handleDescription(e) {
+      this.setState({
+        description: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this2 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        return _this2.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var formData = new FormData();
+      formData.append('photo[title]', this.state.title);
+      formData.append('photo[description]', this.state.description);
+      formData.append('photo[owner_id]', this.state.ownerId);
+
+      if (this.state.photoFile) {
+        formData.append('photo[picture]', this.state.photoFile);
+      }
+
+      this.props.action(formData);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var prev, submit, inputTitle, inputDescription, fileF;
+      prev = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrl
+      }) : null;
+      submit = this.handleSubmit.bind(this);
+      inputTitle = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        id: "photo-title",
+        value: this.state.title,
+        onChange: this.handleTitle.bind(this)
+      });
+      inputDescription = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        id: "photo-description",
+        value: this.state.description,
+        onChange: this.handleDescription.bind(this)
+      });
+      fileF = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile.bind(this)
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "form",
+        onSubmit: submit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "photo-title"
+      }, "Title"), inputTitle, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+        htmlFor: "photo-description"
+      }, "Description"), inputDescription, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image Preview"), prev, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Upload a new Photo!"));
+    }
+  }]);
+
+  return PhotoForm;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+;
+/* harmony default export */ __webpack_exports__["default"] = (PhotoForm);
 
 /***/ }),
 
@@ -944,10 +1089,11 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         htmlFor: "add",
         id: "addLabel",
-        className: "btn"
+        className: "btn",
+        component: _create_photo_form_container__WEBPACK_IMPORTED_MODULE_2__["default"]
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-folder-plus plus-fol"
-      }), " Add"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_photo_form_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), " Add"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "file",
         id: "add",
         name: "Add"
@@ -1048,11 +1194,14 @@ function (_React$Component) {
   _createClass(PhotoIndex, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
       debugger;
       var photos = this.props.photos.map(function (photo) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
           key: photo.id,
-          photo: photo
+          photo: photo,
+          receivePhoto: _this.props.receivePhoto
         });
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1289,152 +1438,6 @@ var mdp = function mdp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_photo_nav__WEBPACK_IMPORTED_MODULE_1__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/photos/photo_upload_form.jsx":
-/*!**********************************************************!*\
-  !*** ./frontend/components/photos/photo_upload_form.jsx ***!
-  \**********************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var PhotoUploadForm =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(PhotoUploadForm, _React$Component);
-
-  function PhotoUploadForm(props) {
-    var _this;
-
-    _classCallCheck(this, PhotoUploadForm);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoUploadForm).call(this, props));
-    debugger;
-    _this.state = {
-      title: '',
-      description: '',
-      ownerId: null,
-      photoUrl: null,
-      photoFile: null
-    };
-    return _this;
-  }
-
-  _createClass(PhotoUploadForm, [{
-    key: "handleTitle",
-    value: function handleTitle(e) {
-      this.setState({
-        title: e.currentTarget.value
-      });
-    }
-  }, {
-    key: "handleDescription",
-    value: function handleDescription(e) {
-      this.setState({
-        description: e.currentTarget.value
-      });
-    }
-  }, {
-    key: "handleFile",
-    value: function handleFile(e) {
-      var _this2 = this;
-
-      var file = e.currentTarget.files[0];
-      var fileReader = new FileReader();
-
-      fileReader.onloadend = function () {
-        _this2.setState({
-          photoFile: file,
-          photoUrl: fileReader.result
-        });
-      };
-
-      if (file) {
-        fileReader.readAsDataURL(file);
-      }
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      debugger;
-      e.preventDefault();
-      var formData = new FormData();
-      formData.append('photo[title]', this.state.title);
-      formData.append('photo[description]', this.state.description);
-      formData.append('photo[owner_id]', this.state.ownerId);
-
-      if (this.state.photoFile) {
-        debugger;
-        formData.append('photo[picture]', this.state.photoFile);
-      }
-
-      this.props.action(formData);
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var prev, submit, inputTitle, inputDescription, fileF;
-      prev = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.photoUrl
-      }) : null;
-      submit = this.handleSubmit.bind(this);
-      inputTitle = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "photo-title",
-        value: this.state.title,
-        onChange: this.handleTitle.bind(this)
-      });
-      inputDescription = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        id: "photo-description",
-        value: this.state.description,
-        onChange: this.handleDescription.bind(this)
-      });
-      fileF = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile.bind(this)
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "form",
-        onSubmit: submit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "photo-title"
-      }, "Title"), inputTitle, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "photo-description"
-      }, "Description"), inputDescription, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Image Preview"), prev, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", null, "Upload a new Photo!"));
-    }
-  }]);
-
-  return PhotoUploadForm;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-;
-/* harmony default export */ __webpack_exports__["default"] = (PhotoUploadForm);
 
 /***/ }),
 
