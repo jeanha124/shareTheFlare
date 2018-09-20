@@ -25,25 +25,48 @@ user6 = user[5].id
 
 
 
-Photo.create({title: 'Couple', description: 'The couple getting married this weekend', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/friend1.jpg'), filename: "friend1.jpg"});
-Photo.create({title: 'Girl in Amaze', description: 'Appearing out of nowhere', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/photo2.jpg'), filename: "photo1.jpg"});
-Photo.create({title: 'In the wilderness', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/photo1.jpg'), filename: "photo1.jpg"});
-Photo.create({title: 'Mom and Child', description: 'Walking down the street', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/photo4.jpg'), filename: "photo4.jpg"});
-Photo.create({title: 'Amanda', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/amanda.jpg'), filename: "amanda.jpg"});
-Photo.create({title: 'Amber', description: 'Dog', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/amber.jpg'), filename: "amber.jpg"});
-Photo.create({title: 'Girl in Bubble', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/bubblegirl.jpg'), filename: "bubblegirl.jpg"});
-Photo.create({title: 'Carol', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/carol2.jpg'), filename: "carol2.jpg"});
-Photo.create({title: 'Daniel', description: 'Youtuber', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/dan1.jpg'), filename: "dan1.jpg"});
-Photo.create({title: 'Cosplay', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/cosplay.jpg'), filename: "cosplay.jpg"});
-Photo.create({title: 'Flowers', description: 'South Korea', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/flowers.jpg'), filename: "flowers.jpg"});
-Photo.create({title: 'Girl Having Fun', description: 'Taken while spinning', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/girlchair.jpg'), filename: "girlchair.jpg"});
-Photo.create({title: 'Grandma', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/grandma.jpg'), filename: "grandma.jpg"});
-Photo.create({title: 'Isabel', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/isabel1.jpg'), filename: "isabel1.jpg"});
-Photo.create({title: 'Isabel', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/isabel2.jpg'), filename: "isabel2.jpg"});
-Photo.create({title: 'Isabel', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/isabel3.jpg'), filename: "isabel3.jpg"});
-Photo.create({title: 'Jay', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/jay.jpg'), filename: "jay.jpg"});
-Photo.create({title: 'Jean', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/jean1.jpg'), filename: "jean1.jpg"});
-Photo.create({title: 'Jenn', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/jenn.jpg'), filename: "jenn.jpg"});
-Photo.create({title: 'DjSiGuy', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/simon.jpg'), filename: "simon.jpg"});
-Photo.create({title: 'Teresa', description: '', owner_id: user1}).picture.attach({io: File.open('/Users/Jeanwoo/Desktop/App_Academy/shareTheFlare/app/assets/images/teresa1.jpg'), filename: "teresa1.jpg"});
+
+
+p1 = Photo.create({title: 'Couple', description: 'The couple getting married this weekend', owner_id: user1})
+p2 = Photo.create({title: 'Girl in Amaze', description: 'Appearing out of nowhere', owner_id: user1})
+p3 = Photo.create({title: 'In the wilderness', description: '', owner_id: user1})
+p4 = Photo.create({title: 'Mom and Child', description: 'Walking down the street', owner_id: user1})
+p5 = Photo.create({title: 'Amanda', description: '', owner_id: user1})
+p6 = Photo.create({title: 'Amber', description: 'Dog', owner_id: user1})
+p7 = Photo.create({title: 'Girl in Bubble', description: '', owner_id: user1})
+p8 = Photo.create({title: 'Carol', description: '', owner_id: user1})
+p9 = Photo.create({title: 'Daniel', description: 'Youtuber', owner_id: user1})
+p10 = Photo.create({title: 'Cosplay', description: '', owner_id: user1})
+p11 = Photo.create({title: 'Flowers', description: 'South Korea', owner_id: user1})
+p13 = Photo.create({title: 'Grandma', description: '', owner_id: user1})
+p14 = Photo.create({title: 'Isabel', description: '', owner_id: user1})
+p15 = Photo.create({title: 'Isabel', description: '', owner_id: user1})
+p16 = Photo.create({title: 'Boy on a Bench', description: '', owner_id: user1})
+p17 = Photo.create({title: 'Jay', description: '', owner_id: user1})
+p18 = Photo.create({title: 'Jean', description: '', owner_id: user1})
+p19 = Photo.create({title: 'Jenn', description: '', owner_id: user1})
+p20 = Photo.create({title: 'DjSiGuy', description: '', owner_id: user1})
+p21 = Photo.create({title: 'Teresa', description: '', owner_id: user1})
+
+
+p1.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/YBu5wSFhURZYCLoNNUsqz1pX'), filename: "friend1.jpg"});
+p2.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/TWur5UMws4TV6MR3VRkYD6oz'), filename: "photo2.jpg"});
+p3.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/LA1DxnEtsrHZwBEQEfUeTaHh'), filename: "photo1.jpg"});
+p4.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/iNo99U4JzwHCZ99md7NwhXLK.jpg'), filename: "photo4.jpg"});
+p5.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/rgmsQMakK6CrwVthQsrTeWin'), filename: "amanda.jpg"});
+p6.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/Q4ik8HB2fuetyzrVH4xyZHaw'), filename: "amber.jpg"});
+p7.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/NNtLJgUZfV4Ymq6HXiUCLgH5'), filename: "bubblegirl.jpg"});
+p8.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/JqYHRrEtW1iumG2jM16d9qsP'), filename: "carol2.jpg"});
+p9.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/Q6WBEmtHG3ymCoJ7SeqdWqeV'), filename: "dan1.jpg"});
+p10.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/75tZ4RGFoHXSW7VuNLMcv2Qh'), filename: "cosplay.jpg"});
+p11.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/e2NP1A9pJfaRnh5FmysprXvR'), filename: "flowers.jpg"});
+p13.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/3PXPBxFkzjeaK8QLu6uyi2Qu'), filename: "grandma.jpg"});
+p14.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/2TcTiG26sBTPuS5BYoXvp4PX'), filename: "isabel1.jpg"});
+p15.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/yeEV8Km9qNfwy1AS8AzDjtbx'), filename: "isabel2.jpg"});
+p16.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/bench.jpg'), filename: "bench.jpg"});
+p17.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/DkrgBjxfzU1SeKiC441Kev1v'), filename: "jay.jpg"});
+p18.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/oN3fa2f2eJXHzsXQm8nPTSw8'), filename: "jean1.jpg"});
+p19.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/a1qXf5KdXZWdrW23JsYy6hRN'), filename: "jenn.jpg"});
+p20.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/CGtwqZbYHc8chHUeU1tRrjqE'), filename: "simon.jpg"});
+p21.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/FrodHnj3NLNjTo4XEZ4E5pqp'), filename: "teresa1.jpg"});
 

@@ -1003,37 +1003,18 @@ function (_React$Component) {
   _createClass(PhotoFormNav, [{
     key: "render",
     value: function render() {
-      if (this.props.navType === 'add') {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-          className: "add-nav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "addLabel",
-          className: "btn"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/photos/upload/new"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-folder-plus plus-fol"
-        }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "upload"
-        }, "Upload")));
-      } else {
-        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-          className: "change-nav"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "add-add",
-          className: "btn"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-          to: "/photos/upload/new"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-folder-plus plus-fol"
-        }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "delete"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-          className: "fas fa-times-circle ex-but"
-        }), "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-          id: "upload1"
-        }, "Upload 1 Photo")));
-      }
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "add-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "addLabel",
+        className: "btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/upload/new"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-folder-plus plus-fol"
+      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "upload"
+      }, "Upload")));
     }
   }]);
 
@@ -1059,9 +1040,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var msp = function msp(state) {
-  return {
-    navType: 'add'
-  };
+  return {};
 };
 
 var mdp = function mdp(dispatch) {

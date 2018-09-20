@@ -32,7 +32,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails'
 # Use ActiveStorage variant
 # gem 'mini_magick', '~> 4.8'
-
+gem 'ez_download', git: 'https://github.com/OscarAlvarez8830/EZDownload.git'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
