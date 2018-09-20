@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class PhotoIndexItem extends React.Component {
   render(){
@@ -7,7 +7,7 @@ class PhotoIndexItem extends React.Component {
 
     return (
       <div className="curr-photo">
-        <Link to={`/photos/${photo.owner.display_name}/${photo.id}`}><img src={photo.file} /></Link>
+        <Link to={`/photos/${photo.owner.display_name}/${photo.id}`}><img src={photo.photoUrl} /></Link>
         <div className="photo-info">
           <h1>{photo.title}</h1>
           <p>{photo.description}</p>
@@ -18,4 +18,4 @@ class PhotoIndexItem extends React.Component {
   }
 };
 
-export default withRouter(PhotoIndexItem);
+export default PhotoIndexItem;

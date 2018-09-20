@@ -1,0 +1,16 @@
+.form {
+  display: grid;
+  grid-gap: 20px;
+  border: 1px solid white;
+  height: 800px;
+  width: 233px;
+  color: white;
+  background: black;
+  border-radius: 4px;
+  z-index: 1;
+}
+
+#photo-title, #photo-description {
+  background: #a49f9f;
+}
+

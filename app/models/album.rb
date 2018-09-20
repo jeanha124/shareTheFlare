@@ -18,6 +18,8 @@ class Album < ApplicationRecord
   has_many :photo_albums,
     foreign_key: :album_id,
     class_name: :PhotoAlbum  
-  has_many :photos
+  has_many :photos,
+    through: :photo_albums,
+    source: :photo
 
 end

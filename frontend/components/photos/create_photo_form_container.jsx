@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { createPhoto } from '../../actions/photo_actions';
-import PhotoForm from './photo_form';
+import PhotoUploadForm from './photo_upload_form';
 
 const msp = state => {
+  debugger
   return {
-    photo: { title: '', description: '', owner_id: state.session.owner_id},
-    formType:'Add Photo',
+    currentUser: state.entities.users[state.session.id]
   };
 };
 
@@ -15,4 +15,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(PhotoForm);
+export default connect(msp, mdp)(PhotoUploadForm);

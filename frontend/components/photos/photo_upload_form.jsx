@@ -3,10 +3,11 @@ import React from 'react';
 class PhotoUploadForm extends React.Component {
   constructor(props){
     super(props);
+    debugger
     this.state = {
       title: '',
       description: '',
-      ownerId: this.props.currentUserId,
+      ownerId: null,
       photoUrl: null,
       photoFile: null,
     };
@@ -28,25 +29,17 @@ class PhotoUploadForm extends React.Component {
     }
   }
   handleSubmit(e) {
+    debugger
     e.preventDefault();
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
     formData.append('photo[owner_id]', this.state.ownerId);
     if (this.state.photoFile) {
+      debugger
       formData.append('photo[picture]', this.state.photoFile);
     }
-    $.ajax ({
-      url: '/api/photos',
-      method: 'POST',
-      contentType: false,
-      processData: false
-    }).then(
-      (response) => console.log(response.message),
-      (response) => {
-        console.log(response.responseJSON)
-      }
-    );
+    this.props.action(formData);
   }
   render(){
     let prev, submit, inputTitle, inputDescription, fileF;
@@ -56,7 +49,7 @@ class PhotoUploadForm extends React.Component {
     inputDescription = <input type="text" id="photo-description" value={this.state.description} onChange={this.handleDescription.bind(this)} />;
     fileF = <input type="file" onChange={this.handleFile.bind(this)} />;
     return (
-      <form onSubmit={submit}>
+      <form className="form" onSubmit={submit}>
         <label htmlFor="photo-title">Title</label>
         {inputTitle}
         <br />

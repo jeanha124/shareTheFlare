@@ -8,8 +8,9 @@ class Api::PhotosController < ApplicationController
   end
 
   def create
-    @photo = Photo.new(photos_params);
-    @photo.owner_id = current_user.id;
+    debugger
+    @photo = Photo.new(photos_params)
+    @photo.owner_id = current_user.id
     if @photo.save
       render :show
     else
@@ -33,13 +34,13 @@ class Api::PhotosController < ApplicationController
   end
   
   def destroy
-    @photo = current_user.photos.find(params[:id]);
+    @photo = current_user.photos.find(params[:id])
     @photo.destroy
     render :show
   end
   
   def photos_params
-    params.require(:photo).permit(:owner_id, :picture, :title);
+    params.require(:photo).permit(:picture, :title, :description)
   end
   
   

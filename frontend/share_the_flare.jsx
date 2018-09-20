@@ -5,6 +5,8 @@ import configureStore from './store/store';
 import * as ApiUtil from './actions/session_actions';
 import { receiveAllUsers } from './actions/user_actions';
 
+
+
 document.addEventListener("DOMContentLoaded", () => {
   const root = document.getElementById('root');
   let store;
@@ -29,6 +31,9 @@ document.addEventListener("DOMContentLoaded", () => {
   window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.receiveAllUsers = receiveAllUsers;
+  
+  
+
 
   ReactDOM.render(<Root store={ store }/>, root);
 });

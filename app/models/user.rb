@@ -22,10 +22,13 @@ class User < ApplicationRecord
   attr_reader :password
   after_initialize :ensure_session_token
 
-  has_many :photos
+  has_many :photos,
+    foreign_key: :owner_id,
+    class_name: :Photo
   has_many :albums
   has_many :comments
   has_many :tags
+  has_one_attached :avatar
 
   def self.find_by_credentials(email, password)
     user = User.find_by(email: email)

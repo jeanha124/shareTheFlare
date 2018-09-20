@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 
 class PhotoIndex extends React.Component {
   render() {
+    debugger
     const photos = this.props.photos.map(photo => {
       return <PhotoIndexItem key={photo.id} photo={photo} />
     });

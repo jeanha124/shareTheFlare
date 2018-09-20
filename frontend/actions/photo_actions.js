@@ -21,6 +21,7 @@ export const receivePhoto = (id) => {
 };
 
 export const createPhoto = (photo) => {
+  debugger
   return dispatch => {
     return PhotoApiUtil.createPhoto(photo).then(photo => {
       dispatch({type: RECEIVE_PHOTO, photo});
@@ -39,7 +40,7 @@ export const updatePhoto = (photo) => {
 export const deletePhoto = (photoId) => {
   return dispatch => {
     return PhotoApiUtil.deletePhoto(photoId).then(photo => {
-      dispatch({type: RECEIVE_PHOTO, photoId});
+      dispatch({type: REMOVE_PHOTO, photoId});
     });
   }; 
 };
