@@ -14,6 +14,7 @@ import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import PhotoFormNav2 from './photos/photo_form_nav2';
 import PhotoFormNav from './photos/photo_form_nav';
 
+
 class App extends React.Component {
   render () {
     return (

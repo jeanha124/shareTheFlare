@@ -13,7 +13,9 @@ const mdp = dispatch => {
   return {
     receivePhoto: id => dispatch(receivePhoto(id)),
     updatePhoto: photo => dispatch(updatePhoto(photo)),
-    deletePhoto: id => dispatch(deletePhoto(id)) 
+    deletePhoto: id => dispatch(deletePhoto(id)), 
+    openModal: () => dispatch(openModal()),
+    closeModal: () => dispatch(closeModal())
   };
 };
 

@@ -15,7 +15,7 @@ class PhotoShow extends React.Component {
       <div>
         <div>
           <Link to='/photos/:display_name'>Back to Photostream</Link>
-          {this.props.photo}
+          
         </div>
       </div>
     );
