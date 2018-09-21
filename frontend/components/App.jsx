@@ -8,7 +8,7 @@ import PhotoNavContainer from './photos/photo_nav_container';
 import UploadIndexContainer from './photos/upload_index_container';
 import LoggedInHomepageNavContainer from './homepage/logged_in_homepage_nav_container';
 import ExploreNavContainer from './homepage/explore_nav_container';
-import UserProfileContainer from './users/user_profile_container';
+import UserNavContainer from './users/user_nav_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import PhotoFormNav2 from './photos/photo_form_nav2';
@@ -29,7 +29,7 @@ class App extends React.Component {
             <ProtectedRoute path='/photos/upload/new' component={PhotoFormNav2} />
             <ProtectedRoute path='/photos/upload' component={PhotoFormNav} />
             <ProtectedRoute path='/explore' component={ExploreNavContainer} />
-            <ProtectedRoute path='/photos/:display_name' component={UserProfileContainer} />
+            <ProtectedRoute path='/photos/:display_name' component={UserNavContainer} />
             <ProtectedRoute path="/" component={LoggedInHomepageNavContainer} />
           </Switch>
           <Switch>
@@ -40,6 +40,7 @@ class App extends React.Component {
       </div>
     );
   }
-};
+}
 
 export default App;
+

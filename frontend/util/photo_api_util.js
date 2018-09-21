@@ -13,7 +13,6 @@ export const fetchPhoto = (id) => {
 };
 
 export const createPhoto = (photo) => {
-  debugger
   return $.ajax ({
     method: 'POST',
     url: `api/photos`,

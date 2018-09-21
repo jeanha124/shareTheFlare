@@ -2,5 +2,51 @@
     display: grid;
     grid-gap: 20px;
     grid-template-columns: 257px repeat(5, 1fr) 3px;
-    grid-template-rows: 278px auto 191px;
+    grid-template-rows: 278px auto 230px;
+    position: relative;
+    top: 69px;
+    height: 100%;
+        
+}
+
+
+.cover {
+    background: url(/assets/great_wall-c072fe9fbd3c32b4e596097e4dcdc84deb7d4a29acc9c4f3292b9c3a2c5f982e.jpg) no-repeat center bottom fixed;
+    height: 276px;
+}
+
+.photo-cover {
+    position: absolute;
+    top: 50px;
+}
+
+.avatar {
+    width: 85px;
+    height: 85px;
+    background: blue;
+    border-radius: 25px;
+    position: relative;
+    top: 63%;
+    left: 1%;
+    object-fit: cover;
+}
+
+.fullName, .displayname {
+    position: relative;
+    left: 113px;
+    top: 43%;
+}
+
+.fullName {
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+}
+
+.displayname {
+    font-size: 16px;
+    font-weight: 400;
+    color: white;
+    position: relative;
+    top: 41%;
 }

@@ -27,32 +27,32 @@ user6 = user[5].id
 
 
 
-p1 = Photo.create({title: 'Couple', description: 'The couple getting married this weekend', owner_id: user1})
-p2 = Photo.create({title: 'Girl in Amaze', description: 'Appearing out of nowhere', owner_id: user1})
-p3 = Photo.create({title: 'In the wilderness', description: '', owner_id: user1})
+p1 = Photo.create({title: 'First Light', description: 'Christian Acappella Group', owner_id: user1})
+p2 = Photo.create({title: 'Girl playing the guitar', description: '', owner_id: user1})
+p3 = Photo.create({title: 'Joey', description: '', owner_id: user1})
 p4 = Photo.create({title: 'Mom and Child', description: 'Walking down the street', owner_id: user1})
 p5 = Photo.create({title: 'Amanda', description: '', owner_id: user1})
 p6 = Photo.create({title: 'Amber', description: 'Dog', owner_id: user1})
 p7 = Photo.create({title: 'Girl in Bubble', description: '', owner_id: user1})
-p8 = Photo.create({title: 'Carol', description: '', owner_id: user1})
+p8 = Photo.create({title: 'Carol', description: '', owner_id: user5})
 p9 = Photo.create({title: 'Daniel', description: 'Youtuber', owner_id: user1})
-p10 = Photo.create({title: 'Cosplay', description: '', owner_id: user1})
+p10 = Photo.create({title: 'Cosplay', description: '', owner_id: user5})
 p11 = Photo.create({title: 'Flowers', description: 'South Korea', owner_id: user1})
-p13 = Photo.create({title: 'Grandma', description: '', owner_id: user1})
+p13 = Photo.create({title: 'Grandma', description: '', owner_id: user4})
 p14 = Photo.create({title: 'Isabel', description: '', owner_id: user1})
 p15 = Photo.create({title: 'Isabel', description: '', owner_id: user1})
-p16 = Photo.create({title: 'Boy on a Bench', description: '', owner_id: user1})
+p16 = Photo.create({title: 'Boy on a Bench', description: '', owner_id: user2})
 p17 = Photo.create({title: 'Jay', description: '', owner_id: user1})
-p18 = Photo.create({title: 'Jean', description: '', owner_id: user1})
+p18 = Photo.create({title: 'Jean', description: '', owner_id: user2})
 p19 = Photo.create({title: 'Jenn', description: '', owner_id: user1})
 p20 = Photo.create({title: 'DjSiGuy', description: '', owner_id: user1})
 p21 = Photo.create({title: 'Teresa', description: '', owner_id: user1})
 
 
-p1.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/friend1.jpg'), filename: "friend1.jpg"});
-p2.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo2.jpg'), filename: "photo2.jpg"});
-p3.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo1.jpg'), filename: "photo1.jpg"});
-p4.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/photo4.jpg'), filename: "photo4.jpg"});
+p1.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/first_light.jpg'), filename: "first_light.jpg"});
+p2.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/guitar.jpg'), filename: "guitar.jpg"});
+p3.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/bench2.jpg'), filename: "bench2.jpg"});
+p4.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/cloe2.jpg'), filename: "cloe2.jpg"});
 p5.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/amanda.jpg'), filename: "amanda.jpg"});
 p6.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/amber.jpg'), filename: "amber.jpg"});
 p7.picture.attach({io: EzDownload.open('https://s3.amazonaws.com/share-the-flare-dev/bubblegirl.jpg'), filename: "bubblegirl.jpg"});

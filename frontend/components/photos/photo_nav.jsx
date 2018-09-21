@@ -17,6 +17,6 @@ class PhotoNav extends React.Component {
       </nav>
     );
   }
-};
+}
 
 export default PhotoNav;

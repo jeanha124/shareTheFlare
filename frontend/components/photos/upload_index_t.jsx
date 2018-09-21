@@ -32,7 +32,9 @@ class UploadIndexT extends React.Component {
       fileReader.readAsDataURL(file);
     }
   }
-  
+  componentDidMount(){
+    return <input type="file" onChange={this.handleFile} className="form-file" />;
+  }
   handleSubmit(e) {
     e.preventDefault();
     const formData = new FormData();
@@ -42,7 +44,7 @@ class UploadIndexT extends React.Component {
     if (this.state.photoFile) {
       formData.append('photo[picture]', this.state.photoFile);
     }
-    this.props.action(formData);
+    this.props.action(formData).then(() => this.props.history.push(`/photos/${this.props.currentUser.display_name}`));
   }
   render(){
     let prev, submit, inputTitle, inputDescription, fileF;
@@ -51,21 +53,23 @@ class UploadIndexT extends React.Component {
     inputTitle = <input type="text" className="photo-title" value={this.state.title} onChange={this.handleTitle} placeholder="Add title"/>;
     inputDescription = <input type="text" className="photo-description" value={this.state.description} onChange={this.handleDescription} placeholder="Add a description"/>;
     fileF = <input type="file" onChange={this.handleFile} className="form-file"/>;
-    return (
-      <div>
-        <div className="content-new">
-          <CreateFormSidebar />
-          <form className="new-photo" onSubmit={submit}>
-            <ul>
-              {fileF}
-              <li>{prev}</li>
-              <li className="photo-title">{inputTitle}</li>
-              <li className="photo-description">{inputDescription}</li>
-            </ul>
-          </form>
+   
+      return (
+        <div>
+          <div className="content-new">
+            <CreateFormSidebar />
+            <form className="new-photo" onSubmit={submit}>
+              <ul>
+                {fileF}
+                <li>{prev}</li>
+                <li className="photo-title">{inputTitle}</li>
+                <li className="photo-description">{inputDescription}</li>
+              </ul>
+              <button className="sub">Submit</button>
+            </form>
+          </div>
         </div>
-      </div>
-    );
+      ); 
   }
 }
 

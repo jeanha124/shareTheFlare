@@ -1,6 +1,5 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
-import { Link } from 'react-router-dom';
 
 class PhotoIndex extends React.Component {
   constructor(props){
@@ -14,8 +13,15 @@ class PhotoIndex extends React.Component {
       return <PhotoIndexItem key={photo.id} currentUser={this.props.currentUser} photo={photo} receivePhoto = {this.props.receivePhoto}/>;
     });
     return (
-      <div className="photo-div">
-        <ul>{photos}</ul>
+      <div className="photo-cover">
+        <div className="cover">
+          <img className="avatar" src="https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png" />
+            <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
+            <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
+        </div>
+        <div className="photo-div">
+          <ul>{photos}</ul>
+        </div>
       </div>
     );
   }

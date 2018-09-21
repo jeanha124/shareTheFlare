@@ -25,7 +25,13 @@
 }
 
 .photo-info {
-  display: none;
+  border: 1px solid #ccc;
+  background: #3f3737;
+  color: white;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+  font-size: 14px;
+  
 }
 
 .content-new {
@@ -63,7 +69,7 @@
 }
 
 .form-file {
-  display: none;
+  
 }
 
 .sidebar {
@@ -93,4 +99,9 @@
   border-bottom: 1px solid #272525;
   padding: 20px 0;
   text-align: center;
+}
+
+.curr-photo  a img {
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
 }

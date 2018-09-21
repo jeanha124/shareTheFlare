@@ -21,7 +21,6 @@ export const receivePhoto = (id) => {
 };
 
 export const createPhoto = (photo) => {
-  debugger
   return dispatch => {
     return PhotoApiUtil.createPhoto(photo).then(photo => {
       dispatch({type: RECEIVE_PHOTO, photo});
