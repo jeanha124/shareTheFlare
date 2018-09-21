@@ -1,7 +1,7 @@
 .photo-div ul {
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: 257px repeat(5, 1fr) 3px;
+    grid-template-columns: 257px repeat(5, 1fr);
     grid-template-rows: 278px auto 230px;
     position: relative;
     top: 69px;

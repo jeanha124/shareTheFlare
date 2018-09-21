@@ -104,9 +104,21 @@ html, body {
 .footer {
   display: grid;
   background: black;
-  height: 106px;
+  height: 200px;
   position: relative;
-  bottom: -89px;
+  bottom: -213px;
+  color: white;
+  font-weight: 700;
+  justify-items: center;
+  align-items: center;
+}
+
+.footer-a {
+  grid-column: 3;
+}
+
+.footer-b {
+  grid-column: 4;
 }
 
 @media only screen and (max-width: 1400px) {

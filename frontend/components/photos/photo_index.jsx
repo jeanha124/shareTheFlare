@@ -9,8 +9,11 @@ class PhotoIndex extends React.Component {
     this.props.receiveAllPhotos();
   }
   render() {
+    debugger
     const photos = this.props.photos.map(photo => {
-      return <PhotoIndexItem key={photo.id} currentUser={this.props.currentUser} photo={photo} receivePhoto = {this.props.receivePhoto}/>;
+      if (photo.owner_id === this.props.currentUser.id){
+        return <PhotoIndexItem key={photo.id} currentUser={this.props.currentUser} photo={photo} receivePhoto = {this.props.receivePhoto}/>;
+      }
     });
     return (
       <div className="photo-cover">

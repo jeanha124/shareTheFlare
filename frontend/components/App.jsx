@@ -13,7 +13,7 @@ import PhotoIndexContainer from './photos/photo_index_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import PhotoFormNav2 from './photos/photo_form_nav2';
 import PhotoFormNav from './photos/photo_form_nav';
-
+import ActivityPhotosContainer from './homepage/activity_photos_container';
 
 class App extends React.Component {
   render () {
@@ -37,6 +37,7 @@ class App extends React.Component {
             <ProtectedRoute path='/photos/upload/new' component={CreatePhotoFormContainer} />
             <ProtectedRoute path='/photos/upload' component={UploadIndexContainer} />
             <ProtectedRoute path='/photos/:display_name' component={PhotoIndexContainer} />
+            <ProtectedRoute path='/' component={ActivityPhotosContainer} />
           </Switch>
       </div>
     );

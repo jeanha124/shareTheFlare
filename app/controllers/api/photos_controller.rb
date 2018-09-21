@@ -1,6 +1,6 @@
 class Api::PhotosController < ApplicationController
   def index
-    @photos = Photo.all;  
+    @photos = Photo.all; 
   end
 
   def create
