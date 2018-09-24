@@ -2010,7 +2010,7 @@ function (_React$Component) {
         className: "login-input"
       });
       email = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
+        type: "email",
         placeholder: "Email",
         value: this.state.email,
         onChange: this.update('email'),
