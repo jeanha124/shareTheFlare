@@ -18,7 +18,7 @@ html, body {
 
 .login-signup {
   display: grid;
-  grid-template-columns: 268px auto 1fr 0.5fr 0.5fr 1fr;
+  grid-template-columns: 1fr auto auto repeat(3, 1fr);
   grid-gap: 20px;
   width: 1922px;
   height: 65px;
@@ -44,9 +44,8 @@ html, body {
 .login {
   background: none;
   border: none;
-  position: relative;
-  right: 16px;
-  grid-column: 4;
+  grid-column: 5;
+  justify-self: end;
 }
 .signup {
   background-color: white;
@@ -55,9 +54,8 @@ html, body {
   border-radius: 3px;
   color: black;
   font-size: 21px;
-  position: relative;
-  right: -8px;
-  grid-column: 5;
+  grid-column: 6;
+  justify-self: baseline;
 }
 
 .content {
@@ -106,7 +104,7 @@ html, body {
   background: black;
   height: 200px;
   position: relative;
-  bottom: -213px;
+  bottom: -121px;
   color: white;
   font-weight: 700;
   justify-items: center;
@@ -114,10 +112,13 @@ html, body {
 }
 
 .footer-a {
-  grid-column: 3;
+  grid-column: 2;
 }
 
 .footer-b {
+  grid-column: 3;
+}
+.footer-c {
   grid-column: 4;
 }
 

@@ -6,12 +6,11 @@ const Greeting = props => {
   const sessionLinks = () => (
     <nav className="login-signup">
       <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
-      <input type="text" placeholder="Photos" className="search"/> 
       <button className="login" onClick= { () => props.openModal('login') }>Login</button>
       <button className="signup" onClick= { () => props.openModal('signup') }>Signup</button>
     </nav>
   );
-
+  
   const mainNav = () => (
     <header className="main-nav">
       <nav className="left-nav">
@@ -30,15 +29,17 @@ const Greeting = props => {
       </ul>
     </header>
   );
-
+  
   return (
     props.currentUser ? mainNav() : sessionLinks()
-  );
-};
-
-export default Greeting;
-
-
- /*<nav className="sub-nav">
-        <h1 className="activity">All Activity</h1>
-      </nav>*/
+    );
+  };
+  
+  export default Greeting;
+  
+  
+  /*<nav className="sub-nav">
+  <h1 className="activity">All Activity</h1>
+  </nav>*/
+  
+  //<input type="text" placeholder="Photos" className="search"/> 

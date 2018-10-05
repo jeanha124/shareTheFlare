@@ -19,7 +19,9 @@ class SessionForm extends React.Component {
   update(field){
     return e => this.setState({ [field]: e.target.value });
   }
-  
+  componentDidMount() {
+    console.log('I\'m alive');
+  }
   demoLogin(e) {
     e.preventDefault();
     const demoUser = {email: 'demo@email.com', password:'hunter2'};
@@ -41,15 +43,13 @@ class SessionForm extends React.Component {
     this.props.processForm(user).then(this.props.closeModal);
   }
   renderErrors() {
-    return (
-      <ul>
-        { this.props.errors.map((error, i) => (
-          <li key={ `error-${i}` }>
-            { error }
-          </li>
-        )) }
-      </ul>
-    );
+      return this.props.errors.map((error, i) => {
+        return (
+            <li key={ `error-${i}` }>
+              { error }
+            </li>
+        );
+      });
   }
   render() {
     let button, fname, lname, gender, email, password, displayName, submit, demoLog;
@@ -120,7 +120,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Already have an account? <span className="link-btn">{button}</span>
+            Already have an account? <span className="link-btn" onClick={this.props.clearModalErrors}>{button}</span>
           </form>
         </div>
       );
@@ -141,7 +141,7 @@ class SessionForm extends React.Component {
             </div>
             <br />
             <br />
-            Don 't have an account? <span className="link-btn">{button}</span>
+            Don 't have an account? <span className="link-btn" onClick={this.props.clearModalErrors}>{button}</span>
             <br />
             {demoLog}
           </form>
