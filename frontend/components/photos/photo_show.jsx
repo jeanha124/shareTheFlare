@@ -13,7 +13,7 @@ class PhotoShow extends React.Component {
   render(){
     return (
       <div>
-        <div>
+        <div className="pic-container">
           <Link to='/photos/:display_name'>Back to Photostream</Link>
           
         </div>
