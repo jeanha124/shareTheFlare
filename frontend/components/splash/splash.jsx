@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import HomepageContainer from '../homepage/homepage_container';
 
 const Splash = props => {
 
@@ -29,6 +30,7 @@ const Splash = props => {
   );
   
   const mainNav = () => (
+    <React.Fragment>
       <nav className="left-nav">
         <Link to='/'><h1 className="main-logo">Share The Flare</h1></Link>
         <Link to={`/photos/${props.currentUser.display_name}`}><h2 className="you">You</h2></Link>
@@ -38,6 +40,7 @@ const Splash = props => {
         <Link to='/account'><img className="prof-img" alt={props.currentUser.display_name}/></Link>
         <button className="header-btn" onClick={props.logout}>Log Out</button>
       </nav>
+    </React.Fragment>
   );
   
   return (
@@ -48,6 +51,9 @@ const Splash = props => {
   export default Splash;
   
   
+  // <Switch>
+  // <Route path='/' component={HomepageContainer} />
+      // </Switch>
   /*<nav className="sub-nav">
   <h1 className="activity">All Activity</h1>
   </nav>*/

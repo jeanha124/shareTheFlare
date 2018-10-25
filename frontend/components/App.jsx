@@ -3,9 +3,8 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './../modals/modal';
 import HomepageContainer from './homepage/homepage_container';
-import GreetingContainer from './greetings/greeting_container';
+
 import { Switch } from 'react-router-dom';
-import Launch from './greetings/launch_description';
 import PhotoNavContainer from './photos/photo_nav_container';
 import UploadIndexContainer from './photos/upload_index_container';
 import LoggedInHomepageNavContainer from './homepage/logged_in_homepage_nav_container';
