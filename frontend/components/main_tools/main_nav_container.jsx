@@ -1,8 +1,6 @@
 import { connect } from 'react-redux';
-import Splash from './splash';
+import MainNav from './main_nav';
 import { logout } from '../../actions/session_actions';
-import { openModal } from '../../actions/modal_actions';
-
 
 const msp = state => {
   return {
@@ -12,9 +10,8 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    logout: () => dispatch(logout()),
-    openModal: modal => dispatch(openModal(modal)),
+    logout: () => dispatch(logout())
   };
 };
 
-export default connect(msp, mdp)(Splash);
+export default connect(msp, mdp)(MainNav);
