@@ -3,17 +3,13 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './../modals/modal';
 // import HomepageContainer from './homepage/homepage_container';
-
-import PhotoNavContainer from './photos/photo_nav_container';
+import Upload from './photos/upload_container';
 import UploadIndexContainer from './photos/upload_index_container';
-import LoggedInHomepageNavContainer from './homepage/logged_in_homepage_nav_container';
-import ExploreNavContainer from './homepage/explore_nav_container';
 import UserNavContainer from './users/user_nav_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import PhotoFormNav2 from './photos/photo_form_nav2';
 import PhotoFormNav from './photos/photo_form_nav';
-import ActivityPhotosContainer from './homepage/activity_photos_container';
 import PhotoShowContainer from './photos/photo_show_container';
 
 class App extends React.Component {
@@ -23,7 +19,8 @@ class App extends React.Component {
         <Modal />
 
         <AuthRoute path='/' component={SplashContainer} />
-        <ProtectedRoute path='/' component={SplashContainer} />
+        <ProtectedRoute path='/photos/upload' component={Upload} />
+        <ProtectedRoute exact path='/' component={SplashContainer} />
       </div>
     );
   }

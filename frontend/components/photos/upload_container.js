@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import PhotoNav from './photo_nav';
+import Upload from './upload';
 import { logout } from '../../actions/session_actions';
 
 const msp = state => {
@@ -14,4 +14,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(PhotoNav);
+export default connect(msp, mdp)(Upload);

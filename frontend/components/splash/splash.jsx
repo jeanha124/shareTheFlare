@@ -3,6 +3,8 @@ import { Link, Route, Switch } from 'react-router-dom';
 import Homepage from '../homepage/homepage_container';
 import Footer from '../main_tools/footer';
 import MainNav from '../main_tools/main_nav_container';
+import Explore from '../homepage/explore_container';
+
 
 const Splash = props => {
 
@@ -27,7 +29,10 @@ const Splash = props => {
   const mainNav = () => (
     <React.Fragment>
       <MainNav />
-      <Homepage />
+      <Switch>
+        <Route exact path='/' component={Homepage} />
+        <Route path='/explore' component={Explore} />
+      </Switch>
       <Footer />
     </React.Fragment>
   );
