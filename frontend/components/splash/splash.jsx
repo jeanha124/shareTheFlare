@@ -4,7 +4,8 @@ import Homepage from '../homepage/homepage_container';
 import Footer from '../main_tools/footer';
 import MainNav from '../main_tools/main_nav_container';
 import Explore from '../homepage/explore_container';
-
+import PhotoIndex from '../photos/photo_index_container';
+import PhotoShow from '../photos/photo_show_container';
 
 const Splash = props => {
 
@@ -32,6 +33,8 @@ const Splash = props => {
       <Switch>
         <Route exact path='/' component={Homepage} />
         <Route path='/explore' component={Explore} />
+        <Route exact path='/photos/:display_name' component={PhotoIndex} />
+        <Route exact path='/photos/:display_name/:id' component={PhotoShow} />
       </Switch>
       <Footer />
     </React.Fragment>
@@ -44,6 +47,7 @@ const Splash = props => {
   
   export default Splash;
   
+ 
   
   // <Switch>
   // <Route path='/' component={HomepageContainer} />

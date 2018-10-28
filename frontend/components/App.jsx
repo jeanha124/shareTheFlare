@@ -2,14 +2,13 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './../modals/modal';
+import { Switch } from 'react-router-dom';
 // import HomepageContainer from './homepage/homepage_container';
 import Upload from './photos/upload_container';
-import UploadIndexContainer from './photos/upload_index_container';
 import UserNavContainer from './users/user_nav_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
 import PhotoFormNav2 from './photos/photo_form_nav2';
-import PhotoFormNav from './photos/photo_form_nav';
 import PhotoShowContainer from './photos/photo_show_container';
 
 class App extends React.Component {
@@ -17,10 +16,11 @@ class App extends React.Component {
     return (
       <div className="main-container">
         <Modal />
-
-        <AuthRoute path='/' component={SplashContainer} />
-        <ProtectedRoute path='/photos/upload' component={Upload} />
-        <ProtectedRoute exact path='/' component={SplashContainer} />
+          <AuthRoute path='/' component={SplashContainer} />
+          <Switch>
+            <ProtectedRoute exact path='/photos/upload' component={Upload} />
+            <ProtectedRoute path='/' component={SplashContainer} />
+          </Switch>
       </div>
     );
   }

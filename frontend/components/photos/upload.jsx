@@ -1,5 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Route, Switch } from 'react-router-dom';
+import BeforeUpload from './before_upload';
+import DuringUpload from './during_upload';
+
 
 class Upload extends React.Component {
   constructor (props){
@@ -18,17 +21,10 @@ class Upload extends React.Component {
             <li className="dUser">Demo User</li>
           </ul>
         </nav>
-        <div className="content-content">
-          <div className="add-content">
-            <div className="add-content-content">
-              <button id="add1" id="content-upload">
-                <Link to='/photos/upload/new'>
-                  Choose photos and videos to upload
-                </Link>
-              </button>
-            </div>
-          </div>
-        </div>
+        <Switch>
+          <Route path='/photos/upload' component={BeforeUpload} />
+          <Route path='/photos/upload/new' component={DuringUpload} />
+        </Switch>
       </React.Fragment>
     ); 
   }

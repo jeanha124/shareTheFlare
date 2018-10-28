@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { createPhoto } from '../../actions/photo_actions';
-import UploadIndexT from './upload_index_t';
+import DuringUpload from './during_upload';
 
 const msp = state => {
   return {
@@ -14,4 +14,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(UploadIndexT);
+export default connect(msp, mdp)(DuringUpload);

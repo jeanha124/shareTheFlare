@@ -6,7 +6,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const msp = (state, ownProps) => {
   return {
     currentUser: state.entities.users[state.session.id],
-    photo: state.entities.photos[ownProps.match.params.photoId]
+    photo: state.entities.photos[ownProps.match.params.photoId],
+    photos: Object.values(state.entities.photos)
   };
 };
 
@@ -15,8 +16,6 @@ const mdp = dispatch => {
     receivePhoto: id => dispatch(receivePhoto(id)),
     updatePhoto: photo => dispatch(updatePhoto(photo)),
     deletePhoto: id => dispatch(deletePhoto(id)), 
-    openModal: () => dispatch(openModal('photo')),
-    closeModal: () => dispatch(closeModal())
   };
 };
 

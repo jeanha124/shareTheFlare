@@ -1,7 +1,7 @@
 import React from 'react';
-import CreateFormSidebar from './create_form_sidebar';
+import { Link } from 'react-router-dom';
 
-class UploadIndexT extends React.Component {
+class DuringUpload extends React.Component {
   constructor(props){
     super(props);
     this.state = {
@@ -55,9 +55,25 @@ class UploadIndexT extends React.Component {
     fileF = <input type="file" onChange={this.handleFile} className="form-file"/>;
    
       return (
-        <div>
+        <React.Fragment>
           <div className="content-new">
-            <CreateFormSidebar />
+            <div className="sidebar">
+              <div className="inner-sidebar">
+                <ul className="sidebar-ul">
+                  <p>Editing 1 photo:</p>
+                  <li>Title</li>
+                  <li>Tags</li>
+                  <li>Albums</li>
+                </ul>
+              </div>
+            </div>  
+            <nav className="change-nav">
+              <button id="add-add" className="btn">
+                <Link to='/photos/upload/new'><i className="fas fa-folder-plus plus-fol"></i>Add</Link>
+              </button>
+              <button id="delete"><i className="fas fa-times-circle ex-but"></i>Delete</button>
+              <button id="upload1">Upload 1 Photo</button>
+            </nav>
             <form className="new-photo" onSubmit={submit}>
               <ul>
                 {fileF}
@@ -68,9 +84,9 @@ class UploadIndexT extends React.Component {
               <button className="sub">Submit</button>
             </form>
           </div>
-        </div>
+        </React.Fragment>
       ); 
   }
 }
 
-export default UploadIndexT;
+export default DuringUpload;

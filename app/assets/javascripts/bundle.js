@@ -303,14 +303,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.jsx");
 /* harmony import */ var _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./splash/splash_container */ "./frontend/components/splash/splash_container.jsx");
 /* harmony import */ var _modals_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../modals/modal */ "./frontend/modals/modal.jsx");
-/* harmony import */ var _photos_upload_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./photos/upload_container */ "./frontend/components/photos/upload_container.js");
-/* harmony import */ var _photos_upload_index_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./photos/upload_index_container */ "./frontend/components/photos/upload_index_container.js");
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _photos_upload_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./photos/upload_container */ "./frontend/components/photos/upload_container.js");
 /* harmony import */ var _users_user_nav_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./users/user_nav_container */ "./frontend/components/users/user_nav_container.jsx");
 /* harmony import */ var _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./photos/photo_index_container */ "./frontend/components/photos/photo_index_container.js");
 /* harmony import */ var _photos_create_photo_form_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photos/create_photo_form_container */ "./frontend/components/photos/create_photo_form_container.jsx");
 /* harmony import */ var _photos_photo_form_nav2__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./photos/photo_form_nav2 */ "./frontend/components/photos/photo_form_nav2.jsx");
-/* harmony import */ var _photos_photo_form_nav__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./photos/photo_form_nav */ "./frontend/components/photos/photo_form_nav.jsx");
-/* harmony import */ var _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./photos/photo_show_container */ "./frontend/components/photos/photo_show_container.jsx");
+/* harmony import */ var _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./photos/photo_show_container */ "./frontend/components/photos/photo_show_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -332,9 +331,8 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
  // import HomepageContainer from './homepage/homepage_container';
-
-
 
 
 
@@ -362,14 +360,14 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modals_modal__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["AuthRoute"], {
         path: "/",
         component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
-        path: "/photos/upload",
-        component: _photos_upload_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         exact: true,
+        path: "/photos/upload",
+        component: _photos_upload_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         path: "/",
         component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-      }));
+      })));
     }
   }]);
 
@@ -821,10 +819,10 @@ var mdp = function mdp(dispatch) {
 
 /***/ }),
 
-/***/ "./frontend/components/photos/create_form_sidebar.jsx":
-/*!************************************************************!*\
-  !*** ./frontend/components/photos/create_form_sidebar.jsx ***!
-  \************************************************************/
+/***/ "./frontend/components/photos/before_upload.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/photos/before_upload.jsx ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -832,7 +830,10 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -852,34 +853,50 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var CreateFormSidebar =
+
+var BeforeUpload =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(CreateFormSidebar, _React$Component);
+  _inherits(BeforeUpload, _React$Component);
 
-  function CreateFormSidebar() {
-    _classCallCheck(this, CreateFormSidebar);
+  function BeforeUpload() {
+    _classCallCheck(this, BeforeUpload);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(CreateFormSidebar).apply(this, arguments));
+    return _possibleConstructorReturn(this, _getPrototypeOf(BeforeUpload).apply(this, arguments));
   }
 
-  _createClass(CreateFormSidebar, [{
+  _createClass(BeforeUpload, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar"
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "add-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "addLabel",
+        className: "btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/upload/new"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-folder-plus plus-fol"
+      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "upload"
+      }, "Upload")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content-content"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "inner-sidebar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "sidebar-ul"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums"))));
+        className: "add-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "add-content-content"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", _defineProperty({
+        id: "add1"
+      }, "id", "content-upload"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/photos/upload/new"
+      }, "Choose photos and videos to upload"))))));
     }
   }]);
 
-  return CreateFormSidebar;
+  return BeforeUpload;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (CreateFormSidebar);
+/* harmony default export */ __webpack_exports__["default"] = (BeforeUpload);
 
 /***/ }),
 
@@ -894,7 +911,7 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
-/* harmony import */ var _upload_index_t__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./upload_index_t */ "./frontend/components/photos/upload_index_t.jsx");
+/* harmony import */ var _during_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./during_upload */ "./frontend/components/photos/during_upload.jsx");
 
 
 
@@ -913,14 +930,14 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_upload_index_t__WEBPACK_IMPORTED_MODULE_2__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_during_upload__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
-/***/ "./frontend/components/photos/photo_form_nav.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/photos/photo_form_nav.jsx ***!
-  \*******************************************************/
+/***/ "./frontend/components/photos/during_upload.jsx":
+/*!******************************************************!*\
+  !*** ./frontend/components/photos/during_upload.jsx ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -939,50 +956,170 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
-var PhotoFormNav =
+
+var DuringUpload =
 /*#__PURE__*/
 function (_React$Component) {
-  _inherits(PhotoFormNav, _React$Component);
+  _inherits(DuringUpload, _React$Component);
 
-  function PhotoFormNav(props) {
-    _classCallCheck(this, PhotoFormNav);
+  function DuringUpload(props) {
+    var _this;
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoFormNav).call(this, props));
+    _classCallCheck(this, DuringUpload);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(DuringUpload).call(this, props));
+    _this.state = {
+      title: '',
+      description: '',
+      ownerId: _this.props.currentUser.id,
+      photoUrl: null,
+      photoFile: null
+    };
+    _this.handleTitle = _this.handleTitle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleDescription = _this.handleDescription.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    return _this;
   }
 
-  _createClass(PhotoFormNav, [{
+  _createClass(DuringUpload, [{
+    key: "handleTitle",
+    value: function handleTitle(e) {
+      this.setState({
+        title: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleDescription",
+    value: function handleDescription(e) {
+      this.setState({
+        description: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleFile",
+    value: function handleFile(e) {
+      var _this2 = this;
+
+      var file = e.currentTarget.files[0];
+      var fileReader = new FileReader();
+
+      fileReader.onloadend = function () {
+        return _this2.setState({
+          photoFile: file,
+          photoUrl: fileReader.result
+        });
+      };
+
+      if (file) {
+        fileReader.readAsDataURL(file);
+      }
+    }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile,
+        className: "form-file"
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      var formData = new FormData();
+      formData.append('photo[title]', this.state.title);
+      formData.append('photo[description]', this.state.description);
+      formData.append('photo[owner_id]', this.state.ownerId);
+
+      if (this.state.photoFile) {
+        formData.append('photo[picture]', this.state.photoFile);
+      }
+
+      this.props.action(formData).then(function () {
+        return _this3.props.history.push("/photos/".concat(_this3.props.currentUser.display_name));
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
-        className: "add-nav"
+      var prev, submit, inputTitle, inputDescription, fileF;
+      prev = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: this.state.photoUrl
+      }) : null;
+      submit = this.handleSubmit;
+      inputTitle = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "photo-title",
+        value: this.state.title,
+        onChange: this.handleTitle,
+        placeholder: "Add title"
+      });
+      inputDescription = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "text",
+        className: "photo-description",
+        value: this.state.description,
+        onChange: this.handleDescription,
+        placeholder: "Add a description"
+      });
+      fileF = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "file",
+        onChange: this.handleFile,
+        className: "form-file"
+      });
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "content-new"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sidebar-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+        className: "change-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "addLabel",
+        id: "add-add",
         className: "btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/photos/upload/new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-folder-plus plus-fol"
       }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        id: "upload"
-      }, "Upload")));
+        id: "delete"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-times-circle ex-but"
+      }), "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        id: "upload1"
+      }, "Upload 1 Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "new-photo",
+        onSubmit: submit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, prev), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "photo-title"
+      }, inputTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        className: "photo-description"
+      }, inputDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "sub"
+      }, "Submit"))));
     }
   }]);
 
-  return PhotoFormNav;
+  return DuringUpload;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (PhotoFormNav);
+/* harmony default export */ __webpack_exports__["default"] = (DuringUpload);
 
 /***/ }),
 
@@ -1113,7 +1250,6 @@ function (_React$Component) {
     value: function render() {
       var _this = this;
 
-      debugger;
       var photos = this.props.photos.map(function (photo) {
         if (photo.owner_id === _this.props.currentUser.id) {
           return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_photo_index_item__WEBPACK_IMPORTED_MODULE_1__["default"], {
@@ -1124,9 +1260,7 @@ function (_React$Component) {
           });
         }
       });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photo-cover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "avatar",
@@ -1135,7 +1269,17 @@ function (_React$Component) {
         className: "fullName"
       }, "".concat(this.props.currentUser.fname, " ").concat(this.props.currentUser.lname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
         className: "displayname"
-      }, "".concat(this.props.currentUser.display_name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "".concat(this.props.currentUser.display_name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "profile-nav"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "about"
+      }, "About"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "photostream"
+      }, "Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "albums"
+      }, "Albums"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+        id: "faves"
+      }, "Faves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photo-div"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, photos)));
     }
@@ -1296,9 +1440,13 @@ function (_React$Component) {
   _inherits(PhotoShow, _React$Component);
 
   function PhotoShow(props) {
+    var _this;
+
     _classCallCheck(this, PhotoShow);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoShow).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoShow).call(this, props));
+    _this.photo = _this.props.photo;
+    return _this;
   }
 
   _createClass(PhotoShow, [{
@@ -1312,8 +1460,13 @@ function (_React$Component) {
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "pic-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/:display_name"
-      }, "Back to Photostream")));
+        to: "/photos/:display_name",
+        className: "back"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        class: "fas fa-arrow-left"
+      }), "Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        src: "".concat(this.photo.photoUrl)
+      })));
     }
   }]);
 
@@ -1345,7 +1498,8 @@ __webpack_require__.r(__webpack_exports__);
 var msp = function msp(state, ownProps) {
   return {
     currentUser: state.entities.users[state.session.id],
-    photo: state.entities.photos[ownProps.match.params.photoId]
+    photo: state.entities.photos[ownProps.match.params.photoId],
+    photos: Object.values(state.entities.photos)
   };
 };
 
@@ -1359,12 +1513,6 @@ var mdp = function mdp(dispatch) {
     },
     deletePhoto: function deletePhoto(id) {
       return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["deletePhoto"])(id));
-    },
-    openModal: function openModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('photo'));
-    },
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["closeModal"])());
     }
   };
 };
@@ -1385,9 +1533,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+/* harmony import */ var _before_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./before_upload */ "./frontend/components/photos/before_upload.jsx");
+/* harmony import */ var _during_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./during_upload */ "./frontend/components/photos/during_upload.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -1404,6 +1552,8 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+
 
 
 
@@ -1441,17 +1591,13 @@ function (_React$Component) {
         className: "photostream-photo"
       }, "Your Photostream")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         className: "dUser"
-      }, "Demo User"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-content-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", _defineProperty({
-        id: "add1"
-      }, "id", "content-upload"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/upload/new"
-      }, "Choose photos and videos to upload"))))));
+      }, "Demo User"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/photos/upload",
+        component: _before_upload__WEBPACK_IMPORTED_MODULE_2__["default"]
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        path: "/photos/upload/new",
+        component: _during_upload__WEBPACK_IMPORTED_MODULE_3__["default"]
+      })));
     }
   }]);
 
@@ -1493,274 +1639,6 @@ var mdp = function mdp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_upload__WEBPACK_IMPORTED_MODULE_1__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/photos/upload_index.jsx":
-/*!*****************************************************!*\
-  !*** ./frontend/components/photos/upload_index.jsx ***!
-  \*****************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-
-var UploadIndex =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(UploadIndex, _React$Component);
-
-  function UploadIndex(props) {
-    var _this;
-
-    _classCallCheck(this, UploadIndex);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(UploadIndex).call(this, props));
-    _this.state = _this.props.photo;
-    return _this;
-  }
-
-  _createClass(UploadIndex, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "add-content-content"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", _defineProperty({
-        id: "add1"
-      }, "id", "content-upload"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/upload/new"
-      }, "Choose photos and videos to upload")))));
-    }
-  }]);
-
-  return UploadIndex;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (UploadIndex);
-
-/***/ }),
-
-/***/ "./frontend/components/photos/upload_index_container.js":
-/*!**************************************************************!*\
-  !*** ./frontend/components/photos/upload_index_container.js ***!
-  \**************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _upload_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./upload_index */ "./frontend/components/photos/upload_index.jsx");
-
-
-
-var msp = function msp(state) {
-  return {};
-};
-
-var mdp = function mdp(dispatch) {
-  return {};
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_upload_index__WEBPACK_IMPORTED_MODULE_1__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/photos/upload_index_t.jsx":
-/*!*******************************************************!*\
-  !*** ./frontend/components/photos/upload_index_t.jsx ***!
-  \*******************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _create_form_sidebar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./create_form_sidebar */ "./frontend/components/photos/create_form_sidebar.jsx");
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-
-
-
-var UploadIndexT =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(UploadIndexT, _React$Component);
-
-  function UploadIndexT(props) {
-    var _this;
-
-    _classCallCheck(this, UploadIndexT);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(UploadIndexT).call(this, props));
-    _this.state = {
-      title: '',
-      description: '',
-      ownerId: _this.props.currentUser.id,
-      photoUrl: null,
-      photoFile: null
-    };
-    _this.handleTitle = _this.handleTitle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleDescription = _this.handleDescription.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    _this.handleFile = _this.handleFile.bind(_assertThisInitialized(_assertThisInitialized(_this)));
-    return _this;
-  }
-
-  _createClass(UploadIndexT, [{
-    key: "handleTitle",
-    value: function handleTitle(e) {
-      this.setState({
-        title: e.currentTarget.value
-      });
-    }
-  }, {
-    key: "handleDescription",
-    value: function handleDescription(e) {
-      this.setState({
-        description: e.currentTarget.value
-      });
-    }
-  }, {
-    key: "handleFile",
-    value: function handleFile(e) {
-      var _this2 = this;
-
-      var file = e.currentTarget.files[0];
-      var fileReader = new FileReader();
-
-      fileReader.onloadend = function () {
-        return _this2.setState({
-          photoFile: file,
-          photoUrl: fileReader.result
-        });
-      };
-
-      if (file) {
-        fileReader.readAsDataURL(file);
-      }
-    }
-  }, {
-    key: "componentDidMount",
-    value: function componentDidMount() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile,
-        className: "form-file"
-      });
-    }
-  }, {
-    key: "handleSubmit",
-    value: function handleSubmit(e) {
-      var _this3 = this;
-
-      e.preventDefault();
-      var formData = new FormData();
-      formData.append('photo[title]', this.state.title);
-      formData.append('photo[description]', this.state.description);
-      formData.append('photo[owner_id]', this.state.ownerId);
-
-      if (this.state.photoFile) {
-        formData.append('photo[picture]', this.state.photoFile);
-      }
-
-      this.props.action(formData).then(function () {
-        return _this3.props.history.push("/photos/".concat(_this3.props.currentUser.display_name));
-      });
-    }
-  }, {
-    key: "render",
-    value: function render() {
-      var prev, submit, inputTitle, inputDescription, fileF;
-      prev = this.state.photoUrl ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: this.state.photoUrl
-      }) : null;
-      submit = this.handleSubmit;
-      inputTitle = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        className: "photo-title",
-        value: this.state.title,
-        onChange: this.handleTitle,
-        placeholder: "Add title"
-      });
-      inputDescription = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        className: "photo-description",
-        value: this.state.description,
-        onChange: this.handleDescription,
-        placeholder: "Add a description"
-      });
-      fileF = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "file",
-        onChange: this.handleFile,
-        className: "form-file"
-      });
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "content-new"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_create_form_sidebar__WEBPACK_IMPORTED_MODULE_1__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        className: "new-photo",
-        onSubmit: submit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, prev), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "photo-title"
-      }, inputTitle), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-        className: "photo-description"
-      }, inputDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "sub"
-      }, "Submit"))));
-    }
-  }]);
-
-  return UploadIndexT;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (UploadIndexT);
 
 /***/ }),
 
@@ -2123,6 +2001,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_tools_footer__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../main_tools/footer */ "./frontend/components/main_tools/footer.jsx");
 /* harmony import */ var _main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../main_tools/main_nav_container */ "./frontend/components/main_tools/main_nav_container.jsx");
 /* harmony import */ var _homepage_explore_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../homepage/explore_container */ "./frontend/components/homepage/explore_container.js");
+/* harmony import */ var _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../photos/photo_index_container */ "./frontend/components/photos/photo_index_container.js");
+/* harmony import */ var _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../photos/photo_show_container */ "./frontend/components/photos/photo_show_container.jsx");
+
+
 
 
 
@@ -2172,6 +2054,14 @@ var Splash = function Splash(props) {
     }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
       path: "/explore",
       component: _homepage_explore_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      exact: true,
+      path: "/photos/:display_name",
+      component: _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_6__["default"]
+    }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      exact: true,
+      path: "/photos/:display_name/:id",
+      component: _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_7__["default"]
     })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
   };
 
