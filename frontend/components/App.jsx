@@ -13,14 +13,12 @@ import PhotoShowContainer from './photos/photo_show_container';
 
 class App extends React.Component {
   render () {
+    const path = window.location.hash;
+    debugger
     return (
       <div className="main-container">
         <Modal />
-          <AuthRoute path='/' component={SplashContainer} />
-          <Switch>
-            <ProtectedRoute exact path='/photos/upload' component={Upload} />
-            <ProtectedRoute path='/' component={SplashContainer} />
-          </Switch>
+        <SplashContainer />
       </div>
     );
   }

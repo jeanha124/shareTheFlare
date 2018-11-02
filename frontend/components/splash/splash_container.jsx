@@ -2,9 +2,12 @@ import { connect } from 'react-redux';
 import Splash from './splash';
 import { logout } from '../../actions/session_actions';
 import { openModal } from '../../actions/modal_actions';
+import { withRouter } from 'react-router-dom';
 
 
-const msp = state => {
+const msp = (state, ownProps) => {
+  debugger
+  ownProps.history.push(ownProps.location.pathname);
   return {
     currentUser: state.entities.users[state.session.id]
   };
@@ -17,4 +20,4 @@ const mdp = dispatch => {
   };
 };
 
-export default connect(msp, mdp)(Splash);
+export default withRouter(connect(msp, mdp)(Splash));

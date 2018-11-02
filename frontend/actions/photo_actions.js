@@ -7,7 +7,7 @@ export const REMOVE_PHOTO = 'REMOVE_PHOTO';
 export const receiveAllPhotos = () => {
   return dispatch => {
     return PhotoApiUtil.fetchAllPhotos().then(photos => {
-      dispatch({type: RECEIVE_ALL_PHOTOS, photos});
+      return dispatch({type: RECEIVE_ALL_PHOTOS, photos});
     });
   }; 
 };
@@ -15,7 +15,7 @@ export const receiveAllPhotos = () => {
 export const receivePhoto = (id) => {
   return dispatch => {
     return PhotoApiUtil.fetchPhoto(id).then(photo => {
-      dispatch({type: RECEIVE_PHOTO, photo});
+      return dispatch({type: RECEIVE_PHOTO, photo});
     });
   }; 
 };
@@ -23,7 +23,7 @@ export const receivePhoto = (id) => {
 export const createPhoto = (photo) => {
   return dispatch => {
     return PhotoApiUtil.createPhoto(photo).then(photo => {
-      dispatch({type: RECEIVE_PHOTO, photo});
+      return dispatch({type: RECEIVE_PHOTO, photo});
     });
   }; 
 };
@@ -31,7 +31,7 @@ export const createPhoto = (photo) => {
 export const updatePhoto = (photo) => {
   return dispatch => {
     return PhotoApiUtil.updatePhoto(photo).then(photo => {
-      dispatch({type: RECEIVE_PHOTO, photo});
+      return dispatch({type: RECEIVE_PHOTO, photo});
     });
   }; 
 };
@@ -39,7 +39,7 @@ export const updatePhoto = (photo) => {
 export const deletePhoto = (photoId) => {
   return dispatch => {
     return PhotoApiUtil.deletePhoto(photoId).then(photo => {
-      dispatch({type: REMOVE_PHOTO, photoId});
+     return dispatch({type: REMOVE_PHOTO, photoId});
     });
   }; 
 };

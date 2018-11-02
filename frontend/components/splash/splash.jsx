@@ -1,14 +1,17 @@
 import React from 'react';
-import { Link, Route, Switch } from 'react-router-dom';
+import { Link, Route, Switch, withRouter } from 'react-router-dom';
 import Homepage from '../homepage/homepage_container';
 import Footer from '../main_tools/footer';
 import MainNav from '../main_tools/main_nav_container';
 import Explore from '../homepage/explore_container';
 import PhotoIndex from '../photos/photo_index_container';
 import PhotoShow from '../photos/photo_show_container';
+import Upload from '../photos/upload_container';
+import SplashContainer from '../splash/splash_container';
+import { AuthRoute, ProtectedRoute } from '../../util/route_util';
 
 const Splash = props => {
-
+debugger
   const sessionLinks = () => (
     <React.Fragment>
       <nav className="splash-auth">
@@ -29,23 +32,24 @@ const Splash = props => {
   
   const mainNav = () => (
     <React.Fragment>
+      <AuthRoute path='/' component={SplashContainer} />
       <MainNav />
-      <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/explore' component={Explore} />
+        <Route exact path='/explore' component={Explore} />
         <Route exact path='/photos/:display_name' component={PhotoIndex} />
-        <Route exact path='/photos/:display_name/:id' component={PhotoShow} />
-      </Switch>
+        <Route exact path='/photos/:display_name/:photoId' component={PhotoShow} />
+        <Route exact path='/' component={Homepage} />
       <Footer />
+      <ProtectedRoute exact path='/photos/upload' component={Upload} />
+      <ProtectedRoute path='/' component={SplashContainer} />
     </React.Fragment>
   );
-  
+  debugger
   return (
     props.currentUser ? mainNav() : sessionLinks()
     );
   };
   
-  export default Splash;
+  export default withRouter(Splash);
   
  
   

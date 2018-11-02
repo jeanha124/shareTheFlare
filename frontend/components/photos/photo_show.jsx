@@ -7,15 +7,15 @@ class PhotoShow extends React.Component {
     this.photo = this.props.photo;
   }
   componentDidMount(){
-    this.props.receivePhoto(this.props.match.params.photoId);
+    this.props.receivePhoto(parseInt(this.props.match.params.photoId));
   }
   
   render(){
     return (
       <div>
         <div className="pic-container">
-          <Link to='/photos/:display_name' className="back"><i class="fas fa-arrow-left"></i>Back to Photostream</Link>
-          <img src={`${this.photo.photoUrl}`} />
+          <Link to='/photos/:display_name' className="back"><i className="fas fa-arrow-left"></i>Back to Photostream</Link>
+          <img src={`${this.photo}`} />
         </div>
       </div>
     );
