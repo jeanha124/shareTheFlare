@@ -6,8 +6,6 @@ import { withRouter } from 'react-router-dom';
 
 
 const msp = (state, ownProps) => {
-  debugger
-  ownProps.history.push(ownProps.location.pathname);
   return {
     currentUser: state.entities.users[state.session.id]
   };

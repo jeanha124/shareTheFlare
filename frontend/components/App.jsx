@@ -2,7 +2,7 @@ import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import SplashContainer from './splash/splash_container';
 import Modal from './../modals/modal';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 // import HomepageContainer from './homepage/homepage_container';
 import Upload from './photos/upload_container';
 import UserNavContainer from './users/user_nav_container';
@@ -14,11 +14,11 @@ import PhotoShowContainer from './photos/photo_show_container';
 class App extends React.Component {
   render () {
     const path = window.location.hash;
-    debugger
     return (
       <div className="main-container">
         <Modal />
-        <SplashContainer />
+          <Route path='/' component={SplashContainer} />
+          <ProtectedRoute path='/' component={SplashContainer} />
       </div>
     );
   }
@@ -26,6 +26,7 @@ class App extends React.Component {
 
 export default App;
 
+{/* <ProtectedRoute exact path='/photos/upload' component={Upload} /> */}
 
 {/* <Modal />
     <AuthRoute exact path='/' component={GreetingContainer} />
