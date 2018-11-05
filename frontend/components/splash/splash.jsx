@@ -32,10 +32,10 @@ class Splash extends React.Component {
   const mainNav = () => (
     <React.Fragment>
       <MainNav />
-        <Route exact path='/explore' component={Explore} />
-        <Route exact path='/photos/:display_name' component={PhotoIndex} />
-        <Route exact path='/photos/:display_name/:photoId' component={PhotoShow} />
-        <Route exact path='/' component={Homepage} />
+      <Route exact path='/explore' component={Explore} />
+      <Route exact path='/photos/:display_name' component={PhotoIndex} />
+      <Route exact path='/photos/:display_name/:photoId' component={PhotoShow} />
+      <Route exact path='/' component={Homepage} />
       <Footer />
     </React.Fragment>
   );

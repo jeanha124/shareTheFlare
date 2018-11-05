@@ -361,9 +361,6 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_modals_modal__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_4__["Route"], {
         path: "/",
         component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
-        path: "/",
-        component: _splash_splash_container__WEBPACK_IMPORTED_MODULE_2__["default"]
       }));
     }
   }]);
@@ -1466,7 +1463,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-arrow-left"
       }), "Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        src: "".concat(this.photo)
+        src: "".concat(this.photo.photoUrl)
       })));
     }
   }]);
@@ -1497,9 +1494,11 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var msp = function msp(state, ownProps) {
+  debugger;
+  var photoId = parseInt(ownProps.match.params.photoId) || 0;
   return {
     currentUser: state.entities.users[state.session.id],
-    photo: state.entities.photos[ownProps.match.params.photoId]
+    photo: state.entities.photos[photoId] || {}
   };
 };
 
@@ -2367,6 +2366,7 @@ var photosReducer = function photosReducer() {
       return action.photos;
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_PHOTO"]:
+      debugger;
       return lodash_merge__WEBPACK_IMPORTED_MODULE_1___default()({}, state, _defineProperty({}, action.photo.id, action.photo));
 
     case _actions_photo_actions__WEBPACK_IMPORTED_MODULE_0__["REMOVE_PHOTO"]:

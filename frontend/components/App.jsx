@@ -18,7 +18,6 @@ class App extends React.Component {
       <div className="main-container">
         <Modal />
           <Route path='/' component={SplashContainer} />
-          <ProtectedRoute path='/' component={SplashContainer} />
       </div>
     );
   }

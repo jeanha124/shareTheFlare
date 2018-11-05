@@ -4,9 +4,11 @@ import { receivePhoto, updatePhoto, deletePhoto } from '../../actions/photo_acti
 import { openModal, closeModal } from '../../actions/modal_actions';
 
 const msp = (state, ownProps) => {
+  debugger
+  const photoId = parseInt(ownProps.match.params.photoId) || 0;
   return {
     currentUser: state.entities.users[state.session.id],
-    photo: state.entities.photos[ownProps.match.params.photoId],
+    photo: state.entities.photos[photoId] || {},
   };
 };
 

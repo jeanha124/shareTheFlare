@@ -16,7 +16,7 @@ class PhotoShow extends React.Component {
       <div>
         <div className="pic-container">
           <Link to={`/photos/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i>Back to Photostream</Link>
-          <img src={`${this.photo}`} />
+          <img src={`${this.photo.photoUrl}`} />
         </div>
       </div>
     );
