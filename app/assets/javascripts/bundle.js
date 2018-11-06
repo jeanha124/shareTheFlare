@@ -150,6 +150,7 @@ var receiveAllPhotos = function receiveAllPhotos() {
 var receivePhoto = function receivePhoto(id) {
   return function (dispatch) {
     return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhoto"](id).then(function (photo) {
+      debugger;
       return dispatch({
         type: RECEIVE_PHOTO,
         photo: photo
@@ -1485,7 +1486,6 @@ function (_React$Component) {
     _classCallCheck(this, PhotoShow);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoShow).call(this, props));
-    _this.photo = _this.props.photo;
     _this.currentUser = _this.props.currentUser;
     return _this;
   }
@@ -1507,7 +1507,7 @@ function (_React$Component) {
         className: "fas fa-arrow-left"
       }), "Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "superfun-image",
-        src: "".concat(this.photo.photoUrl)
+        src: "".concat(this.props.photo.photoUrl)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);

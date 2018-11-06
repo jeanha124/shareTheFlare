@@ -15,6 +15,7 @@ export const receiveAllPhotos = () => {
 export const receivePhoto = (id) => {
   return dispatch => {
     return PhotoApiUtil.fetchPhoto(id).then(photo => {
+      debugger
       return dispatch({type: RECEIVE_PHOTO, photo});
     });
   }; 
