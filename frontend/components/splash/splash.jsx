@@ -1,18 +1,13 @@
 import React from 'react';
-import { Link, Route, Switch, withRouter } from 'react-router-dom';
-import Homepage from '../homepage/homepage_container';
+import { Link } from 'react-router-dom';
 import Footer from '../main_tools/footer';
-import MainNav from '../main_tools/main_nav_container';
-import Explore from '../homepage/explore_container';
-import PhotoIndex from '../photos/photo_index_container';
-import PhotoShow from '../photos/photo_show_container';
 
 class Splash extends React.Component {
   constructor (props){
     super(props);
   }
   render (){
-    const sessionLinks = () => (
+    return (
     <React.Fragment>
       <nav className="splash-auth">
         <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
@@ -28,24 +23,14 @@ class Splash extends React.Component {
       </div>
       <Footer />
     </React.Fragment>
-  );
-  const mainNav = () => (
-    <React.Fragment>
-      <MainNav />
-      <Route exact path='/explore' component={Explore} />
-      <Route exact path='/photos/:display_name' component={PhotoIndex} />
-      <Route exact path='/photos/:display_name/:photoId' component={PhotoShow} />
-      <Route exact path='/' component={Homepage} />
-      <Footer />
-    </React.Fragment>
-  );
-
-  return (
-    this.props.currentUser ? mainNav() : sessionLinks()
     );
+
   }
 }
 
+// return (
+//   this.props.currentUser ? mainNav() : sessionLinks()
+//   );
 
 export default Splash;
   

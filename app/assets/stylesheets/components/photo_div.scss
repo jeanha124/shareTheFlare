@@ -54,5 +54,10 @@
 
 .pic-container {
     background: grey;
-    height: 500px;
+    display: grid;
+    height: 700px;
+}
+
+.superfun-image {
+    max-width: 50%;
 }

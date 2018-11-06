@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import MainNav from '../main_tools/main_nav_container';
+import Footer from '../main_tools/footer';
 
 class PhotoShow extends React.Component {
   constructor(props){
@@ -10,15 +12,16 @@ class PhotoShow extends React.Component {
   componentDidMount(){
     this.props.receivePhoto(parseInt(this.props.match.params.photoId));
   }
-  
   render(){
     return (
-      <div>
+      <React.Fragment>
+        <MainNav />
         <div className="pic-container">
-          <Link to={`/photos/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i>Back to Photostream</Link>
-          <img src={`${this.photo.photoUrl}`} />
+          <Link to={`/photos/~/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i>Back to Photostream</Link>
+          <img className='superfun-image'src={`${this.photo.photoUrl}`} />
         </div>
-      </div>
+        <Footer />
+      </React.Fragment>
     );
   }
 }

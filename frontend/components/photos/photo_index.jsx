@@ -1,5 +1,7 @@
 import React from 'react';
 import PhotoIndexItem from './photo_index_item';
+import Footer from '../main_tools/footer';
+import MainNav from '../main_tools/main_nav_container';
 
 class PhotoIndex extends React.Component {
   constructor(props){
@@ -16,6 +18,7 @@ class PhotoIndex extends React.Component {
     });
     return (
       <React.Fragment>
+        <MainNav />
         <div className="cover">
           <img className="avatar" src="https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png" />
             <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
@@ -30,6 +33,7 @@ class PhotoIndex extends React.Component {
         <div className="photo-div">
           <ul>{photos}</ul>
         </div>
+        <Footer />
       </React.Fragment>
     );
   }

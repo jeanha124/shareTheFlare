@@ -1,10 +1,14 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import SplashContainer from './splash/splash_container';
 import Modal from './../modals/modal';
 import { Switch, Route } from 'react-router-dom';
+import Splash from './splash/splash_container';
 // import HomepageContainer from './homepage/homepage_container';
 import Upload from './photos/upload_container';
+import Homepage from './homepage/homepage_container';
+import Explore from './homepage/explore_container';
+import PhotoIndex from './photos/photo_index_container';
+import PhotoShow from './photos/photo_show_container';
 import UserNavContainer from './users/user_nav_container';
 import PhotoIndexContainer from './photos/photo_index_container';
 import CreatePhotoFormContainer from './photos/create_photo_form_container';
@@ -17,7 +21,12 @@ class App extends React.Component {
     return (
       <div className="main-container">
         <Modal />
-          <Route path='/' component={SplashContainer} />
+        <AuthRoute exact path='/' component={Splash} />
+        <ProtectedRoute exact path='/' component={Homepage} />
+        <Route exact path='/explore' component={Explore} />
+        <Route exact path='/photos/upload' component={Upload} />
+        <Route exact path='/photos/~/:display_name' component={PhotoIndex} />
+        <Route exact path='/photos/~/:display_name/:photoId' component={PhotoShow} />
       </div>
     );
   }

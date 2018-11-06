@@ -72,7 +72,7 @@ class DuringUpload extends React.Component {
                 <Link to='/photos/upload/new'><i className="fas fa-folder-plus plus-fol"></i>Add</Link>
               </button>
               <button id="delete"><i className="fas fa-times-circle ex-but"></i>Delete</button>
-              <button id="upload1">Upload 1 Photo</button>
+              <button id="upload1">Upload Photo</button>
             </nav>
             <form className="new-photo" onSubmit={submit}>
               <ul>
