@@ -1508,7 +1508,10 @@ function (_React$Component) {
       }), "Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "superfun-image",
         src: "".concat(this.props.photo.photoUrl)
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "avatar",
+        src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.photo.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
 

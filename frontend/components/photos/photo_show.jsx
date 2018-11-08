@@ -19,6 +19,13 @@ class PhotoShow extends React.Component {
           <Link to={`/photos/~/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i>Back to Photostream</Link>
           <img className='superfun-image'src={`${this.props.photo.photoUrl}`} />
         </div>
+        <content>
+          <div>
+            <img className="avatar" src="https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"/>
+            <span>{this.props.photo.title}</span>
+            <span>{this.props.photo.description}</span>
+          </div>
+        </content>
         <Footer />
       </React.Fragment>
     );
