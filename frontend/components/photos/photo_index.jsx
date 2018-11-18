@@ -31,7 +31,7 @@ class PhotoIndex extends React.Component {
             <li id="faves">Faves</li>
         </ul>
         <div className="photo-div">
-          <ul>{photos}</ul>
+          <ul className="photo-index">{photos}</ul>
         </div>
         <Footer />
       </React.Fragment>

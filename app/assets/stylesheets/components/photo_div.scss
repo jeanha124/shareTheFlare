@@ -55,19 +55,28 @@
 .pic-container {
     background: #212124;
     display: flex;
-    max-height: 620px;
+    max-height: 582px;
     /* max-width: 1280px; */
     position: relative;
 }
 
 .superfun-image {
+    background-size: cover;
     position: relative;
-    left: 260px;
-    max-width: 50%;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    max-width: 900px;
+    max-height: 500px;
+    display: block;
 }
 
 .back {
     position: relative;
-    left: 90px;
+    left: 15px;
     color: white;
+}
+
+.photo-index {
+    background-size: contain;
 }

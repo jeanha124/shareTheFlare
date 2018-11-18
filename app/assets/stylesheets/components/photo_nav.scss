@@ -2,7 +2,14 @@
   background: white;
   color: #666;
   font-weight: 700;
-  height: 45px;
+  height: 50px;
+  font-size: 17px;
+  justify-items: baseline;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: auto;
 }
 
 
@@ -13,11 +20,9 @@
 }
 
 .photo-nav-ul {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 293px 173px 1fr 218px;
-  height: inherit;
-  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 500px;
 }
 
 .photostream-photo {
@@ -29,15 +34,15 @@
 }
 
 .add-nav {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: 163px auto 223px;
-  grid-template-rows: 33px;
   height: 33px;
+  justify-items: baseline;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
   background: #f2f0f0;
   border: 1px solid #ccc;
   font-size: 14px;
-  align-items: center;
+  padding: 0 5%;
 }
 
 #addLabel {
@@ -72,10 +77,7 @@
 }
 
 .change-nav {
-  display: grid;
-  grid-gap: 20px;
-  grid-template-columns: repeat(11, 1fr);
-  grid-template-rows: 33px;
+  display: flex;
   height: 33px;
   background: #f2f0f0;
   border: 1px solid #ccc;
@@ -84,8 +86,6 @@
 }
 
 #add-add {
-  grid-column: 2;
-  justify-self: end;
   width: 40px;
   padding: 3px 8px;
 }

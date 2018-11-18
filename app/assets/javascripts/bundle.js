@@ -150,7 +150,6 @@ var receiveAllPhotos = function receiveAllPhotos() {
 var receivePhoto = function receivePhoto(id) {
   return function (dispatch) {
     return _util_photo_api_util__WEBPACK_IMPORTED_MODULE_0__["fetchPhoto"](id).then(function (photo) {
-      debugger;
       return dispatch({
         type: RECEIVE_PHOTO,
         photo: photo
@@ -311,8 +310,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./photos/photo_index_container */ "./frontend/components/photos/photo_index_container.js");
 /* harmony import */ var _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./photos/photo_show_container */ "./frontend/components/photos/photo_show_container.jsx");
 /* harmony import */ var _users_user_nav_container__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./users/user_nav_container */ "./frontend/components/users/user_nav_container.jsx");
-/* harmony import */ var _photos_create_photo_form_container__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./photos/create_photo_form_container */ "./frontend/components/photos/create_photo_form_container.jsx");
-/* harmony import */ var _photos_photo_form_nav2__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./photos/photo_form_nav2 */ "./frontend/components/photos/photo_form_nav2.jsx");
+/* harmony import */ var _photos_photo_form_nav2__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./photos/photo_form_nav2 */ "./frontend/components/photos/photo_form_nav2.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -336,8 +334,6 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
  // import HomepageContainer from './homepage/homepage_container';
-
-
 
 
 
@@ -378,7 +374,6 @@ function (_React$Component) {
         path: "/explore",
         component: _homepage_explore_container__WEBPACK_IMPORTED_MODULE_7__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
-        exact: true,
         path: "/photos/upload",
         component: _photos_upload_container__WEBPACK_IMPORTED_MODULE_5__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
@@ -783,6 +778,8 @@ __webpack_require__.r(__webpack_exports__);
 var mainNav = function mainNav(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
     className: "left-nav"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "left"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
     to: "/"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
@@ -795,7 +792,9 @@ var mainNav = function mainNav(props) {
     to: "/explore"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h2", {
     className: "explore"
-  }, "Explore")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+  }, "Explore"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+    className: "right"
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
     className: "main-search",
     type: "text",
     placeholder: "Photos..."
@@ -811,7 +810,7 @@ var mainNav = function mainNav(props) {
   })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
     className: "header-btn",
     onClick: props.logout
-  }, "Log Out")));
+  }, "Log Out"))));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (mainNav);
@@ -930,40 +929,6 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (BeforeUpload);
-
-/***/ }),
-
-/***/ "./frontend/components/photos/create_photo_form_container.jsx":
-/*!********************************************************************!*\
-  !*** ./frontend/components/photos/create_photo_form_container.jsx ***!
-  \********************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
-/* harmony import */ var _during_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./during_upload */ "./frontend/components/photos/during_upload.jsx");
-
-
-
-
-var msp = function msp(state) {
-  return {
-    currentUser: state.entities.users[state.session.id]
-  };
-};
-
-var mdp = function mdp(dispatch) {
-  return {
-    action: function action(photo) {
-      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["createPhoto"])(photo));
-    }
-  };
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_during_upload__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1115,13 +1080,7 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content-new"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "sidebar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "inner-sidebar"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
-        className: "sidebar-ul"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
         className: "change-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "add-add",
@@ -1130,13 +1089,21 @@ function (_React$Component) {
         to: "/photos/upload/new"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-folder-plus plus-fol"
-      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }), "Add")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "add-del"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "delete"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-times-circle ex-but"
       }), "Delete"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "upload1"
-      }, "Upload Photo")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "Upload Photo"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "inner-sidebar"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "sidebar-ul"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Editing 1 photo:"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Tags"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, "Albums")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "new-photo",
         onSubmit: submit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, fileF, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, prev), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
@@ -1153,6 +1120,40 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (DuringUpload);
+
+/***/ }),
+
+/***/ "./frontend/components/photos/during_upload_container.js":
+/*!***************************************************************!*\
+  !*** ./frontend/components/photos/during_upload_container.js ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
+/* harmony import */ var _during_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./during_upload */ "./frontend/components/photos/during_upload.jsx");
+
+
+
+
+var msp = function msp(state) {
+  return {
+    currentUser: state.entities.users[state.session.id]
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    action: function action(photo) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_1__["createPhoto"])(photo));
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_during_upload__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 
@@ -1318,7 +1319,9 @@ function (_React$Component) {
         id: "faves"
       }, "Faves")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photo-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, photos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "photo-index"
+      }, photos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -1505,7 +1508,7 @@ function (_React$Component) {
         className: "back"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
         className: "fas fa-arrow-left"
-      }), "Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+      }), " Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "superfun-image",
         src: "".concat(this.props.photo.photoUrl)
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
@@ -1577,7 +1580,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 /* harmony import */ var _before_upload__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./before_upload */ "./frontend/components/photos/before_upload.jsx");
-/* harmony import */ var _during_upload__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./during_upload */ "./frontend/components/photos/during_upload.jsx");
+/* harmony import */ var _during_upload_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./during_upload_container */ "./frontend/components/photos/during_upload_container.js");
 /* harmony import */ var _main_tools_footer__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../main_tools/footer */ "./frontend/components/main_tools/footer.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
@@ -1626,22 +1629,23 @@ function (_React$Component) {
         className: "photo-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "photo-nav-ul"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "photo-logo"
-      }, "Share the Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, "Share the Flare"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/photos/".concat(this.currentUser.display_name)
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "photostream-photo"
-      }, "Your Photostream")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
+      }, "Your Photostream")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "dUser"
-      }, "Demo User"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+      }, "Demo User")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Switch"], null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+        exact: true,
         path: "/photos/upload",
         component: _before_upload__WEBPACK_IMPORTED_MODULE_2__["default"]
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
         path: "/photos/upload/new",
-        component: _during_upload__WEBPACK_IMPORTED_MODULE_3__["default"]
+        component: _during_upload_container__WEBPACK_IMPORTED_MODULE_3__["default"]
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_4__["default"], null));
     }
   }]);
@@ -2669,7 +2673,6 @@ var fetchAllPhotos = function fetchAllPhotos() {
   });
 };
 var fetchPhoto = function fetchPhoto(id) {
-  debugger;
   return $.ajax({
     method: 'GET',
     url: "api/photos/".concat(id)

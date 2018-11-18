@@ -10,8 +10,8 @@ import Explore from './homepage/explore_container';
 import PhotoIndex from './photos/photo_index_container';
 import PhotoShow from './photos/photo_show_container';
 import UserNavContainer from './users/user_nav_container';
-import PhotoIndexContainer from './photos/photo_index_container';
-import CreatePhotoFormContainer from './photos/create_photo_form_container';
+
+
 import PhotoFormNav2 from './photos/photo_form_nav2';
 import PhotoShowContainer from './photos/photo_show_container';
 
@@ -24,7 +24,7 @@ class App extends React.Component {
         <AuthRoute exact path='/' component={Splash} />
         <ProtectedRoute exact path='/' component={Homepage} />
         <Route exact path='/explore' component={Explore} />
-        <Route exact path='/photos/upload' component={Upload} />
+        <Route path='/photos/upload' component={Upload} />
         <Route exact path='/photos/~/:display_name' component={PhotoIndex} />
         <Route exact path='/photos/~/:display_name/:photoId' component={PhotoShow} />
       </div>
