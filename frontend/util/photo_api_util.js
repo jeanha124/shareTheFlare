@@ -36,3 +36,34 @@ export const deletePhoto = (photoId) => {
     url: `api/photos/${photoId}`,
   });
 };
+
+
+export const createComment = comment => {
+  return $.ajax ({
+    method: 'POST',
+    url: `api/photos/${comment.photo_id}/comments`,
+    data: { comment }
+  });
+};
+
+export const deleteComment = id => {
+  return $.ajax ({
+    method: 'DELETE',
+    url: `api/comments`,
+  });
+};
+
+export const createTag = tag => {
+  return $.ajax ({
+    method: 'POST',
+    url: `api/photos/${tag.photo_id}/tags`,
+    data: { tag }
+  });
+};
+
+export const deleteTag = id => {
+  return $.ajax ({
+    method: 'DELETE',
+    url: `api/tags`,
+  });
+};
