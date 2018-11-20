@@ -58,7 +58,7 @@ export const createComment = comment => {
 
 export const removeComment = commentId => {
   return dispatch => {
-    return PhotoApiUtil.removeComment(commentId).then(comment => {
+    return PhotoApiUtil.deleteComment(commentId).then(comment => {
       return dispatch({type: REMOVE_COMMENT, commentId});
     });
   };
@@ -74,7 +74,7 @@ export const createTag = tag => {
 
 export const removeTag = tagId => {
   return dispatch => {
-    return PhotoApiUtil.removeTag(tagId).then(tag => {
+    return PhotoApiUtil.deleteTag(tagId).then(tag => {
       return dispatch({type: REMOVE_TAG, tagId});
     });
   };
