@@ -3,8 +3,17 @@ import { createPhoto } from '../../actions/photo_actions';
 import DuringUpload from './during_upload';
 
 const msp = state => {
+  const photo = {
+    title: '',
+    description: '',
+    currentUserId: state.entities.users[state.session.id].id,
+    photoUrl: null,
+    photoFile: null,
+  };
+  const formType = 'Create Photo';
   return {
-    currentUser: state.entities.users[state.session.id]
+    photo,
+    formType
   };
 };
 

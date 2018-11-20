@@ -4,13 +4,7 @@ import { Link } from 'react-router-dom';
 class DuringUpload extends React.Component {
   constructor(props){
     super(props);
-    this.state = {
-      title: '',
-      description: '',
-      ownerId: this.props.currentUser.id,
-      photoUrl: null,
-      photoFile: null,
-    };
+    this.state = this.props.photo;
     this.handleTitle = this.handleTitle.bind(this);
     this.handleDescription = this.handleDescription.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -40,7 +34,7 @@ class DuringUpload extends React.Component {
     const formData = new FormData();
     formData.append('photo[title]', this.state.title);
     formData.append('photo[description]', this.state.description);
-    formData.append('photo[owner_id]', this.state.ownerId);
+    formData.append('photo[currentUserId]', this.state.ownerId);
     if (this.state.photoFile) {
       formData.append('photo[picture]', this.state.photoFile);
     }

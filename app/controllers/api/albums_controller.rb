@@ -38,6 +38,8 @@ class Api::AlbumsController < ApplicationController
     
   end
 
+
+  private
   def album_params
     params.require(:album).permit(:owner_id, :title);
   end

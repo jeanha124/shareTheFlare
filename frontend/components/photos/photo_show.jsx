@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import MainNav from '../main_tools/main_nav_container';
 import Footer from '../main_tools/footer';
+import EditPhoto from './edit_photo_container';
 
 class PhotoShow extends React.Component {
   constructor(props){
@@ -18,6 +19,7 @@ class PhotoShow extends React.Component {
         <div className="pic-container">
           <Link to={`/photos/~/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
           <img className='superfun-image'src={`${this.props.photo.photoUrl}`} />
+          <i class="fas fa-edit" onClick={<EditPhoto />}></i>
         </div>
         <content>
           <div>
