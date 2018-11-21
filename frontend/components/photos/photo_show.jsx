@@ -19,7 +19,7 @@ class PhotoShow extends React.Component {
         <div className="pic-container">
           <Link to={`/photos/~/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
           <img className='superfun-image'src={`${this.props.photo.photoUrl}`} />
-          <i class="fas fa-edit" onClick={<EditPhoto />}></i>
+          <i className="fas fa-edit" ></i>
         </div>
         <content>
           <div>
@@ -27,6 +27,7 @@ class PhotoShow extends React.Component {
             <span>{this.props.photo.title}</span>
             <span>{this.props.photo.description}</span>
           </div>
+          
         </content>
         <Footer />
       </React.Fragment>
@@ -35,3 +36,8 @@ class PhotoShow extends React.Component {
 }
 
 export default PhotoShow;
+
+{/* <div>
+            <span>{this.props.comments.title}</span>
+            <span>{this.props.comments.body}</span>
+          </div> */}

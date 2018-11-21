@@ -10,15 +10,18 @@ class PhotoIndexItem extends React.Component {
   render(){
     return (
       <div className="curr-photo">
-        <Link to={`/photos/~/${this.currentUser.display_name}/${this.photo.id}`}><img src={this.photo.photoUrl} /></Link>
-        <div className="photo-info">
-          <h1>{this.photo.title}</h1>
-          <p>{this.photo.description}</p>
-          <Link to={`/photos/~/${this.currentUser.display_name}`}>{this.currentUser.display_name}</Link>
-        </div>
+        <Link to={`/photos/~/${this.currentUser.display_name}/${this.photo.id}`}><img className="curr-photo-img"src={this.photo.photoUrl} /></Link>
       </div>
     );
   }
 }
 
 export default PhotoIndexItem;
+        
+        
+        
+        // <div className="photo-info">
+        //   <h1>{this.photo.title}</h1>
+        //   <p>{this.photo.description}</p>
+        //   <Link to={`/photos/~/${this.currentUser.display_name}`}>{this.currentUser.display_name}</Link>
+        // </div>

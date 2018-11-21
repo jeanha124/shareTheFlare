@@ -647,7 +647,9 @@ function (_React$Component) {
         className: "activity"
       }, "All Activity")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "photo-div"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", null, photos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+        className: "photo-index"
+      }, photos)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 
@@ -1588,19 +1590,20 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/photos/~/".concat(this.currentUser.display_name, "/").concat(this.photo.id)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+        className: "curr-photo-img",
         src: this.photo.photoUrl
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "photo-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, this.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, this.photo.description), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/~/".concat(this.currentUser.display_name)
-      }, this.currentUser.display_name)));
+      })));
     }
   }]);
 
   return PhotoIndexItem;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (PhotoIndexItem);
+/* harmony default export */ __webpack_exports__["default"] = (PhotoIndexItem); // <div className="photo-info">
+//   <h1>{this.photo.title}</h1>
+//   <p>{this.photo.description}</p>
+//   <Link to={`/photos/~/${this.currentUser.display_name}`}>{this.currentUser.display_name}</Link>
+// </div>
 
 /***/ }),
 
@@ -1677,8 +1680,7 @@ function (_React$Component) {
         className: "superfun-image",
         src: "".concat(this.props.photo.photoUrl)
       }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        class: "fas fa-edit",
-        onClick: react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_edit_photo_container__WEBPACK_IMPORTED_MODULE_4__["default"], null)
+        className: "fas fa-edit"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
         className: "avatar",
         src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
@@ -1690,6 +1692,12 @@ function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (PhotoShow);
+{
+  /* <div>
+             <span>{this.props.comments.title}</span>
+             <span>{this.props.comments.body}</span>
+           </div> */
+}
 
 /***/ }),
 
@@ -1705,6 +1713,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _photo_show__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./photo_show */ "./frontend/components/photos/photo_show.jsx");
 /* harmony import */ var _actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../actions/photo_actions */ "./frontend/actions/photo_actions.js");
+/* harmony import */ var _reducers_selectors__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../reducers/selectors */ "./frontend/reducers/selectors.js");
+
 
 
 
@@ -1713,7 +1723,9 @@ var msp = function msp(state, ownProps) {
   var photoId = parseInt(ownProps.match.params.photoId) || 0;
   return {
     currentUser: state.entities.users[state.session.id],
-    photo: state.entities.photos[photoId] || {}
+    photo: state.entities.photos[photoId] || {},
+    comments: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["getComments"])(state.entities.comments, photoId),
+    tags: Object(_reducers_selectors__WEBPACK_IMPORTED_MODULE_3__["getTags"])(state.entities.tags, photoId)
   };
 };
 
@@ -1727,6 +1739,18 @@ var mdp = function mdp(dispatch) {
     },
     deletePhoto: function deletePhoto(id) {
       return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["deletePhoto"])(id));
+    },
+    createComment: function createComment(id) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["createComment"])(id));
+    },
+    removeComment: function removeComment(id) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["removeComment"])(id));
+    },
+    createTag: function createTag(id) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["createTag"])(id));
+    },
+    removeTag: function removeTag(id) {
+      return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["removeTag"])(id));
     }
   };
 };
@@ -2644,6 +2668,40 @@ var rootReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])(
   ui: _ui_reducer__WEBPACK_IMPORTED_MODULE_4__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (rootReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/selectors.js":
+/*!****************************************!*\
+  !*** ./frontend/reducers/selectors.js ***!
+  \****************************************/
+/*! exports provided: getComments, getTags */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getComments", function() { return getComments; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "getTags", function() { return getTags; });
+var getComments = function getComments(state, photoId) {
+  var commentArr = [];
+  var comments = Object.values(state);
+  comments.forEach(function (comment) {
+    if (comment.photo_id === parseInt(photoId)) {
+      commentArr.push(comment);
+    }
+  });
+  return commentArr;
+};
+var getTags = function getTags(state, photoId) {
+  var tagArr = [];
+  var tags = Object.values(state);
+  tags.forEach(function (tag) {
+    if (tag.photo_id === parseInt(photoId)) {
+      tagArr.push(tag);
+    }
+  });
+  return tagArr;
+};
 
 /***/ }),
 

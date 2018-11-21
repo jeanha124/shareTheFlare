@@ -99,13 +99,24 @@
   text-align: center;
 }
 
-.curr-photo  a img {
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
-}
 
 .back {
   position: relative;
   top: 50px;
   left: 25px;
+}
+
+.curr-photo {
+  margin: 2px;
+  position: relative;
+  flex-grow: 1;
+  background-color: blue;
+}
+
+.curr-photo-img {
+  max-width: 100%;
+  min-width: 100%;
+  height: 200px;
+  object-fit: cover;
+  vertical-align: bottom;
 }

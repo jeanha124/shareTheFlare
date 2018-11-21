@@ -22,7 +22,7 @@ class Homepage extends React.Component {
           <h1 className="activity">All Activity</h1>
       </nav>
       <div className="photo-div">
-        <ul>{photos}</ul>
+        <ul className="photo-index">{photos}</ul>
       </div>
       <Footer />
     </React.Fragment>
