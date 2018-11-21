@@ -10,24 +10,28 @@ html, body {
   -o-background-size: cover;
   background-size: cover;
   overflow: hidden;
-  height: 107vh;
+  height: 93vh;
   font-family: Proxima Nova, helvetica nueue, helvetica, arial, sans-serif;
-  position: relative;
+  position: inherit;
   top: -64px;
 }
 
 .splash-auth {
-  display: grid;
-  grid-template-columns: 1fr auto auto repeat(3, 1fr);
-  grid-gap: 20px;
-  width: 1922px;
+  display: flex;
+  width: 100%;
   height: 65px;
   font-size: 21px;
-  justify-items: center;
+  justify-content: space-between;
   align-items: center;
   background: rgba(90, 88, 88, 0.6);
   position: fixed;
   z-index: 1;
+}
+
+.splash-losi {
+  display: flex;
+  width: 300px;
+  justify-content: space-evenly;
 }
 
 .logo {
@@ -44,7 +48,6 @@ html, body {
 .login {
   background: none;
   border: none;
-  grid-column: 5;
   justify-self: end;
 }
 .signup {
@@ -54,73 +57,58 @@ html, body {
   border-radius: 3px;
   color: black;
   font-size: 21px;
-  grid-column: 6;
-  justify-self: baseline;
 }
 
 .content {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-rows: 294.5px 106px 143.5px;
-  height: 640px;
-  grid-template-columns: 396px 801px auto;
-  grid-auto-flow: column;
-  justify-items: center;
+  display: block;
+  max-width: 50%;
+  margin: 0 auto;
+  position: relative;
+  top: 40%;
+  
 }
 
 .content-h1 {
-  grid-column: 2;
-  grid-row: 2;
+  margin: auto;
+  padding-bottom: 12px;
   width: 560px;
   font-size: 60px;
-  height: 69px;
+  
   text-shadow: 1px 1px black;
 }
 
 .content-h2 {
-  grid-row: 3;
-  grid-column: 2;
+  margin: auto;
+  padding-bottom: 15px;
   font-weight: 500;
+  width: 580px;
   font-size: 26px;
   text-align: center;
   text-shadow: 1px 1px black;
 }
 
 .signup-2 {
-  grid-column: 2;
-  grid-row: 4;
+  display: block;
+  margin: 0 auto;
   font-size: 24px;
   background: whitesmoke;
   color: black;
   border-radius: 5px;
   padding: 16px 58px;
 }
-.empty {
-  display: grid;
-  height: 174px;
-}
+
 .footer {
-  display: grid;
+  display: flex;
   background: black;
+  justify-content: space-evenly;
   height: 77px;
   position: relative;
-  bottom: -121px;
   color: white;
   font-weight: 700;
-  justify-items: baseline;
-  align-items: end;
+  align-items: center;
 }
 
-.footer-a {
-  grid-column: 2;
-}
 
-.footer-b {
-  grid-column: 3;
-}
-.footer-c {
-  grid-column: 4;
-}
 
 @media only screen and (max-width: 1400px) {
   .login-signup, .content, .empty, .footer {

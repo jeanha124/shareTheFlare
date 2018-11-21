@@ -11,8 +11,10 @@ class Splash extends React.Component {
     <React.Fragment>
       <nav className="splash-auth">
         <Link to='/'><h1 className="logo">Share The Flare</h1></Link>
-        <button className="login" onClick= { () => this.props.openModal('login') }>Login</button>
-        <button className="signup" onClick= { () => this.props.openModal('signup') }>Signup</button>
+        <div className="splash-losi">
+          <button className="login" onClick= { () => this.props.openModal('login') }>Login</button>
+          <button className="signup" onClick= { () => this.props.openModal('signup') }>Signup</button>
+        </div>
       </nav>
       <div className="launch-body">
         <div className="content">

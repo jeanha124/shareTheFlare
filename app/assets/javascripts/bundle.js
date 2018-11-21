@@ -805,9 +805,7 @@ var Footer = function Footer() {
     className: "footer-c"
   }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
     href: "https://www.jeanwooha.me"
-  }, "Porfolio")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-    className: "footer-a"
-  }));
+  }, "Porfolio")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Footer);
@@ -2283,7 +2281,9 @@ function (_React$Component) {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "logo"
-      }, "Share The Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Share The Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-losi"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "login",
         onClick: function onClick() {
           return _this.props.openModal('login');
@@ -2293,7 +2293,7 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this.props.openModal('signup');
         }
-      }, "Signup")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Signup"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "launch-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"
