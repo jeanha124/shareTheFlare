@@ -246,7 +246,7 @@ var removeTag = function removeTag(tagId) {
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, login, signup, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, CLEAR_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, clearErrors, login, signup, logout, updateUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -262,6 +262,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 /* harmony import */ var _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../util/session_api_util */ "./frontend/util/session_api_util.js");
 
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
@@ -308,6 +309,13 @@ var logout = function logout() {
   return function (dispatch) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["logout"]().then(function (user) {
       dispatch(logoutCurrentUser());
+    });
+  };
+};
+var updateUser = function updateUser(formData, id) {
+  return function (dispatch) {
+    return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["updateUser"](formData, id).then(function (user) {
+      return dispatch(receiveCurrentUser(user));
     });
   };
 };
@@ -421,18 +429,18 @@ function (_React$Component) {
         exact: true,
         path: "/",
         component: _homepage_homepage_container__WEBPACK_IMPORTED_MODULE_6__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         exact: true,
         path: "/explore",
         component: _homepage_explore_container__WEBPACK_IMPORTED_MODULE_7__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         path: "/photos/upload",
         component: _photos_upload_container__WEBPACK_IMPORTED_MODULE_5__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         exact: true,
         path: "/photos/~/:display_name",
         component: _photos_photo_index_container__WEBPACK_IMPORTED_MODULE_8__["default"]
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_3__["Route"], {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_1__["ProtectedRoute"], {
         exact: true,
         path: "/photos/~/:display_name/:photoId",
         component: _photos_photo_show_container__WEBPACK_IMPORTED_MODULE_9__["default"]
@@ -1438,14 +1446,32 @@ function (_React$Component) {
   function PhotoIndex(props) {
     _classCallCheck(this, PhotoIndex);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoIndex).call(this, props));
+    return _possibleConstructorReturn(this, _getPrototypeOf(PhotoIndex).call(this, props)); // this.state = {
+    //   avatar: null,
+    //   avatarURL : this.props.currentUser.avatar
+    // };
+    // this.handleFile = this.handleFile.bind(this);
   }
 
   _createClass(PhotoIndex, [{
     key: "componentDidMount",
     value: function componentDidMount() {
       this.props.receiveAllPhotos();
-    }
+    } // handleFile(e, field){
+    //   const file = e.currentTarget.files[0];
+    //   const fileReader = new FileReader();
+    //   fileReader.onloadend = () => {
+    //     this.setState({[field]: file, [field + "URL"]: fileReader.result }, () => {
+    //       const formData = new FormData();
+    //       formData.append('user[avatar]', this.state.avatar);
+    //       this.props.updateUser(formData, this.props.currentUser.id);
+    //     });
+    //   };
+    //   if (file) {
+    //     fileReader.readAsDataURL(file);
+    //   }
+    // }
+
   }, {
     key: "render",
     value: function render() {
@@ -1463,14 +1489,7 @@ function (_React$Component) {
       });
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "cover"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "avatar",
-        src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "fullName"
-      }, "".concat(this.props.currentUser.fname, " ").concat(this.props.currentUser.lname)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", {
-        className: "displayname"
-      }, "".concat(this.props.currentUser.display_name))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("ul", {
         className: "profile-nav"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
         id: "about"
@@ -1493,6 +1512,12 @@ function (_React$Component) {
 
 /* harmony default export */ __webpack_exports__["default"] = (PhotoIndex);
 /*<Link to={`/photos/${this.props.currentUser.display_name}/edit`}>Edit</Link>*/
+// <div className="user-profile-photo">
+//   <img className="avatar" src={this.state.avatarURL} alt="Select an Avatar" />
+//   <input type="file" style={{display: "none"}} onChange={(e) => this.handleFile(e, "avatar")} />
+//   <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
+//   <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
+// </div>
 
 /***/ }),
 
@@ -1523,7 +1548,9 @@ var mdp = function mdp(dispatch) {
   return {
     receiveAllPhotos: function receiveAllPhotos() {
       return dispatch(Object(_actions_photo_actions__WEBPACK_IMPORTED_MODULE_2__["receiveAllPhotos"])());
-    }
+    } // updateUser: (formData, id) => dispatch(updateUser(formData, id)),
+    // receiveCurrentUser: id => dispatch(receiveCurrentUser(id));
+
   };
 };
 
@@ -1824,7 +1851,7 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "photo-logo"
       }, "Share the Flare"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/".concat(this.currentUser.display_name)
+        to: "/photos/~/".concat(this.currentUser.display_name)
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "photostream-photo"
       }, "Your Photostream")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -3123,7 +3150,7 @@ var ProtectedRoute = Object(react_router_dom__WEBPACK_IMPORTED_MODULE_0__["withR
 /*!*******************************************!*\
   !*** ./frontend/util/session_api_util.js ***!
   \*******************************************/
-/*! exports provided: login, signup, logout */
+/*! exports provided: login, signup, logout, updateUser */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3131,6 +3158,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "updateUser", function() { return updateUser; });
 var login = function login(user) {
   return $.ajax({
     method: 'POST',
@@ -3153,6 +3181,15 @@ var logout = function logout() {
   return $.ajax({
     method: 'DELETE',
     url: 'api/session'
+  });
+};
+var updateUser = function updateUser(formData, id) {
+  return $.ajax({
+    method: 'PATCH',
+    url: "api/users/".concat(id),
+    data: formData,
+    contentType: false,
+    processData: false
   });
 };
 

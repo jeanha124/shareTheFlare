@@ -7,5 +7,7 @@
     json.owner_id @photo.owner_id
     json.created_at @photo.created_at
     json.photoUrl url_for(@photo.picture)
+    json.avatarURL url_for(@photo.avatar)
+    json.cover_photoURL url_for(@photo.cover_photo)
   # end
 

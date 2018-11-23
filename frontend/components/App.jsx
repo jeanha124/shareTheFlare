@@ -23,10 +23,10 @@ class App extends React.Component {
         <Modal />
         <AuthRoute exact path='/' component={Splash} />
         <ProtectedRoute exact path='/' component={Homepage} />
-        <Route exact path='/explore' component={Explore} />
-        <Route path='/photos/upload' component={Upload} />
-        <Route exact path='/photos/~/:display_name' component={PhotoIndex} />
-        <Route exact path='/photos/~/:display_name/:photoId' component={PhotoShow} />
+        <ProtectedRoute exact path='/explore' component={Explore} />
+        <ProtectedRoute path='/photos/upload' component={Upload} />
+        <ProtectedRoute exact path='/photos/~/:display_name' component={PhotoIndex} />
+        <ProtectedRoute exact path='/photos/~/:display_name/:photoId' component={PhotoShow} />
       </div>
     );
   }

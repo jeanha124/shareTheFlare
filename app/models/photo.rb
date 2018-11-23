@@ -17,6 +17,11 @@ class Photo < ApplicationRecord
   # validate :ensure_photo
 
   has_one_attached :picture
+
+  has_one_attached :avatar
+  has_one_attached :cover_photo
+
+
   belongs_to :owner,
     foreign_key: :owner_id,
     class_name: :User
@@ -29,10 +34,13 @@ class Photo < ApplicationRecord
   #   through: :photo_albums,
   #   source: :photo
 
-  # def ensure_photo
-  #   unless self.picture.attached?
-  #     errors[:picture] << "must be attached"
-  #   end
-  # end
+  def ensure_photo
+    unless self.avatar.attached?
+      errors[:photo] << "Avatar must be attached"
+    end
+    unless self.cover_photo.attached?
+      errors[:photo] << "Cover Photo must be attached"
+    end
+  end
 
 end

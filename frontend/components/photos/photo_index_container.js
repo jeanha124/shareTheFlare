@@ -11,7 +11,9 @@ const msp = state => {
 
 const mdp = dispatch => {
   return {
-    receiveAllPhotos: () => dispatch(receiveAllPhotos())
+    receiveAllPhotos: () => dispatch(receiveAllPhotos()),
+    // updateUser: (formData, id) => dispatch(updateUser(formData, id)),
+    // receiveCurrentUser: id => dispatch(receiveCurrentUser(id));
   };
 };
 
