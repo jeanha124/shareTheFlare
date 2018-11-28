@@ -1166,7 +1166,7 @@ function (_React$Component) {
         className: "photo-description"
       }, inputDescription)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "sub"
-      }, "Submit"))));
+      }, this.props.formType))));
     }
   }]);
 
@@ -1201,7 +1201,7 @@ var msp = function msp(state) {
     photoUrl: null,
     photoFile: null
   };
-  var formType = 'Create Photo';
+  var formType = 'Upload Photo';
   return {
     photo: photo,
     formType: formType
@@ -1257,14 +1257,20 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
-var msp = function msp(state, ownProps) {
+var msp = function msp(state) {
+  debugger;
   var defaultPhoto = {
     title: '',
     currentUserId: state.entities.users[state.session.id].id,
     photoUrl: null,
     photoFile: null
   };
-  var photo = state.photos[ownProps.match.params.photoId] || defaultPhoto;
+  var photo = {
+    title: state.title,
+    description: state.description,
+    photoUrl: state.photoUrl,
+    photoFile: state.photoFile
+  };
   var formType = 'Update Photo';
   return {
     photo: photo,
@@ -1288,10 +1294,15 @@ var EditPhotoForm =
 function (_React$Component) {
   _inherits(EditPhotoForm, _React$Component);
 
-  function EditPhotoForm() {
+  function EditPhotoForm(props) {
+    var _this;
+
     _classCallCheck(this, EditPhotoForm);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(EditPhotoForm).apply(this, arguments));
+    debugger;
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(EditPhotoForm).call(this, props));
+    _this.photo = _this.props.photo;
+    return _this;
   }
 
   _createClass(EditPhotoForm, [{
@@ -1302,13 +1313,14 @@ function (_React$Component) {
   }, {
     key: "conponentDidUpdate",
     value: function conponentDidUpdate(prevProps) {
-      if (prevProps.photo.id != this.props.match.params.photoId) {
+      if (prevProps.photo.id !== this.props.match.params.photoId) {
         this.props.receivePhoto(this.props.match.params.postId);
       }
     }
   }, {
     key: "render",
     value: function render() {
+      debugger;
       var _this$props = this.props,
           action = _this$props.action,
           formType = _this$props.formType,
@@ -1657,13 +1669,13 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 
 function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
 
 
 
@@ -1682,7 +1694,18 @@ function (_React$Component) {
     _classCallCheck(this, PhotoShow);
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(PhotoShow).call(this, props));
+    _this.state = {
+      title: _this.props.photo.title,
+      description: _this.props.photo.description,
+      image: _this.props.photo.photoUrl,
+      edit: false
+    };
     _this.currentUser = _this.props.currentUser;
+    _this.toggleEdit = _this.toggleEdit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.updateTitle = _this.updateTitle.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.updateDescription = _this.updateDescription.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_assertThisInitialized(_this)));
+    _this.handleDelete = _this.handleDelete.bind(_assertThisInitialized(_assertThisInitialized(_this)));
     return _this;
   }
 
@@ -1692,24 +1715,95 @@ function (_React$Component) {
       this.props.receivePhoto(parseInt(this.props.match.params.photoId));
     }
   }, {
+    key: "updateTitle",
+    value: function updateTitle(e) {
+      this.setState({
+        title: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "updateDescription",
+    value: function updateDescription(e) {
+      this.setState({
+        description: e.currentTarget.value
+      });
+    }
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      this.props.updatePhoto(this.state);
+      this.toggleEdit();
+    }
+  }, {
+    key: "handleDelete",
+    value: function handleDelete(e) {
+      e.preventDefault();
+      this.props.deletePhoto(this.props.photo.id);
+    }
+  }, {
+    key: "toggleEdit",
+    value: function toggleEdit() {
+      if (this.state.edit === false) {
+        this.setState({
+          edit: true
+        });
+      } else {
+        this.setState({
+          edit: false
+        });
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "pic-container"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        to: "/photos/~/".concat(this.currentUser.display_name),
-        className: "back"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-arrow-left"
-      }), " Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "superfun-image",
-        src: "".concat(this.props.photo.photoUrl)
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fas fa-edit"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-        className: "avatar",
-        src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.photo.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.props.photo.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      if (this.state.edit === false) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "pic-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+          to: "/photos/~/".concat(this.currentUser.display_name),
+          className: "back"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-arrow-left"
+        }), " Back to Photostream"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "superfun-image",
+          src: "".concat(this.state.image)
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("nav", {
+          className: "edit-btns"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-trash edit-btn",
+          onClick: this.handleDelete
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+          className: "fas fa-edit edit-btn",
+          onClick: this.toggleEdit
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "avatar",
+          src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.state.title), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", null, this.state.description))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      } else {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_main_nav_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+          className: "pic-container"
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "superfun-image",
+          src: "".concat(this.state.image)
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("content", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+          className: "avatar",
+          src: "https://s3.amazonaws.com/share-the-flare-dev/shareTheFlare.png"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Title"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "edit-input",
+          type: "text",
+          value: this.state.title,
+          onChange: this.updateTitle
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Description"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "edit-input",
+          type: "text",
+          value: this.state.description,
+          onChange: this.updateDescription
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+          className: "edit-update",
+          onClick: this.handleSubmit
+        }, "Update"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_tools_footer__WEBPACK_IMPORTED_MODULE_3__["default"], null));
+      }
     }
   }]);
 

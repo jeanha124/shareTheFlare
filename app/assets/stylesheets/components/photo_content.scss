@@ -116,7 +116,39 @@
 .curr-photo-img {
   max-width: 100%;
   min-width: 100%;
-  height: 200px;
+  height: 300px;
   object-fit: cover;
   vertical-align: bottom;
+}
+
+.edit-btn {
+  display: flex;
+  float: right;
+  Cursor: pointer;
+  height: 30px;
+  padding: 2px;
+  font-size: 30px;
+  color: grey;
+}
+
+.edit-input {
+  border: 2px solid gray;
+  border-radius: 3px;
+  width: 50%;
+}
+
+.edit-update {
+  background-color: lightgrey;
+  padding: 5px;
+  border-radius: 5px;
+  color: white;
+}
+
+.edit-update:hover {
+  background-color: grey;
+}
+
+.edit-btns {
+  position: relative;
+  left: -22%;
 }

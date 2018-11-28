@@ -11,10 +11,10 @@ class DuringUpload extends React.Component {
     this.handleFile = this.handleFile.bind(this);
   }
   handleTitle(e) {
-    this.setState({title: e.currentTarget.value})
+    this.setState({title: e.currentTarget.value});
   }
   handleDescription(e) {
-    this.setState({description: e.currentTarget.value})
+    this.setState({description: e.currentTarget.value});
   }
   handleFile(e) {
     const file = e.currentTarget.files[0];
@@ -77,7 +77,7 @@ class DuringUpload extends React.Component {
                 <li className="photo-title">{inputTitle}</li>
                 <li className="photo-description">{inputDescription}</li>
               </ul>
-              <button className="sub">Submit</button>
+              <button className="sub">{this.props.formType}</button>
             </form>
           </div>
         </React.Fragment>

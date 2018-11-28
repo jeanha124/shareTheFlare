@@ -10,7 +10,7 @@ const msp = state => {
     photoUrl: null,
     photoFile: null,
   };
-  const formType = 'Create Photo';
+  const formType = 'Upload Photo';
   return {
     photo,
     formType

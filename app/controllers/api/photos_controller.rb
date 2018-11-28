@@ -39,7 +39,7 @@ class Api::PhotosController < ApplicationController
   def destroy
     @photo = current_user.photos.find(params[:id])
     @photo.destroy
-    render :show
+    render :index
   end
   
   private
