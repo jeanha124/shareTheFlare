@@ -7,7 +7,7 @@ class PhotoIndex extends React.Component {
   constructor(props){
     super(props);
     // this.state = {
-    //   avatar: null,
+    //avatar: null,
     //   avatarURL : this.props.currentUser.avatar
     // };
     // this.handleFile = this.handleFile.bind(this);
@@ -40,6 +40,10 @@ class PhotoIndex extends React.Component {
         <MainNav />
         <div className="cover">
         </div>
+                <div className="user-profile-photo">
+                <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
+                <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
+                </div>
         <ul className="profile-nav">
             <li id="about">About</li>
             <li id="photostream">Photostream</li>
@@ -59,9 +63,5 @@ export default PhotoIndex;
 
 
 /*<Link to={`/photos/${this.props.currentUser.display_name}/edit`}>Edit</Link>*/
-        // <div className="user-profile-photo">
-        //   <img className="avatar" src={this.state.avatarURL} alt="Select an Avatar" />
-        //   <input type="file" style={{display: "none"}} onChange={(e) => this.handleFile(e, "avatar")} />
-        //   <h1 className="fullName">{`${this.props.currentUser.fname} ${this.props.currentUser.lname}`}</h1>
-        //   <h3 className="displayname">{`${this.props.currentUser.display_name}`}</h3>
-        // </div>
+                // <img className="avatar" src={this.state.avatarURL} alt="Select an Avatar" />
+                // <input type="file" style={{display: "none"}} onChange={(e) => this.handleFile(e, "avatar")} />

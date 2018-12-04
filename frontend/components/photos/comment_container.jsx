@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import merge from 'lodash/merge';
-import { createComment, deleteComment } from '../../actions/photo_actions';
+// import { createComment, removeComment } from '../../actions/photo_actions';
 
 const msp = state => {
   return {
@@ -12,7 +12,7 @@ const msp = state => {
 const mdp = dispatch => {
   return {
     createComment: comment => dispatch(createComment(comment)),
-    deleteComment: id => dispatch(deleteComment(id))
+    deleteComment: id => dispatch(removeComment(id))
   };
 };
 
@@ -34,7 +34,7 @@ class Comment extends React.Component {
   }
   handleSubmit(e) {
     e.preventDefault();
-    const photoId = parseInt(this.props.match.params.photoId);
+    const photoId = this.props.match.params.photoId;
     const comment = merge({}, this.state, {title: this.state.title, body: this.state.body, photo_id: photoId, commenter_id: this.props.currentUser.id});
     this.props.createComment(comment).then(this.setState({tite: '', body: ''}));
   }

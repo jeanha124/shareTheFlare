@@ -18,6 +18,8 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id].to_i)
+    puts @photo
+    puts params
     render :show
   end
 
@@ -45,7 +47,7 @@ class Api::PhotosController < ApplicationController
   private
   
   def photos_params
-    params.require(:photo).permit(:picture, :title, :description, :avatar, :cover_photo)
+    params.require(:photo).permit(:picture, :title, :description)
   end
   
   

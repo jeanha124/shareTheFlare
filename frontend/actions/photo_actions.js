@@ -3,10 +3,15 @@ import * as PhotoApiUtil from '../util/photo_api_util';
 export const RECEIVE_ALL_PHOTOS = 'RECEIVE_ALL_PHOTOS';
 export const RECEIVE_PHOTO = 'RECEIVE_PHOTO';
 export const REMOVE_PHOTO = 'REMOVE_PHOTO';
-export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
-export const REMOVE_COMMENT = 'REMOVE_COMMENT';
-export const RECEIVE_TAG = 'RECEIVE_TAG';
-export const REMOVE_TAG = 'REMOVE_TAG';
+export const CLEAR_PHOTO = 'CLEAR_PHOTO';
+
+
+export const clearPhoto = () => {
+  return {
+    type: CLEAR_PHOTO
+  };
+};
+
 
 export const receiveAllPhotos = () => {
   return dispatch => {
@@ -48,34 +53,3 @@ export const deletePhoto = (photoId) => {
   }; 
 };
 
-export const createComment = comment => {
-  return dispatch => {
-    return PhotoApiUtil.createComment(comment).then(comment => {
-      return dispatch({type: RECEIVE_COMMENT, comment});
-    });
-  };
-};
-
-export const removeComment = commentId => {
-  return dispatch => {
-    return PhotoApiUtil.deleteComment(commentId).then(comment => {
-      return dispatch({type: REMOVE_COMMENT, commentId});
-    });
-  };
-};
-
-export const createTag = tag => {
-  return dispatch => {
-    return PhotoApiUtil.createTag(tag).then(tag => {
-      return dispatch({type: RECEIVE_TAG, tag});
-    });
-  };
-};
-
-export const removeTag = tagId => {
-  return dispatch => {
-    return PhotoApiUtil.deleteTag(tagId).then(tag => {
-      return dispatch({type: REMOVE_TAG, tagId});
-    });
-  };
-};
