@@ -19,10 +19,7 @@ class PhotoShow extends React.Component {
     this.handleDelete = this.handleDelete.bind(this);
   }
   componentDidMount(){
-    debugger
-    console.log(parseInt(this.props.match.params.photoId));
     this.props.receivePhoto(parseInt(this.props.match.params.photoId));
-
   }
   updateTitle(e) {
     this.setState({title: e.currentTarget.value});

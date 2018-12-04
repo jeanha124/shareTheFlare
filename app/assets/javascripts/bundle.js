@@ -1693,8 +1693,6 @@ function (_React$Component) {
   _createClass(PhotoShow, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-      debugger;
-      console.log(parseInt(this.props.match.params.photoId));
       this.props.receivePhoto(parseInt(this.props.match.params.photoId));
     }
   }, {
