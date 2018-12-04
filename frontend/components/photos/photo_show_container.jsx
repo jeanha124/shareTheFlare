@@ -4,7 +4,6 @@ import {
   receivePhoto,
   updatePhoto,
   deletePhoto,
-  clearPhoto
 } from '../../actions/photo_actions';
 // import { getComments, getTags } from '../../reducers/selectors';
 
@@ -22,7 +21,6 @@ const mdp = dispatch => {
   return {
     receivePhoto: id => dispatch(receivePhoto(id)),
     updatePhoto: photo => dispatch(updatePhoto(photo)),
-    clearPhoto: () => dispatch(clearPhoto()),
     deletePhoto: id => dispatch(deletePhoto(id)), 
   };
 };

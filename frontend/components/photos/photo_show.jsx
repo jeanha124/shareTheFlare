@@ -71,11 +71,11 @@ class PhotoShow extends React.Component {
             </div> 
           </content>
           <content>
+          {/* <Comment /> */}
           </content>
           <Footer />
         </React.Fragment>
       );
-      {/* <Comment currentUser={this.currentUser}/> */}
     } else {
       return (
         <React.Fragment>
