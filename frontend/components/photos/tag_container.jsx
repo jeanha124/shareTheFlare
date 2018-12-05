@@ -24,6 +24,7 @@ class Tag extends React.Component {
       title: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateTitle = this.updateTitle.bind(this);
   }
   handleSubmit(e){
     e.preventDefault();
