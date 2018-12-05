@@ -12,7 +12,7 @@
 #
 
 class Comment < ApplicationRecord
-  validates :commenter_id, :photo_id, :title, presence: true
+  validates :commenter_id, :photo_id, :body, presence: true
 
   belongs_to :commenter,
     foreign_key: :commenter_id,

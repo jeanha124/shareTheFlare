@@ -1,12 +1,16 @@
 class Api::CommentsController < ApplicationController
   before_action :require_login!
   
+  def index
+  end
+  end
   def create
     @comment = Comment.new(comment_params)
-    @comment.commenter_id = current_user.id
-    @comment.photo_id = params[:photo_id]
-    if @comment.save
-      render :show
+    if @comment.save 
+      @photo = Photo.find(@comment.photo_id)
+      @comments = @photo.comments
+      debugger
+      render 'api/photos/show'
     else
       render json: @comment.errors.full_messages, status: 422
     end
@@ -23,7 +27,7 @@ class Api::CommentsController < ApplicationController
 
   private
   def comment_params
-    params.require(:comment).permit(:title, :body, :commenter_id, :photo_id)
+    params.require(:comment).permit(:body, :commenter_id, :photo_id)
   end
 
 end

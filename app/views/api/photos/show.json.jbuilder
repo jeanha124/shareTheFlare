@@ -11,3 +11,18 @@
     # json.cover_photoURL url_for(@photo.cover_photo)
   # end
 
+json.comments do
+  @comments.each do |comment|
+    json.set! comment.id do
+      json.extract! comment, :commenter_id, :body
+    end
+  end
+end
+
+json.tags do
+  @tags.each do |tag|
+    json.set! tag.id do
+      json.extract! tag, :id, :title
+    end
+  end
+end

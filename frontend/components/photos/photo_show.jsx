@@ -4,6 +4,8 @@ import { Redirect } from 'react-router';
 import MainNav from '../main_tools/main_nav_container';
 import Footer from '../main_tools/footer';
 import Comment from './comment_container';
+import CommentList from './comment_list_container';
+import Tag from './tag_container';
 
 class PhotoShow extends React.Component {
   constructor(props){
@@ -11,7 +13,6 @@ class PhotoShow extends React.Component {
     this.state = {
       edit: false
     };
-    this.currentUser = this.props.currentUser;
     this.toggleEdit = this.toggleEdit.bind(this);
     this.updateTitle = this.updateTitle.bind(this);
     this.updateDescription = this.updateDescription.bind(this);
@@ -50,7 +51,7 @@ class PhotoShow extends React.Component {
         <React.Fragment>
           <MainNav />
           <div className="pic-container">
-            <Link to={`/photos/~/${this.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
+            <Link to={`/photos/~/${this.props.currentUser.display_name}`} className="back"><i className="fas fa-arrow-left"></i> Back to Photostream</Link>
             <img className='superfun-image'
             src= {
               `${this.props.photo.photoUrl}`
@@ -71,7 +72,9 @@ class PhotoShow extends React.Component {
             </div> 
           </content>
           <content>
-          {/* <Comment /> */}
+          <CommentList />
+          <Comment />
+          <Tag />
           </content>
           <Footer />
         </React.Fragment>

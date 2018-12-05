@@ -18,8 +18,8 @@ class Api::PhotosController < ApplicationController
 
   def show
     @photo = Photo.find(params[:id].to_i)
-    puts @photo
-    puts params
+    @comments = @photo.comments
+    @tags = @photo.tags
     render :show
   end
 
