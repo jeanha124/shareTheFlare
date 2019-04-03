@@ -2448,7 +2448,12 @@ function (_React$Component) {
     value: function renderErrors() {
       return this.props.errors.map(function (error, i) {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("li", {
-          key: "error-".concat(i)
+          key: "error-".concat(i),
+          style: {
+            listStyleType: 'none',
+            color: 'red',
+            textAlign: 'center'
+          }
         }, error);
       });
     }
@@ -2470,7 +2475,7 @@ function (_React$Component) {
           className: "login-form-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "cred-sign"
-        }, "Sign Up"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "text",
@@ -2536,7 +2541,7 @@ function (_React$Component) {
           className: "login-form-box"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
           className: "cred-sign"
-        }, "Log In"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
           type: "email",
@@ -2687,7 +2692,10 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-        className: "logo"
+        className: "logo",
+        style: {
+          color: '#fff'
+        }
       }, "Share The Flare")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-losi"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
