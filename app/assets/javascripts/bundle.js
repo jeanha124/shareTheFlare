@@ -2703,12 +2703,12 @@ function (_React$Component) {
         onClick: function onClick() {
           return _this.props.openModal('login');
         }
-      }, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+      }, "Log In"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "signup",
         onClick: function onClick() {
           return _this.props.openModal('signup');
         }
-      }, "Signup"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Sign Up"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "launch-body"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "content"

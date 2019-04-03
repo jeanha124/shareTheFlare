@@ -35,6 +35,8 @@ html, body {
 }
 
 .logo {
+  position: relative;
+  left: 16%;
   font-weight: 700;
 }
 
@@ -48,7 +50,10 @@ html, body {
 .login {
   background: none;
   border: none;
+  color: #fff;
   justify-self: end;
+  font-size: 16px;
+  font-weight: 700;
 }
 .signup {
   background-color: white;
@@ -56,9 +61,12 @@ html, body {
   padding: 6px 22px;
   border-radius: 3px;
   color: black;
-  font-size: 21px;
+  font-size: 16px;
+  font-weight: 700;
 }
-
+.signup:hover {
+  color: grey;
+}
 .content {
   display: block;
   max-width: 50%;
