@@ -2322,6 +2322,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["clearErrors"])());
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("button", {
+      className: "creds",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["openModal"])('signup'));
       }
@@ -2454,55 +2455,8 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var button, fname, lname, gender, email, password, displayName, submit, demoLog;
-      fname = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "First Name",
-        value: this.state.fname,
-        onChange: this.update('fname'),
-        className: "login-input"
-      });
-      lname = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Last Name",
-        value: this.state.lname,
-        onChange: this.update('lname'),
-        className: "login-input"
-      });
-      email = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "email",
-        placeholder: "Email",
-        value: this.state.email,
-        onChange: this.update('email'),
-        className: "login-input"
-      });
-      password = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "password",
-        placeholder: "Password",
-        value: this.state.password,
-        onChange: this.update('password'),
-        className: "login-input"
-      });
-      displayName = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Display Name",
-        value: this.state.display_name,
-        onChange: this.update('display_name'),
-        className: "login-input"
-      });
-      gender = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Gender: Optional",
-        value: this.state.gender,
-        onChange: this.update('gender'),
-        className: "login-input"
-      });
+      var button, demoLog;
       button = this.props.otherForm;
-      submit = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "session-submit",
-        type: "submit",
-        value: this.props.formType
-      });
       demoLog = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         id: "demo",
         onClick: this.demoLogin
@@ -2514,24 +2468,104 @@ function (_React$Component) {
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "login-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Sign Up", this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "cred-sign"
+        }, "Sign Up"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), fname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), lname, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), email, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), password, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), displayName, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), gender, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), submit), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Already have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          placeholder: "First Name",
+          id: "fname",
+          value: this.state.fname,
+          onChange: this.update('fname'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          placeholder: "Last Name",
+          id: "lname",
+          value: this.state.lname,
+          onChange: this.update('lname'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "email",
+          placeholder: "Email",
+          id: "email",
+          value: this.state.email,
+          onChange: this.update('email'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "password",
+          placeholder: "Password",
+          id: "password",
+          value: this.state.password,
+          onChange: this.update('password'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          placeholder: "Display Name",
+          id: "displayname",
+          value: this.state.display_name,
+          onChange: this.update('display_name'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "text",
+          placeholder: "Gender: Optional",
+          id: "gender",
+          value: this.state.gender,
+          onChange: this.update('gender'),
+          className: "login-input"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "session-submit",
+          type: "submit",
+          value: this.props.formType
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "cred-sign"
+        }, "Already have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "link-btn",
-          onClick: this.props.clearModalErrors
-        }, button)));
+          onClick: this.props.clearModalErrors,
+          style: {
+            fontSize: '18px',
+            fontFamily: 'Helvetica'
+          }
+        }, button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null)));
       } else {
         return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form-container"
         }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
           onSubmit: this.handleSubmit,
           className: "login-form-box"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Log In", this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "cred-sign"
+        }, "Log In"), this.renderErrors(), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
           className: "login-form"
-        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), email, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), password, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), submit), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), "Don 't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "email",
+          placeholder: "Email",
+          value: this.state.email,
+          onChange: this.update('email'),
+          className: "login-input",
+          id: "login-email"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          type: "password",
+          placeholder: "Password",
+          value: this.state.password,
+          onChange: this.update('password'),
+          className: "login-input",
+          id: "login-password"
+        }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+          className: "session-submit",
+          type: "submit",
+          value: this.props.formType
+        })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+          className: "cred-sign"
+        }, "Don 't have an account? ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
           className: "link-btn",
-          onClick: this.props.clearModalErrors
-        }, button), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), demoLog));
+          onClick: this.props.clearModalErrors,
+          style: {
+            fontSize: '18px',
+            fontFamily: 'Helvetica'
+          }
+        }, button)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("br", null), demoLog));
       }
     }
   }]);
@@ -2582,6 +2616,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_4__["clearErrors"])());
     },
     otherForm: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("button", {
+      className: "creds",
       onClick: function onClick() {
         return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_3__["openModal"])('login'));
       }

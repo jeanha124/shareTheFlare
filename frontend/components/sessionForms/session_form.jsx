@@ -1,7 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
 
-
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -52,45 +51,8 @@ class SessionForm extends React.Component {
       });
   }
   render() {
-    let button, fname, lname, gender, email, password, displayName, submit, demoLog;
-    fname = <input type="text"
-                placeholder="First Name"
-                value={ this.state.fname }
-                onChange={ this.update('fname') }
-                className="login-input"
-                />;
-    lname = <input type="text"
-                placeholder = "Last Name"
-                value={ this.state.lname }
-                onChange={ this.update('lname') }
-                className="login-input"
-                />;
-    email = <input type="email"
-                placeholder = "Email"
-                value={ this.state.email }
-                onChange={ this.update('email') }
-                className="login-input"
-                />;
-    password = <input type="password"
-                placeholder = "Password"
-                value={ this.state.password }
-                onChange={ this.update('password') }
-                className="login-input"
-                />;
-    displayName = <input type="text"
-                placeholder = "Display Name"
-                value={ this.state.display_name }
-                onChange={ this.update('display_name') }
-                className="login-input"
-                />;
-    gender = <input type="text"
-                placeholder = "Gender: Optional"
-                value={ this.state.gender }
-                onChange={ this.update('gender') }
-                className="login-input"
-                />;                        
+    let button, demoLog;            
     button = this.props.otherForm;
-    submit = <input className="session-submit" type="submit" value={this.props.formType} />;
     demoLog = <button id="demo" onClick={this.demoLogin}>Demo Login</button>;
 
 
@@ -100,27 +62,74 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
-            Sign Up
+            <h1 className="cred-sign">Sign Up</h1>
             { this.renderErrors() }
             <div className="login-form">
               <br />
-                {fname}
-                <br />
-                {lname}
-                <br /> 
-                {email}
-                <br />
-                {password}
               <br />
-                {displayName}
+              <input type="text"
+                placeholder="First Name"
+                id="fname"
+                value={ this.state.fname }
+                onChange={ this.update('fname') }
+                className="login-input"
+              />
+              <input type="text"
+                placeholder="Last Name"
+                id="lname"
+                value={ this.state.lname }
+                onChange={ this.update('lname') }
+                className="login-input"
+              />
               <br /> 
-                {gender}
+              <br /> 
+              <input type="email"
+                placeholder = "Email"
+                id="email"
+                value={ this.state.email }
+                onChange={ this.update('email') }
+                className="login-input"
+              />
               <br />
-              {submit}
+              <br />
+              <input type="password"
+                placeholder = "Password"
+                id="password"
+                value={ this.state.password }
+                onChange={ this.update('password') }
+                className="login-input"
+              />
+              <br />
+              <br />
+              <input type="text"
+                placeholder = "Display Name"
+                id="displayname"
+                value={ this.state.display_name }
+                onChange={ this.update('display_name') }
+                className="login-input"
+              />
+              <br /> 
+              <br /> 
+              <input type="text"
+                placeholder = "Gender: Optional"
+                id="gender"
+                value={ this.state.gender }
+                onChange={ this.update('gender') }
+                className="login-input"
+              />
+              <br />
+              <br />
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
             <br />
             <br />
-            Already have an account? <span className="link-btn" onClick={this.props.clearModalErrors}>{button}</span>
+            <br />
+            <br />
+            <h1 className="cred-sign">Already have an account? <span className="link-btn" onClick={this.props.clearModalErrors} style={{fontSize: '18px', fontFamily: 'Helvetica'}}>{button}</span></h1>
+            <br />
+            <br />
+            <br />
           </form>
         </div>
       );
@@ -129,19 +138,37 @@ class SessionForm extends React.Component {
         <div className="login-form-container">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <br />
-            Log In
+            <br />
+            <h1 className="cred-sign">Log In</h1>
             { this.renderErrors() }
             <div className="login-form">
               <br />
-                {email}
+              <input type="email"
+                placeholder = "Email"
+                value={ this.state.email }
+                onChange={ this.update('email') }
+                className="login-input"
+                id="login-email"
+              />
               <br />
-                {password}
               <br />
-              {submit}
+              <input type="password"
+                placeholder = "Password"
+                value={ this.state.password }
+                onChange={ this.update('password') }
+                className="login-input"
+                id="login-password"
+              />
+              <br />
+              <br />
+              <br />
+              <input className="session-submit" type="submit" value={this.props.formType} />
             </div>
             <br />
             <br />
-            Don 't have an account? <span className="link-btn" onClick={this.props.clearModalErrors}>{button}</span>
+            <br />
+            <br />
+            <h1 className="cred-sign">Don 't have an account? <span className="link-btn" onClick={this.props.clearModalErrors} style={{fontSize: '18px', fontFamily: 'Helvetica'}}>{button}</span></h1>
             <br />
             {demoLog}
           </form>
